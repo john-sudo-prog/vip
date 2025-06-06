@@ -217,21 +217,21 @@
           <p class="section-subtitle">为您提供全方位的云服务解决方案</p>
         </div>
 
+        <!-- 产品服务卡片 -->
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           <div v-for="service in services" :key="service.id" 
-               class="group bg-white rounded-xl p-8 shadow-sm
-                      hover:shadow-lg hover:bg-gradient-to-br hover:from-white hover:to-blue-50/50
-                      transform hover:-translate-y-1 transition-all duration-300
-                      border border-gray-100 hover:border-blue-100">
-            <div class="bg-blue-50 rounded-lg p-3 w-16 h-16 mb-4
-                        group-hover:bg-blue-100/50 transition-colors duration-300">
+               class="group bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl p-8 shadow-lg
+                      hover:shadow-xl hover:from-blue-600 hover:to-blue-700
+                      transform hover:-translate-y-1 transition-all duration-300">
+            <div class="bg-white/10 backdrop-blur-lg rounded-lg p-3 w-16 h-16 mb-4
+                        group-hover:bg-white/20 transition-colors duration-300">
               <component :is="service.icon" 
-                         class="h-10 w-10 text-blue-600 group-hover:text-blue-700 transition-colors duration-300" />
+                         class="h-10 w-10 text-white group-hover:text-white transition-colors duration-300" />
             </div>
-            <h3 class="text-xl font-semibold mb-3 text-gray-800 group-hover:text-blue-800 transition-colors duration-300">
+            <h3 class="text-xl font-semibold mb-3 text-white">
               {{ service.title }}
             </h3>
-            <p class="text-gray-600 group-hover:text-gray-700 transition-colors duration-300">
+            <p class="text-blue-100">
               {{ service.description }}
             </p>
           </div>
@@ -252,19 +252,19 @@
           <p class="section-subtitle">为您提供全方位的出海解决方案</p>
         </div>
 
+        <!-- 解决方案卡片 -->
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
           <div v-for="solution in solutions" :key="solution.id" 
-               class="group bg-white rounded-xl p-8 shadow-sm
-                      hover:shadow-lg hover:bg-gradient-to-br hover:from-white hover:to-purple-50/50
-                      transform hover:-translate-y-1 transition-all duration-300
-                      border border-gray-100 hover:border-purple-100">
-            <div class="flex items-start">
-              <div class="bg-purple-50 rounded-lg p-3 
-                          group-hover:bg-purple-100/50 transition-colors duration-300">
+               class="group bg-white rounded-xl p-8 shadow-lg border-2 border-purple-200
+                      hover:shadow-xl hover:border-purple-400 hover:bg-purple-50
+                      transform hover:-translate-y-1 transition-all duration-300">
+            <div class="flex items-start space-x-6">
+              <div class="bg-purple-100 rounded-2xl p-4 
+                          group-hover:bg-purple-200 transition-colors duration-300">
                 <component :is="solution.icon" 
                           class="h-8 w-8 text-purple-600 group-hover:text-purple-700 transition-colors duration-300" />
               </div>
-              <div class="ml-4">
+              <div>
                 <h3 class="text-xl font-semibold mb-3 text-gray-800 group-hover:text-purple-800 transition-colors duration-300">
                   {{ solution.title }}
                 </h3>
