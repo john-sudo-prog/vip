@@ -17,6 +17,6 @@ git add -A
 git commit -m 'deploy'
 
 # 如果你要部署在 https://<USERNAME>.github.io/<REPO>
-git push -f https://github.com/john-sudo-prog/vip.git master
+git push -f https://github.com/john-sudo-prog/vip.git master:gh-pages
 
 cd - 
