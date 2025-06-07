@@ -1,6 +1,5 @@
 <template>
   <Home />
-  1111
 </template>
 
 <script setup lang="ts">
