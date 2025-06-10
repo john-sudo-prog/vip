@@ -32,4 +32,213 @@
   .section-subtitle {
     @apply text-lg text-gray-600 mb-8 max-w-2xl mx-auto;
   }
+}
+
+:root {
+  /* 主要渐变 - 深邃蓝紫渐变 */
+  --primary-gradient: linear-gradient(135deg, #0F172A 0%, #1E293B 100%);
+  
+  /* 强调渐变 - 科技蓝 */
+  --accent-gradient: linear-gradient(135deg, #3B82F6 0%, #1D4ED8 100%);
+  
+  /* 辅助渐变 - 紫罗兰 */
+  --secondary-gradient: linear-gradient(135deg, #4F46E5 0%, #7C3AED 100%);
+  
+  /* 特殊渐变 - 深色调 */
+  --dark-gradient: linear-gradient(135deg, #020617 0%, #1E293B 100%);
+  
+  /* 卡片背景 */
+  --card-bg: rgba(30, 41, 59, 0.7);
+  --card-hover: rgba(30, 41, 59, 0.9);
+  
+  /* 边框颜色 */
+  --border-light: rgba(148, 163, 184, 0.1);
+  --border-hover: rgba(148, 163, 184, 0.2);
+  
+  /* 文字颜色 */
+  --text-primary: #F8FAFC;
+  --text-secondary: #CBD5E1;
+  --text-muted: #94A3B8;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', sans-serif;
+  background: var(--primary-gradient);
+  color: var(--text-primary);
+  min-height: 100vh;
+}
+
+/* 板块渐变背景 */
+.section-gradient-1 {
+  background: var(--primary-gradient);
+  position: relative;
+}
+
+.section-gradient-2 {
+  background: var(--secondary-gradient);
+  position: relative;
+}
+
+.section-gradient-3 {
+  background: var(--accent-gradient);
+  position: relative;
+}
+
+.section-gradient-4 {
+  background: var(--dark-gradient);
+  position: relative;
+}
+
+/* 玻璃态卡片效果 */
+.glass-card {
+  background: var(--card-bg);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--border-light);
+  border-radius: 1rem;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.glass-card:hover {
+  background: var(--card-hover);
+  border-color: var(--border-hover);
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+}
+
+/* 服务卡片 */
+.service-card {
+  @apply glass-card p-6;
+  position: relative;
+  overflow: hidden;
+}
+
+.service-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--accent-gradient);
+  transform: scaleX(0);
+  transition: transform 0.4s ease;
+}
+
+.service-card:hover::before {
+  transform: scaleX(1);
+}
+
+/* 时间轴样式 */
+.timeline-container {
+  position: relative;
+  padding: 2rem 0;
+}
+
+.timeline-item {
+  display: flex;
+  align-items: center;
+  margin: 2rem 0;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.timeline-item.aos-animate {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* 合作伙伴卡片 */
+.partner-card {
+  @apply glass-card p-4;
+  background: var(--card-bg);
+}
+
+.partner-card:hover {
+  background: var(--card-hover);
+  transform: translateY(-5px) scale(1.02);
+}
+
+/* 联系方式卡片 */
+.contact-card {
+  @apply glass-card p-8;
+  background: linear-gradient(135deg, var(--card-bg) 0%, rgba(30, 41, 59, 0.8) 100%);
+}
+
+/* 社交媒体链接 */
+.social-link {
+  @apply flex items-center gap-3 p-3 rounded-lg;
+  color: var(--text-secondary);
+  background: rgba(30, 41, 59, 0.4);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.social-link:hover {
+  color: var(--text-primary);
+  background: rgba(59, 130, 246, 0.2);
+  transform: translateY(-2px);
+}
+
+/* 动画效果 */
+.partner-animation {
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+/* 按钮样式 */
+.btn-primary {
+  @apply px-6 py-3 rounded-full font-semibold;
+  background: var(--accent-gradient);
+  color: var(--text-primary);
+  transition: all 0.3s ease;
+  border: 1px solid rgba(59, 130, 246, 0.2);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(59, 130, 246, 0.2);
+}
+
+.btn-secondary {
+  @apply px-6 py-3 rounded-full font-semibold;
+  background: transparent;
+  color: var(--text-primary);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.3s ease;
+}
+
+.btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateY(-2px);
+}
+
+/* 导航栏样式 */
+.nav-bg {
+  background: rgba(15, 23, 42, 0.8);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border-light);
+}
+
+/* Logo容器 */
+.logo-container {
+  width: 180px;
+  height: auto;
+  transition: all 0.3s ease;
+}
+
+.logo-container img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.1));
 } 

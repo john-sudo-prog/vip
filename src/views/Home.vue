@@ -1,43 +1,65 @@
 <template>
   <div class="min-h-screen">
     <!-- 导航栏 -->
-    <nav class="fixed w-full bg-white/90 backdrop-blur-md z-50 shadow-sm">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <nav class="fixed top-0 left-0 right-0 z-50 nav-bg">
+      <div class="max-w-7xl mx-auto px-4">
         <div class="flex justify-between items-center h-16">
           <div class="flex-shrink-0">
-            <h1 class="text-2xl font-bold text-primary-600">点一云科技</h1>
-            <!-- <img src="../assets/img/logo.png" alt="点一云科技" class="h-8"> -->
+            <!-- <h1 class="text-2xl font-bold text-primary-600">点一云科技</h1> -->
+            <img class="h-8 w-auto" src="../assets/logo.png" alt="点一云科技">
           </div>
           
           <!-- 桌面端导航 -->
-          <div class="hidden md:flex space-x-8">
-            <a v-for="item in navItems" :key="item.id" 
-               :href="item.href"
-               @click.prevent="scrollToSection(item.href)"
-               class="text-gray-600 hover:text-primary-600 transition-colors">
-              {{ item.name }}
-            </a>
+          <div class="hidden md:block">
+            <div class="ml-10 flex items-baseline space-x-4">
+              <template v-for="item in navItems" :key="item.name">
+                <router-link v-if="!item.isHash"
+                   :to="item.href"
+                   class="nav-link"
+                   :class="{ 'nav-link-active': route.path === item.href }">
+                  {{ item.name }}
+                </router-link>
+                <a v-else
+                   :href="item.href"
+                   class="nav-link"
+                   @click.prevent="scrollToSection(item.href)">
+                  {{ item.name }}
+                </a>
+              </template>
+            </div>
           </div>
 
           <!-- 移动端菜单按钮 -->
           <div class="md:hidden">
-            <button @click="isMenuOpen = !isMenuOpen" class="text-gray-600">
-              <MenuIcon v-if="!isMenuOpen" class="h-6 w-6" />
-              <XMarkIcon v-else class="h-6 w-6" />
+            <button @click="isMenuOpen = !isMenuOpen"
+                    class="menu-button">
+              <span class="sr-only">打开菜单</span>
+              <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path v-if="!isMenuOpen" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                <path v-else stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+              </svg>
             </button>
           </div>
         </div>
+      </div>
 
-        <!-- 移动端菜单 -->
-        <div v-if="isMenuOpen" class="md:hidden">
-          <div class="px-2 pt-2 pb-3 space-y-1">
-            <a v-for="item in navItems" :key="item.id"
+      <!-- 移动端菜单 -->
+      <div v-show="isMenuOpen" class="md:hidden mobile-menu">
+        <div class="px-2 pt-2 pb-3 space-y-1">
+          <template v-for="item in navItems" :key="item.name">
+            <router-link v-if="!item.isHash"
+               :to="item.href"
+               class="mobile-nav-link"
+               :class="{ 'mobile-nav-link-active': route.path === item.href }">
+              {{ item.name }}
+            </router-link>
+            <a v-else
                :href="item.href"
-               @click.prevent="scrollToSection(item.href)"
-               class="block px-3 py-2 text-gray-600 hover:text-primary-600 transition-colors">
+               class="mobile-nav-link"
+               @click.prevent="scrollToSection(item.href)">
               {{ item.name }}
             </a>
-          </div>
+          </template>
         </div>
       </div>
     </nav>
@@ -204,36 +226,33 @@
       </div>
     </section>
 
-    <!-- 产品服务 -->
-    <section id="services" class="py-20 relative overflow-hidden bg-gradient-to-b from-gray-50 via-gray-100 to-white">
-      <div class="absolute inset-0">
-        <div class="absolute inset-0 bg-[radial-gradient(circle_at_30%_30%,rgba(59,130,246,0.03),transparent_70%)]"></div>
-        <div class="absolute inset-0 bg-grid opacity-5"></div>
-      </div>
+    <!-- 服务介绍 -->
+    <section id="services" class="py-16 bg-gradient-section">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center mb-12" data-aos="fade-down">我们的服务</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <!-- GPU计算服务 -->
+          <div class="service-card" data-aos="fade-up">
+            <h3 class="text-xl font-bold mb-4">GPU计算服务</h3>
+            <p class="text-gray-300">高性能GPU计算解决方案，支持AI训练和推理</p>
+          </div>
+          
+          <!-- 边缘计算 -->
+          <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+            <h3 class="text-xl font-bold mb-4">边缘计算</h3>
+            <p class="text-gray-300">200+ 全球节点，毫秒级响应</p>
+          </div>
+          
+          <!-- 云代理服务 -->
+          <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+            <h3 class="text-xl font-bold mb-4">云代理服务</h3>
+            <p class="text-gray-300">安全稳定的全球网络代理解决方案</p>
+          </div>
 
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-        <div class="text-center mb-16">
-          <h2 class="section-title">产品服务</h2>
-          <p class="section-subtitle">为您提供全方位的云服务解决方案</p>
-        </div>
-
-        <!-- 产品服务卡片 -->
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          <div v-for="service in services" :key="service.id" 
-               class="group bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl p-8 shadow-lg
-                      hover:shadow-xl hover:from-blue-600 hover:to-blue-700
-                      transform hover:-translate-y-1 transition-all duration-300">
-            <div class="bg-white/10 backdrop-blur-lg rounded-lg p-3 w-16 h-16 mb-4
-                        group-hover:bg-white/20 transition-colors duration-300">
-              <component :is="service.icon" 
-                         class="h-10 w-10 text-white group-hover:text-white transition-colors duration-300" />
-            </div>
-            <h3 class="text-xl font-semibold mb-3 text-white">
-              {{ service.title }}
-            </h3>
-            <p class="text-blue-100">
-              {{ service.description }}
-            </p>
+          <!-- 国际营销短信服务 -->
+          <div class="service-card" data-aos="fade-up" data-aos-delay="300">
+            <h3 class="text-xl font-bold mb-4">国际营销短信服务</h3>
+            <p class="text-gray-300">覆盖全球 230 个国家和地区，支持全球语言，助力企业拓展海外市场</p>
           </div>
         </div>
       </div>
@@ -279,113 +298,60 @@
     </section>
 
     <!-- 联系我们 -->
-    <section id="contact" class="py-20 relative overflow-hidden bg-gradient-to-b from-white via-gray-50 to-white">
-      <div class="absolute inset-0">
-        <div class="absolute inset-0 bg-[radial-gradient(circle_at_30%_70%,rgba(59,130,246,0.03),transparent_70%)]"></div>
-        <div class="absolute inset-0 bg-grid opacity-5"></div>
-      </div>
-
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-        <div class="text-center mb-16">
-          <h2 class="section-title">联系我们</h2>
-          <p class="section-subtitle">随时为您提供专业的技术支持和服务</p>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
-          <div class="group bg-white rounded-xl p-8 shadow-sm
-                      hover:shadow-lg hover:bg-gradient-to-br hover:from-white hover:to-blue-50/50
-                      transform hover:-translate-y-1 transition-all duration-300
-                      border border-gray-100 hover:border-blue-100">
-            <div class="text-center">
-              <div class="w-16 h-16 mx-auto mb-4 bg-blue-50 rounded-full flex items-center justify-center
-                          group-hover:bg-blue-100/50 transition-colors duration-300">
-                <ClockIcon class="h-8 w-8 text-blue-600 group-hover:text-blue-700 transition-colors duration-300" />
-              </div>
-              <div class="text-2xl font-bold text-gray-800 group-hover:text-blue-800 mb-2 transition-colors duration-300">
-                7x24
-              </div>
-              <div class="text-gray-600 group-hover:text-gray-700 transition-colors duration-300">
-                全天候技术支持
-              </div>
-            </div>
-          </div>
-
-          <div class="group bg-white rounded-xl p-8 shadow-sm
-                      hover:shadow-lg hover:bg-gradient-to-br hover:from-white hover:to-blue-50/50
-                      transform hover:-translate-y-1 transition-all duration-300
-                      border border-gray-100 hover:border-blue-100">
-            <div class="text-center">
-              <div class="w-16 h-16 mx-auto mb-4 bg-blue-50 rounded-full flex items-center justify-center
-                          group-hover:bg-blue-100/50 transition-colors duration-300">
-                <GlobeAltIcon class="h-8 w-8 text-blue-600 group-hover:text-blue-700 transition-colors duration-300" />
-              </div>
-              <div class="text-2xl font-bold text-gray-800 group-hover:text-blue-800 mb-2 transition-colors duration-300">
-                200+
-              </div>
-              <div class="text-gray-600 group-hover:text-gray-700 transition-colors duration-300">
-                覆盖国家和地区
-              </div>
-            </div>
-          </div>
-
-          <div class="group bg-white rounded-xl p-8 shadow-sm
-                      hover:shadow-lg hover:bg-gradient-to-br hover:from-white hover:to-blue-50/50
-                      transform hover:-translate-y-1 transition-all duration-300
-                      border border-gray-100 hover:border-blue-100">
-            <div class="text-center">
-              <div class="w-16 h-16 mx-auto mb-4 bg-blue-50 rounded-full flex items-center justify-center
-                          group-hover:bg-blue-100/50 transition-colors duration-300">
-                <ShieldCheckIcon class="h-8 w-8 text-blue-600 group-hover:text-blue-700 transition-colors duration-300" />
-              </div>
-              <div class="text-2xl font-bold text-gray-800 group-hover:text-blue-800 mb-2 transition-colors duration-300">
-                99.9%
-              </div>
-              <div class="text-gray-600 group-hover:text-gray-700 transition-colors duration-300">
-                服务可用性
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <div class="group bg-white rounded-xl p-8 shadow-sm
-                      hover:shadow-lg hover:bg-gradient-to-br hover:from-white hover:to-blue-50/50
-                      transform hover:-translate-y-1 transition-all duration-300
-                      border border-gray-100 hover:border-blue-100">
-            <h3 class="text-xl font-semibold mb-4 text-gray-800 group-hover:text-blue-800 transition-colors duration-300">
-              联系方式
-            </h3>
-            <ul class="space-y-4">
-              <li class="flex items-center group/item">
-                <div class="w-10 h-10 bg-blue-50 rounded-full flex items-center justify-center mr-3
-                            group-hover/item:bg-blue-100/50 transition-colors duration-300">
-                  <EnvelopeIcon class="h-5 w-5 text-blue-600 group-hover/item:text-blue-700 transition-colors duration-300" />
+    <section id="contact" class="py-16 bg-gradient-section-reverse">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center mb-12" data-aos="fade-down">联系我们</h2>
+        <div class="max-w-4xl mx-auto">
+          <div class="contact-card" data-aos="fade-up">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div>
+                <h3 class="text-xl font-bold mb-4">联系方式</h3>
+                <div class="space-y-3">
+                  <p class="flex items-center">
+                    <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                      <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/>
+                      <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/>
+                    </svg>
+                    <span>contact@example.com</span>
+                  </p>
+                  <p class="flex items-center">
+                    <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                      <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
+                    </svg>
+                    <span>+852 1234 5678</span>
+                  </p>
+                  <p class="flex items-center">
+                    <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/>
+                    </svg>
+                    <span>香港特别行政区</span>
+                  </p>
                 </div>
-                <span class="text-gray-600 group-hover/item:text-gray-700 transition-colors duration-300">
-                  邮箱：contact@dianyi.cloud
-                </span>
-              </li>
-              <li class="flex items-center group/item">
-                <div class="w-10 h-10 bg-blue-50 rounded-full flex items-center justify-center mr-3
-                            group-hover/item:bg-blue-100/50 transition-colors duration-300">
-                  <PhoneIcon class="h-5 w-5 text-blue-600 group-hover/item:text-blue-700 transition-colors duration-300" />
+              </div>
+              <div>
+                <h3 class="text-xl font-bold mb-4">社交媒体</h3>
+                <div class="grid grid-cols-2 gap-4">
+                  <a href="#" class="social-link">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"/>
+                    </svg>
+                    <span>Facebook</span>
+                  </a>
+                  <a href="#" class="social-link">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M24 12c0 6.627-5.373 12-12 12S0 18.627 0 12 5.373 0 12 0s12 5.373 12 12zm-6.465-3.192c-.379.168-.786.281-1.213.333.436-.261.774-.677.932-1.171-.409.242-.86.418-1.338.513-.384-.409-.93-.666-1.537-.666-1.162 0-2.105.942-2.105 2.105 0 .165.019.326.055.48-1.753-.088-3.307-.926-4.351-2.199-.181.311-.286.672-.286 1.058 0 .731.373 1.375.941 1.753-.346-.011-.671-.106-.957-.264v.027c0 1.019.725 1.87 1.687 2.063-.177.048-.362.074-.553.074-.135 0-.266-.013-.394-.038.268.836 1.045 1.445 1.462-.72.565-1.628.901-2.614.901-.17 0-.337-.01-.502-.029.931.596 2.037.944 3.226.944 3.87 0 5.986-3.206 5.986-5.986 0-.091-.002-.182-.006-.272.411-.297.77-.667 1.054-1.088z"/>
+                    </svg>
+                    <span>Telegram</span>
+                  </a>
+                  <a href="#" class="social-link">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M21.502 19.525c1.524-1.105 2.498-2.738 2.498-4.554 0-3.326-3.237-6.023-7.229-6.023s-7.229 2.697-7.229 6.023c0 3.327 3.237 6.024 7.229 6.024.825 0 1.621-.117 2.36-.33l.212-.032 1.916 1.675c.137.12.31.182.488.182.069 0 .139-.009.209-.027.245-.066.439-.259.505-.504l.171-.62c.025-.091.035-.185.035-.28 0-.107-.023-.213-.068-.31zm-12.586-4.554c0-2.516 2.455-4.564 5.478-4.564s5.478 2.048 5.478 4.564c0 2.515-2.455 4.563-5.478 4.563s-5.478-2.048-5.478-4.563z"/>
+                    </svg>
+                    <span>WeChat</span>
+                  </a>
                 </div>
-                <span class="text-gray-600 group-hover/item:text-gray-700 transition-colors duration-300">
-                  电话：+852 51641419
-                </span>
-              </li>
-            </ul>
-          </div>
-          <div class="group bg-white rounded-xl p-8 shadow-sm
-                      hover:shadow-lg hover:bg-gradient-to-br hover:from-white hover:to-blue-50/50
-                      transform hover:-translate-y-1 transition-all duration-300
-                      border border-gray-100 hover:border-blue-100">
-            <h3 class="text-xl font-semibold mb-4 text-gray-800 group-hover:text-blue-800 transition-colors duration-300">
-              服务时间
-            </h3>
-            <p class="text-gray-600 group-hover:text-gray-700 transition-colors duration-300">
-              我们提供全天候24小时技术支持服务，确保您的业务永不停歇
-            </p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -406,7 +372,8 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
+import { ref, onMounted } from 'vue'
+import { useRoute } from 'vue-router'
 import {
   Bars3Icon as MenuIcon,
   XMarkIcon,
@@ -422,26 +389,27 @@ import {
   PhoneIcon,
   ArrowRightIcon
 } from '@heroicons/vue/24/outline'
+import AOS from 'aos'
+import 'aos/dist/aos.css'
+import CompanyTimeline from '../components/CompanyTimeline.vue'
+import Partners from '../components/Partners.vue'
+import SmsService from '../components/SmsService.vue'
 
-// 导航菜单状态
-const isMenuOpen = ref(false)
-
-// 平滑滚动函数
-const scrollToSection = (href: string) => {
-  const element = document.querySelector(href)
-  if (element) {
-    element.scrollIntoView({ behavior: 'smooth' })
-  }
-  isMenuOpen.value = false
+interface NavItem {
+  name: string;
+  href: string;
+  isHash?: boolean;
 }
 
-// 导航项目
-const navItems = [
-  { id: 1, name: '首页', href: '#home' },
-  { id: 2, name: '产品服务', href: '#services' },
-  { id: 3, name: '解决方案', href: '#solutions' },
-  { id: 4, name: '联系我们', href: '#contact' }
-]
+const route = useRoute()
+const isMenuOpen = ref(false)
+const navItems = ref<NavItem[]>([
+  { name: '首页', href: '/', isHash: false },
+  { name: '服务', href: '#services', isHash: true },
+  { name: '案例', href: '/cases', isHash: false },
+  { name: '合作伙伴', href: '#partners', isHash: true },
+  { name: '联系我们', href: '#contact', isHash: true }
+])
 
 // 产品服务
 const services = [
@@ -504,6 +472,23 @@ const solutions = [
     icon: GlobeAltIcon
   }
 ]
+
+// 平滑滚动函数
+const scrollToSection = (href: string) => {
+  if (!href.startsWith('#')) return
+  const element = document.querySelector(href)
+  if (element) {
+    element.scrollIntoView({ behavior: 'smooth' })
+    isMenuOpen.value = false
+  }
+}
+
+onMounted(() => {
+  AOS.init({
+    duration: 1000,
+    once: true
+  })
+})
 </script>
 
 <style scoped>
@@ -707,5 +692,118 @@ button {
 
 .border-gradient-to-r {
   border-image: linear-gradient(to right, var(--tw-gradient-from), var(--tw-gradient-to)) 1;
+}
+
+.bg-gradient-section {
+  background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+}
+
+.bg-gradient-section-reverse {
+  background: linear-gradient(135deg, #2a5298 0%, #1e3c72 100%);
+}
+
+.service-card {
+  @apply p-6 rounded-lg backdrop-blur-lg;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+  background: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.contact-card {
+  @apply p-8 rounded-lg backdrop-blur-lg;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.social-link {
+  @apply flex items-center space-x-2 p-3 rounded-lg text-gray-300 hover:text-white hover:bg-white/10 transition-all;
+}
+
+.nav-link {
+  @apply px-3 py-2 rounded-md text-sm font-medium transition-all duration-300;
+  color: var(--text-secondary);
+}
+
+.nav-link:hover {
+  color: var(--text-primary);
+  background: rgba(59, 130, 246, 0.1);
+}
+
+.nav-link-active {
+  color: var(--text-primary);
+  background: var(--accent-gradient);
+}
+
+.mobile-nav-link {
+  @apply block px-3 py-2 rounded-md text-base font-medium transition-all duration-300;
+  color: var(--text-secondary);
+}
+
+.mobile-nav-link:hover {
+  color: var(--text-primary);
+  background: rgba(59, 130, 246, 0.1);
+}
+
+.mobile-nav-link-active {
+  color: var(--text-primary);
+  background: var(--accent-gradient);
+}
+
+.menu-button {
+  @apply text-gray-300 hover:text-white p-2 rounded-md transition-colors duration-300;
+}
+
+.mobile-menu {
+  @apply px-2 pt-2 pb-3 space-y-1 border-t border-gray-700;
+  background: rgba(15, 23, 42, 0.95);
+  backdrop-filter: blur(12px);
+}
+
+.hero-section {
+  background-image: linear-gradient(to bottom, rgba(15, 23, 42, 0.8), rgba(15, 23, 42, 0.6)),
+                    url('../assets/hero-bg.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.section {
+  @apply py-20;
+  position: relative;
+  overflow: hidden;
+}
+
+.section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(to right, 
+    rgba(59, 130, 246, 0), 
+    rgba(59, 130, 246, 0.2), 
+    rgba(59, 130, 246, 0)
+  );
+}
+
+.section::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(to right, 
+    rgba(59, 130, 246, 0), 
+    rgba(59, 130, 246, 0.2), 
+    rgba(59, 130, 246, 0)
+  );
 }
 </style> 

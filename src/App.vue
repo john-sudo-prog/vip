@@ -1,7 +1,11 @@
 <template>
-  <Home />
+  <router-view></router-view>
 </template>
 
 <script setup lang="ts">
-import Home from './views/Home.vue'
-</script> 
+// 使用路由视图，不需要导入 Home 组件
+</script>
+
+<style>
+@import './style.css';
+</style> 
