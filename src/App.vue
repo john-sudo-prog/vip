@@ -1,7 +1,11 @@
 <template>
-  <Home />
+  <router-view></router-view>
 </template>
 
 <script setup lang="ts">
-import Home from './views/Home.vue'
-</script> 
+// 组件逻辑
+</script>
+
+<style>
+/* 全局样式 */
+</style> 
