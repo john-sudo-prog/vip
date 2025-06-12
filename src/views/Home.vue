@@ -187,36 +187,59 @@
     </section>
 
     <!-- 产品服务 -->
-    <section id="services" class="py-20 relative overflow-hidden bg-gradient-to-b from-gray-50 via-gray-100 to-white">
-      <div class="absolute inset-0">
-        <div class="absolute inset-0 bg-[radial-gradient(circle_at_30%_30%,rgba(59,130,246,0.03),transparent_70%)]"></div>
-        <div class="absolute inset-0 bg-grid opacity-5"></div>
+    <section id="services" class="relative py-16 overflow-hidden">
+      <!-- 背景装饰 -->
+      <div class="absolute inset-0 bg-gradient-to-br from-blue-900/20 via-purple-900/20 to-blue-900/20">
+        <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop')] bg-cover bg-center opacity-10"></div>
+        <div class="absolute inset-0 bg-gradient-to-br from-blue-900/40 via-purple-900/40 to-blue-900/40"></div>
       </div>
-
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-        <div class="text-center mb-16">
-          <h2 class="section-title">产品服务</h2>
-          <p class="section-subtitle">为您提供全方位的云服务解决方案</p>
+      
+      <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl font-bold text-white mb-3">产品服务</h2>
+          <p class="text-base text-gray-300">为企业提供全方位的云服务解决方案</p>
         </div>
 
-        <!-- 产品服务卡片 -->
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          <div v-for="service in services" :key="service.id" 
-               class="group bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl p-8 shadow-lg
-                      hover:shadow-xl hover:from-blue-600 hover:to-blue-700
-                      transform hover:-translate-y-1 transition-all duration-300">
-            <div class="bg-white/10 backdrop-blur-lg rounded-lg p-3 w-16 h-16 mb-4
-                        group-hover:bg-white/20 transition-colors duration-300">
-              <component :is="service.icon" 
-                         class="h-10 w-10 text-white group-hover:text-white transition-colors duration-300" />
-            </div>
-            <h3 class="text-xl font-semibold mb-3 text-white">
-              {{ service.title }}
-            </h3>
-            <p class="text-blue-100">
-              {{ service.description }}
-            </p>
-          </div>
+        <!-- 轮播容器 -->
+        <div class="relative">
+          <Carousel
+            :items-to-show="1"
+            :wrap-around="true"
+            :autoplay="5000"
+            :transition="500"
+            class="services-carousel"
+          >
+            <Slide v-for="(service, index) in services" :key="index">
+              <div class="p-4 max-w-2xl mx-auto">
+                <div class="bg-gradient-to-br from-white/15 to-white/5 backdrop-blur-lg rounded-xl p-8 border border-white/30 hover:border-white/50 transition-all duration-300 group h-full shadow-lg hover:shadow-xl">
+                  <div class="w-16 h-16 bg-gradient-to-br from-blue-500/30 to-blue-400/20 rounded-lg flex items-center justify-center mb-6 group-hover:from-blue-500/40 group-hover:to-blue-400/30 transition-all duration-300">
+                    <component :is="service.icon" class="w-8 h-8 text-blue-300" />
+                  </div>
+                  <h3 class="text-2xl font-semibold text-white mb-4">{{ service.title }}</h3>
+                  <p class="text-lg text-gray-200">{{ service.description }}</p>
+                </div>
+              </div>
+            </Slide>
+
+            <template #addons>
+              <Navigation>
+                <template #prev>
+                  <button class="carousel__navigation-button">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 17l-5-5m0 0l5-5m-5 5h12" />
+                    </svg>
+                  </button>
+                </template>
+                <template #next>
+                  <button class="carousel__navigation-button">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                    </svg>
+                  </button>
+                </template>
+              </Navigation>
+            </template>
+          </Carousel>
         </div>
       </div>
     </section>
@@ -419,7 +442,7 @@
           <a href="https://t.me" target="_blank" class="group">
             <div class="w-10 h-10 bg-gray-800/50 backdrop-blur-sm rounded-lg border border-gray-700 group-hover:border-sky-500/50 transition-all duration-300 flex items-center justify-center">
               <svg class="w-5 h-5 text-gray-400 group-hover:text-sky-400 transition-colors duration-300" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/>
+                <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.321.023 0 .12-.024.24-.048.36-.12.48-.144.12 0 .12.024.24.144.36.12.12-.024.12-.12.024-.24.144zM12 15.504c.12 0 .24.024.36.048a.548.548 0 0 0 .12-1.02L12 15.456c-.12 0-.12.024-.24.024-.12 0 .12.024.12.12.024.24zM12 12c.12 0 .24.024.36.048a.548.548 0 0 0 .12-1.02L12 11.952c-.12 0-.12.024-.24.024-.12 0 .12.024.12.12.024.24z"/>
               </svg>
             </div>
           </a>
@@ -464,6 +487,8 @@ import {
   ArrowRightIcon,
   CheckCircleIcon,
 } from '@heroicons/vue/24/outline'
+import { Carousel, Slide, Navigation, Pagination } from 'vue3-carousel'
+import 'vue3-carousel/dist/carousel.css'
 
 // 导航菜单状态
 const isMenuOpen = ref(false)
@@ -488,110 +513,54 @@ const navItems = [
   { id: 6, name: '联系我们', href: '#contact' }
 ]
 
-// 产品服务
+// 产品服务数据
 const services = [
   {
-    id: 1,
     title: '公有云代理',
     description: '提供稳定、高效、安全的云计算服务，快速开户流程，7x24专业技术支持',
     icon: CloudIcon
   },
   {
-    id: 2,
     title: 'GPU算力服务',
     description: '专享高性能GPU云主机，适用于AI训练、深度学习等场景',
     icon: CpuChipIcon
   },
   {
-    id: 3,
     title: 'AI海外矩阵营销',
     description: '引流一站式方案云手机 + 自动机器人 + AIGC',
     icon: RocketLaunchIcon
   },
   {
-    id: 4,
     title: '边缘计算',
     description: '全球200+边缘节点，提供高效的跨境网络服务',
     icon: GlobeAltIcon
   },
   {
-    id: 5,
     title: '人工智能应用',
     description: '高效率处理大量数据和复杂模型，为人工智能的应用提供强大的运算能力和资源',
     icon: ShieldCheckIcon
   },
   {
-    id: 6,
     title: '国际营销短信服务',
     description: '覆盖全球 230 个国家和地区，支持全球语言，助力企业拓展海外市场简单、迅速、低成本',
-    icon: ShieldCheckIcon
-  }
-]
-
-// 解决方案
-const solutions = [
-  {
-    id: 1,
-    title: '一站式出海解决方案',
-    description: '为企业提供完整的跨境业务平台，包含市场调研、策略规划、运营管理等全方位服务',
-    icon: RocketLaunchIcon
-  },
-  {
-    id: 2,
-    title: '国际营销短信服务',
-    description: '提供全球覆盖的短信发送服务，支持多语言、高到达率、快速稳定',
     icon: EnvelopeIcon
-  },
-  {
-    id: 3,
-    title: '高防DDoS解决方案',
-    description: '提供强大的DDoS防护能力，保护您的业务免受各类网络攻击的威胁',
-    icon: ShieldCheckIcon
-  },
-  {
-    id: 4,
-    title: '跨境加速安全解决方案',
-    description: '通过全球节点网络，为您的跨境业务提供安全、稳定、高速的网络加速服务',
-    icon: GlobeAltIcon
   }
 ]
 
 // 轮播控制
 const currentSlide = ref(0)
-const totalSlides = 4
+let autoplayInterval: number | undefined
 
-const nextSlide = () => {
-  currentSlide.value = (currentSlide.value + 1) % totalSlides
-}
-
-const prevSlide = () => {
-  currentSlide.value = (currentSlide.value - 1 + totalSlides) % totalSlides
-}
-
-// 自动轮播
-let autoplayInterval: number | null = null
-
-const startAutoplay = () => {
-  autoplayInterval = window.setInterval(() => {
-    nextSlide()
-  }, 5000)
-}
-
-const stopAutoplay = () => {
-  if (autoplayInterval) {
-    clearInterval(autoplayInterval)
-    autoplayInterval = null
-  }
-}
-
-// 组件挂载时启动自动轮播
 onMounted(() => {
-  startAutoplay()
+  autoplayInterval = window.setInterval(() => {
+    currentSlide.value = (currentSlide.value + 1) % services.length
+  }, 5000)
 })
 
-// 组件卸载时清除定时器
 onUnmounted(() => {
-  stopAutoplay()
+  if (autoplayInterval) {
+    clearInterval(autoplayInterval)
+  }
 })
 </script>
 
@@ -853,5 +822,107 @@ button {
 
 .animate-float-5 {
   animation: float5 9s ease-in-out infinite;
+}
+
+.services-carousel {
+  --carousel-slide-width: 33.333%;
+  --carousel-slide-height: 300px;
+}
+
+.services-carousel .carousel__slide {
+  opacity: 0.5;
+  transform: scale(0.8);
+  transition: all 0.3s ease;
+}
+
+.services-carousel .carousel__slide--active {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.services-carousel .carousel__slide--prev,
+.services-carousel .carousel__slide--next {
+  opacity: 0.7;
+  transform: scale(0.9);
+}
+
+/* 修改导航按钮样式 */
+.services-carousel .carousel__navigation-button {
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: white;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  margin: 0;
+}
+
+.services-carousel .carousel__navigation-button:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.services-carousel .carousel__navigation-button svg {
+  width: 16px;
+  height: 16px;
+  stroke: currentColor;
+  stroke-width: 2.5;
+}
+
+/* 调整导航按钮位置 */
+.services-carousel .carousel__navigation {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 0;
+  pointer-events: none;
+  z-index: 10;
+}
+
+.services-carousel .carousel__navigation-button {
+  pointer-events: auto;
+  position: absolute;
+}
+
+.services-carousel .carousel__navigation-button--prev {
+  left: -48px;
+}
+
+.services-carousel .carousel__navigation-button--next {
+  right: -48px;
+}
+
+/* 调整轮播容器样式 */
+.services-carousel .carousel__viewport {
+  padding: 20px 0;
+  margin: 0 48px;
+}
+
+/* 调整卡片样式 */
+.services-carousel .carousel__slide > div {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.services-carousel .carousel__slide > div > div {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* 确保图标正确显示 */
+.services-carousel .carousel__slide svg {
+  width: 24px;
+  height: 24px;
+  stroke: currentColor;
+  stroke-width: 2;
+  fill: none;
 }
 </style> 
