@@ -200,46 +200,16 @@
           <p class="text-base text-gray-300">为企业提供全方位的云服务解决方案</p>
         </div>
 
-        <!-- 轮播容器 -->
-        <div class="relative">
-          <Carousel
-            :items-to-show="1"
-            :wrap-around="true"
-            :autoplay="5000"
-            :transition="500"
-            class="services-carousel"
-          >
-            <Slide v-for="(service, index) in services" :key="index">
-              <div class="p-4 max-w-2xl mx-auto">
-                <div class="bg-gradient-to-br from-white/15 to-white/5 backdrop-blur-lg rounded-xl p-8 border border-white/30 hover:border-white/50 transition-all duration-300 group h-full shadow-lg hover:shadow-xl">
-                  <div class="w-16 h-16 bg-gradient-to-br from-blue-500/30 to-blue-400/20 rounded-lg flex items-center justify-center mb-6 group-hover:from-blue-500/40 group-hover:to-blue-400/30 transition-all duration-300">
-                    <component :is="service.icon" class="w-8 h-8 text-blue-300" />
-                  </div>
-                  <h3 class="text-2xl font-semibold text-white mb-4">{{ service.title }}</h3>
-                  <p class="text-lg text-gray-200">{{ service.description }}</p>
-                </div>
-              </div>
-            </Slide>
-
-            <template #addons>
-              <Navigation>
-                <template #prev>
-                  <button class="carousel__navigation-button">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 17l-5-5m0 0l5-5m-5 5h12" />
-                    </svg>
-                  </button>
-                </template>
-                <template #next>
-                  <button class="carousel__navigation-button">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                    </svg>
-                  </button>
-                </template>
-              </Navigation>
-            </template>
-          </Carousel>
+        <!-- 服务网格 -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div v-for="(service, index) in services" :key="index" 
+               class="bg-gradient-to-br from-white/15 to-white/5 backdrop-blur-lg rounded-xl p-6 border border-white/30 hover:border-white/50 transition-all duration-300 group shadow-lg hover:shadow-xl">
+            <div class="w-14 h-14 bg-gradient-to-br from-blue-500/30 to-blue-400/20 rounded-lg flex items-center justify-center mb-4 group-hover:from-blue-500/40 group-hover:to-blue-400/30 transition-all duration-300">
+              <component :is="service.icon" class="w-7 h-7 text-blue-300" />
+            </div>
+            <h3 class="text-xl font-semibold text-white mb-3">{{ service.title }}</h3>
+            <p class="text-base text-gray-200">{{ service.description }}</p>
+          </div>
         </div>
       </div>
     </section>
