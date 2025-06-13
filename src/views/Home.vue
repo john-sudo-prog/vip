@@ -411,8 +411,8 @@
           </a>
           <a href="https://t.me" target="_blank" class="group">
             <div class="w-10 h-10 bg-gray-800/50 backdrop-blur-sm rounded-lg border border-gray-700 group-hover:border-sky-500/50 transition-all duration-300 flex items-center justify-center">
-              <svg class="w-5 h-5 text-gray-400 group-hover:text-sky-400 transition-colors duration-300" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.321.023 0 .12-.024.24-.048.36-.12.48-.144.12 0 .12.024.24.144.36.12.12-.024.12-.12.024-.24.144zM12 15.504c.12 0 .24.024.36.048a.548.548 0 0 0 .12-1.02L12 15.456c-.12 0-.12.024-.24.024-.12 0 .12.024.12.12.024.24zM12 12c.12 0 .24.024.36.048a.548.548 0 0 0 .12-1.02L12 11.952c-.12 0-.12.024-.24.024-.12 0 .12.024.12.12.024.24z"/>
+              <svg class="w-5 h-5 text-gray-400 group-hover:text-sky-400 transition-colors duration-300" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M3 12l18-7-7 18-2.5-7.5L3 12z"/>
               </svg>
             </div>
           </a>
