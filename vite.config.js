@@ -2,18 +2,19 @@ import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import tailwindcss from 'tailwindcss'
 import autoprefixer from 'autoprefixer'
+import path from 'path'
 
 export default defineConfig({
   plugins: [vue()],
   base: '/vip/',
   resolve: {
     alias: {
-      '@': '/src'
+      '@': path.resolve(__dirname, './src')
     }
   },
   build: {
-    minify: true,
-    sourcemap: false,
+    minify: false,
+    sourcemap: true,
     rollupOptions: {
       output: {
         manualChunks: {
@@ -25,9 +26,9 @@ export default defineConfig({
             './src/i18n/en.js'
           ]
         },
-        chunkFileNames: 'assets/[name].js',
-        entryFileNames: 'assets/[name].js',
-        assetFileNames: 'assets/[name].[ext]'
+        chunkFileNames: 'assets/[name].[hash].js',
+        entryFileNames: 'assets/[name].[hash].js',
+        assetFileNames: 'assets/[name].[hash].[ext]'
       }
     }
   },

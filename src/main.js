@@ -7,9 +7,14 @@ import { messages } from './i18n'
 
 const i18n = createI18n({
   legacy: false,
+  globalInjection: true,
   locale: 'zh-CN',
   fallbackLocale: 'zh-CN',
-  messages
+  messages,
+  silentTranslationWarn: true,
+  silentFallbackWarn: true,
+  missingWarn: false,
+  fallbackWarn: false
 })
 
 // 创建应用实例
