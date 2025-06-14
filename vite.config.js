@@ -12,18 +12,7 @@ export default defineConfig({
     }
   },
   build: {
-    rollupOptions: {
-      output: {
-        manualChunks: {
-          'i18n': [
-            './src/i18n/zh-CN.js',
-            './src/i18n/zh-TW.js',
-            './src/i18n/en.js'
-          ]
-        }
-      }
-    },
-    chunkSizeWarningLimit: 1000,
+    minify: 'esbuild',
     sourcemap: true
   },
   css: {

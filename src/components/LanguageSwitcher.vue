@@ -61,16 +61,11 @@ export default {
     const isOpen = ref(false)
 
     const languages = [
-      // { code: 'zh-CN', name: '简体中文' },
       { code: 'zh-TW', name: '繁體中文' },
       { code: 'en', name: 'English' }
     ]
 
     const currentLocale = computed(() => locale.value)
-    const currentLanguage = computed(() => {
-      const lang = languages.find(l => l.code === locale.value)
-      return lang ? lang.name : '简体中文'
-    })
 
     const switchLanguage = (code) => {
       locale.value = code
@@ -82,7 +77,6 @@ export default {
       isOpen,
       languages,
       currentLocale,
-      currentLanguage,
       switchLanguage
     }
   }

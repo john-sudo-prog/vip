@@ -1,6 +1,6 @@
 <template>
   <div class="min-h-screen bg-gray-900 text-white">
-  111
+  222
     <router-view />
   </div>
 </template>
