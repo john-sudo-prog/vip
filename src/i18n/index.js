@@ -1,7 +1,7 @@
 import { createI18n } from 'vue-i18n'
-import zhCN from '@/assets/zh-CN'
-import zhTW from '@/assets/zh-TW'
-import en from '@/assets/en'
+import zhCN from '../assets/zh-CN'
+import zhTW from '../assets/zh-TW'
+import en from '../assets/en'
 
 const i18n = createI18n({
   legacy: false,
