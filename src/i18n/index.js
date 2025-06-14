@@ -15,10 +15,12 @@ const i18n = createI18n({
   fallbackLocale: 'en',
   messages,
   globalInjection: true,
-  silentTranslationWarn: false, // 开启警告以便调试
+  silentTranslationWarn: false,
   silentFallbackWarn: false,
   missingWarn: true,
-  fallbackWarn: true
+  fallbackWarn: true,
+  runtimeOnly: false,
+  allowComposition: true
 })
 
 // 导出语言包和实例

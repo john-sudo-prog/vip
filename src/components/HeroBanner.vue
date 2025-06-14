@@ -141,7 +141,7 @@ import { ArrowRightIcon, PhoneIcon } from '@heroicons/vue/24/outline'
 import { onMounted, nextTick } from 'vue'
 import { useI18n } from 'vue-i18n'
 
-const { t, locale, messages } = useI18n()
+const i18n = useI18n()
 
 const scrollToSection = (href: string) => {
   const element = document.querySelector(href)
@@ -152,9 +152,8 @@ const scrollToSection = (href: string) => {
 
 onMounted(async () => {
   await nextTick()
-  console.log('Current locale:', locale.value)
-  console.log('Available messages:', messages.value)
-  console.log('Translation:', t('hero.subtitle'))
+  console.log('Current locale:', i18n.locale.value)
+  console.log('Translation:', i18n.t('hero.subtitle'))
 })
 </script>
 
