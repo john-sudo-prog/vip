@@ -59,7 +59,7 @@ interface Language {
   name: string
 }
 
-const { locale } = useI18n()
+const i18n = useI18n()
 const isOpen = ref(false)
 
 const languages: Language[] = [
@@ -68,16 +68,16 @@ const languages: Language[] = [
   { code: 'en', name: 'English' }
 ]
 
-const currentLanguage = ref<Language>(languages.find(l => l.code === locale.value) || languages[0])
+const currentLanguage = ref<Language>(languages.find(l => l.code === i18n.locale.value) || languages[0])
 
 const switchLanguage = (code: string) => {
-  locale.value = code
+  i18n.locale.value = code
   currentLanguage.value = languages.find(l => l.code === code) || languages[0]
   isOpen.value = false
 }
 
 // 监听语言变化
-watch(() => locale.value, (newLocale) => {
+watch(() => i18n.locale.value, (newLocale) => {
   currentLanguage.value = languages.find(l => l.code === newLocale) || languages[0]
 })
 </script> 

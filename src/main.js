@@ -6,11 +6,13 @@ import './assets/main.css'
 import { messages } from './i18n'
 
 const i18n = createI18n({
-  legacy: false,
   locale: localStorage.getItem('locale') || 'zh-TW',
   fallbackLocale: 'en',
   messages,
-  globalInjection: true
+  silentTranslationWarn: true,
+  silentFallbackWarn: true,
+  missingWarn: false,
+  fallbackWarn: false
 })
 
 // 创建应用实例
