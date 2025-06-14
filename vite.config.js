@@ -17,15 +17,14 @@ export default defineConfig({
     rollupOptions: {
       output: {
         manualChunks: {
-          'vendor': ['vue', 'vue-router', 'vue-i18n'],
-          'i18n': [
-            './src/i18n/index.js',
-            './src/i18n/zh-CN.js',
-            './src/i18n/zh-TW.js',
-            './src/i18n/en.js'
-          ]
+          'vendor': ['vue', 'vue-router', 'vue-i18n']
         },
-        chunkFileNames: 'assets/[name]-[hash].js',
+        chunkFileNames: (chunkInfo) => {
+          if (chunkInfo.name.includes('i18n')) {
+            return '[name].js'
+          }
+          return 'assets/[name]-[hash].js'
+        },
         entryFileNames: 'assets/[name]-[hash].js',
         assetFileNames: 'assets/[name]-[hash].[ext]'
       }
