@@ -16,18 +16,22 @@ const getBrowserLanguage = () => {
   return 'zh-TW' // 默认使用繁体中文
 }
 
+const messages = {
+  'zh-CN': zhCN,
+  'zh-TW': zhTW,
+  'en': en
+}
+
 const i18n = createI18n({
   legacy: false,
   locale: getBrowserLanguage(),
   fallbackLocale: 'en',
-  messages: {
-    'zh-CN': zhCN,
-    'zh-TW': zhTW,
-    'en': en
-  },
+  messages,
   sync: true,
   silentTranslationWarn: true,
-  silentFallbackWarn: true
+  silentFallbackWarn: true,
+  missingWarn: false,
+  fallbackWarn: false
 })
 
 // 监听语言变化并保存到 localStorage
