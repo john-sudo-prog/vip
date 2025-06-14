@@ -62,6 +62,7 @@ export default {
 
     const languages = [
       { code: 'zh-TW', name: '繁體中文' },
+      { code: 'zh-CN', name: '简体中文' },
       { code: 'en', name: 'English' }
     ]
 
@@ -78,6 +79,11 @@ export default {
     }
 
     onMounted(() => {
+      // 如果没有保存的语言设置，默认使用繁体中文
+      if (!localStorage.getItem('locale')) {
+        locale.value = 'zh-TW'
+        localStorage.setItem('locale', 'zh-TW')
+      }
       console.log('Current locale:', locale.value)
       console.log('Available messages:', t('nav'))
     })
