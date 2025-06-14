@@ -122,11 +122,11 @@ export default {
     subtitle: 'Professional service available anytime',
     email: {
       title: 'Email',
-      value: 'support@dianyicloud.com'
+      value: 'san@dycloud.ai'
     },
     phone: {
       title: 'Phone',
-      value: '+852 1234 5678'
+      value: '15989283653 Mr. Liu'
     },
     wechat: {
       title: 'WeChat',

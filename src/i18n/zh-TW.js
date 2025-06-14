@@ -124,11 +124,11 @@ export default {
     subtitle: '隨時為您提供專業服務',
     email: {
       title: '郵箱',
-      value: 'support@dianyicloud.com'
+      value: 'san@dycloud.ai'
     },
     phone: {
       title: '電話',
-      value: '+852 1234 5678'
+      value: '15989283653 劉先生'
     },
     wechat: {
       title: '微信',

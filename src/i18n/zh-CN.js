@@ -95,7 +95,7 @@ export default {
     subtitle: '随时为您提供专业服务',
     email: {
       title: '邮箱',
-      value: 'support@dianyicloud.com'
+      value: 'san@dycloud.ai'
     },
     phone: {
       title: '电话',
