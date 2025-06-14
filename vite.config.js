@@ -12,7 +12,7 @@ export default defineConfig({
     }
   },
   build: {
-    minify: false,
+    minify: true,
     sourcemap: false,
     rollupOptions: {
       output: {
@@ -20,9 +20,9 @@ export default defineConfig({
           'vendor': ['vue', 'vue-router', 'vue-i18n'],
           'i18n': [
             './src/i18n/index.js',
-            './src/assets/zh-CN.js',
-            './src/assets/zh-TW.js',
-            './src/assets/en.js'
+            './src/i18n/zh-CN.js',
+            './src/i18n/zh-TW.js',
+            './src/i18n/en.js'
           ]
         },
         chunkFileNames: 'assets/[name].js',

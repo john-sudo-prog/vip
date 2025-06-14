@@ -1,10 +1,7 @@
 import { createI18n } from 'vue-i18n'
-import zhCN from '../assets/zh-CN'
-import zhTW from '../assets/zh-TW'
-import en from '../assets/en'
-
-// 确保语言包被正确导入
-console.log('Language packs loaded:', { zhCN, zhTW, en })
+import zhCN from './zh-CN.js'
+import zhTW from './zh-TW.js'
+import en from './en.js'
 
 const messages = {
   'zh-CN': zhCN,
