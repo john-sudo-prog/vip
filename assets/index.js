@@ -1,4 +1,4 @@
-import { a as createElementBlock, b as createTextVNode, d as createVNode, r as resolveComponent, o as openBlock, e as createBaseVNode, u as useI18n, f as ref, g as computed, h as onMounted, i as createCommentVNode, F as Fragment, j as renderList, n as normalizeClass, t as toDisplayString, k as defineComponent, l as createBlock, m as unref, w as withModifiers, p as resolveDynamicComponent, q as withCtx, s as createStaticVNode, v as createRouter, x as createWebHistory, y as createApp } from "./vendor.js";
+import { a as createElementBlock, b as createTextVNode, d as createVNode, r as resolveComponent, o as openBlock, e as createBaseVNode, u as useI18n, f as ref, g as computed, h as onMounted, i as createCommentVNode, F as Fragment, j as renderList, n as normalizeClass, t as toDisplayString, k as defineComponent, l as createBlock, m as unref, w as withModifiers, p as nextTick, q as resolveDynamicComponent, s as withCtx, v as createStaticVNode, x as createRouter, y as createWebHistory, z as createApp } from "./vendor.js";
 import { m as messages, i as i18n } from "./i18n.js";
 (function polyfill() {
   const relList = document.createElement("link").relList;
@@ -475,15 +475,17 @@ const _hoisted_29$1 = ["alt"];
 const _sfc_main$9 = /* @__PURE__ */ defineComponent({
   __name: "HeroBanner",
   setup(__props) {
-    const { t } = useI18n();
+    const { t, locale } = useI18n();
     const scrollToSection = (href) => {
       const element = document.querySelector(href);
       if (element) {
         element.scrollIntoView({ behavior: "smooth" });
       }
     };
-    onMounted(() => {
-      console.log(t("hero.subtitle"), 111);
+    onMounted(async () => {
+      await nextTick();
+      console.log("Current locale:", locale.value);
+      console.log("Translation:", t("hero.subtitle"));
     });
     return (_ctx, _cache) => {
       return openBlock(), createElementBlock("section", _hoisted_1$9, [
@@ -591,7 +593,7 @@ const _sfc_main$9 = /* @__PURE__ */ defineComponent({
     };
   }
 });
-const HeroBanner = /* @__PURE__ */ _export_sfc(_sfc_main$9, [["__scopeId", "data-v-3e15a156"]]);
+const HeroBanner = /* @__PURE__ */ _export_sfc(_sfc_main$9, [["__scopeId", "data-v-0157cf12"]]);
 const _hoisted_1$8 = {
   id: "services",
   class: "relative py-16 overflow-hidden"

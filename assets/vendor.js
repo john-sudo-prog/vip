@@ -9884,14 +9884,15 @@ export {
   unref as m,
   normalizeClass as n,
   openBlock as o,
-  resolveDynamicComponent as p,
-  withCtx as q,
+  nextTick as p,
+  resolveDynamicComponent as q,
   resolveComponent as r,
-  createStaticVNode as s,
+  withCtx as s,
   toDisplayString$1 as t,
   useI18n as u,
-  createRouter as v,
+  createStaticVNode as v,
   withModifiers as w,
-  createWebHistory as x,
-  createApp as y
+  createRouter as x,
+  createWebHistory as y,
+  createApp as z
 };
