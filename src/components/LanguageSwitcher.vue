@@ -26,13 +26,13 @@
       <button
         v-for="lang in languages"
         :key="lang.code"
-        @click="switchLanguage(lang.code)"
+        @click="selectLanguage(lang)"
         class="flex items-center w-full px-3 py-2 text-sm text-gray-200 hover:bg-gray-700/50 transition-colors duration-200"
-        :class="{ 'bg-gray-700/50': currentLocale === lang.code }"
+        :class="{ 'bg-gray-700/50': currentLanguage.code === lang.code }"
       >
         <span class="flex-1">{{ lang.name }}</span>
         <svg
-          v-if="currentLocale === lang.code"
+          v-if="currentLanguage.code === lang.code"
           class="w-4 h-4 text-blue-400"
           fill="none"
           stroke="currentColor"
@@ -50,50 +50,32 @@
   </div>
 </template>
 
-<script>
-import { ref, computed, onMounted } from 'vue'
+<script setup lang="ts">
+import { ref, watch } from 'vue'
 import { useI18n } from 'vue-i18n'
 
-export default {
-  name: 'LanguageSwitcher',
-  setup() {
-    const { locale, t } = useI18n()
-    const isOpen = ref(false)
+const { locale } = useI18n()
+const isOpen = ref(false)
 
-    const languages = [
-      { code: 'zh-TW', name: '繁體中文' },
-      { code: 'zh-CN', name: '简体中文' },
-      { code: 'en', name: 'English' }
-    ]
+const languages = [
+  { code: 'zh-CN', name: '简体中文' },
+  { code: 'zh-TW', name: '繁體中文' }
+]
 
-    const currentLocale = computed(() => locale.value)
+const currentLanguage = ref(languages.find(lang => lang.code === locale.value) || languages[0])
 
-    const switchLanguage = (code) => {
-      console.log('Switching language to:', code)
-      locale.value = code
-      localStorage.setItem('locale', code)
-      isOpen.value = false
-      
-      // 强制刷新页面以确保所有组件都使用新语言
-      window.location.reload()
-    }
-
-    onMounted(() => {
-      // 如果没有保存的语言设置，默认使用繁体中文
-      if (!localStorage.getItem('locale')) {
-        locale.value = 'zh-TW'
-        localStorage.setItem('locale', 'zh-TW')
-      }
-      console.log('Current locale:', locale.value)
-      console.log('Available messages:', t('nav'))
-    })
-
-    return {
-      isOpen,
-      languages,
-      currentLocale,
-      switchLanguage
-    }
-  }
+const toggleDropdown = () => {
+  isOpen.value = !isOpen.value
 }
+
+const selectLanguage = (lang: { code: string; name: string }) => {
+  currentLanguage.value = lang
+  locale.value = lang.code
+  isOpen.value = false
+}
+
+// 监听语言变化
+watch(() => locale.value, (newLocale) => {
+  currentLanguage.value = languages.find(lang => lang.code === newLocale) || languages[0]
+})
 </script> 
