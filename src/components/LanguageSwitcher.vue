@@ -26,7 +26,7 @@
       <button
         v-for="lang in languages"
         :key="lang.code"
-        @click="selectLanguage(lang)"
+        @click="switchLanguage(lang.code)"
         class="flex items-center w-full px-3 py-2 text-sm text-gray-200 hover:bg-gray-700/50 transition-colors duration-200"
         :class="{ 'bg-gray-700/50': currentLanguage.code === lang.code }"
       >
@@ -54,28 +54,30 @@
 import { ref, watch } from 'vue'
 import { useI18n } from 'vue-i18n'
 
+interface Language {
+  code: string
+  name: string
+}
+
 const { locale } = useI18n()
 const isOpen = ref(false)
 
-const languages = [
+const languages: Language[] = [
   { code: 'zh-CN', name: '简体中文' },
-  { code: 'zh-TW', name: '繁體中文' }
+  { code: 'zh-TW', name: '繁體中文' },
+  { code: 'en', name: 'English' }
 ]
 
-const currentLanguage = ref(languages.find(lang => lang.code === locale.value) || languages[0])
+const currentLanguage = ref<Language>(languages.find(l => l.code === locale.value) || languages[0])
 
-const toggleDropdown = () => {
-  isOpen.value = !isOpen.value
-}
-
-const selectLanguage = (lang: { code: string; name: string }) => {
-  currentLanguage.value = lang
-  locale.value = lang.code
+const switchLanguage = (code: string) => {
+  locale.value = code
+  currentLanguage.value = languages.find(l => l.code === code) || languages[0]
   isOpen.value = false
 }
 
 // 监听语言变化
 watch(() => locale.value, (newLocale) => {
-  currentLanguage.value = languages.find(lang => lang.code === newLocale) || languages[0]
+  currentLanguage.value = languages.find(l => l.code === newLocale) || languages[0]
 })
 </script> 

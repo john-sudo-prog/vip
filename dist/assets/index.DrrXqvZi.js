@@ -1,5 +1,5 @@
-import { a as createElementBlock, b as createTextVNode, d as createVNode, r as resolveComponent, o as openBlock, e as createBaseVNode, f as defineComponent, u as useI18n, g as ref, w as watch, h as createCommentVNode, F as Fragment, i as renderList, t as toDisplayString, n as normalizeClass, j as createBlock, k as unref, l as withModifiers, m as onMounted, p as nextTick, q as inject, s as resolveDynamicComponent, v as withCtx, x as createStaticVNode, y as createRouter, z as createWebHistory, c as createI18n, A as createApp } from "./vendor.D89jyuXb.js";
-import { m as messages } from "./i18n.Bb1BM4bm.js";
+import { c as createElementBlock, a as createTextVNode, b as createVNode, r as resolveComponent, o as openBlock, d as createBaseVNode, e as defineComponent, u as useI18n, f as ref, w as watch, g as createCommentVNode, F as Fragment, h as renderList, t as toDisplayString, n as normalizeClass, i as createBlock, j as unref, k as withModifiers, l as onMounted, m as nextTick, p as inject, q as resolveDynamicComponent, s as withCtx, v as createStaticVNode, x as createRouter, y as createWebHistory, z as createI18n, A as createApp } from "./vendor.BjSu_IYG.js";
+import { m as messages } from "./i18n.DeDtISgX.js";
 (function polyfill() {
   const relList = document.createElement("link").relList;
   if (relList && relList.supports && relList.supports("modulepreload")) {
@@ -51,7 +51,7 @@ const _hoisted_1$c = { class: "min-h-screen bg-gray-900 text-white" };
 function _sfc_render$6(_ctx, _cache, $props, $setup, $data, $options) {
   const _component_router_view = resolveComponent("router-view");
   return openBlock(), createElementBlock("div", _hoisted_1$c, [
-    _cache[0] || (_cache[0] = createTextVNode(" 333333 ")),
+    _cache[0] || (_cache[0] = createTextVNode(" 444444 ")),
     createVNode(_component_router_view)
   ]);
 }
@@ -265,16 +265,17 @@ const _sfc_main$b = /* @__PURE__ */ defineComponent({
     const isOpen = ref(false);
     const languages = [
       { code: "zh-CN", name: "简体中文" },
-      { code: "zh-TW", name: "繁體中文" }
+      { code: "zh-TW", name: "繁體中文" },
+      { code: "en", name: "English" }
     ];
-    const currentLanguage = ref(languages.find((lang) => lang.code === locale.value) || languages[0]);
-    const selectLanguage = (lang) => {
-      currentLanguage.value = lang;
-      locale.value = lang.code;
+    const currentLanguage = ref(languages.find((l) => l.code === locale.value) || languages[0]);
+    const switchLanguage = (code) => {
+      locale.value = code;
+      currentLanguage.value = languages.find((l) => l.code === code) || languages[0];
       isOpen.value = false;
     };
     watch(() => locale.value, (newLocale) => {
-      currentLanguage.value = languages.find((lang) => lang.code === newLocale) || languages[0];
+      currentLanguage.value = languages.find((l) => l.code === newLocale) || languages[0];
     });
     return (_ctx, _cache) => {
       return openBlock(), createElementBlock("div", _hoisted_1$b, [
@@ -300,7 +301,7 @@ const _sfc_main$b = /* @__PURE__ */ defineComponent({
           (openBlock(), createElementBlock(Fragment, null, renderList(languages, (lang) => {
             return createBaseVNode("button", {
               key: lang.code,
-              onClick: ($event) => selectLanguage(lang),
+              onClick: ($event) => switchLanguage(lang.code),
               class: normalizeClass(["flex items-center w-full px-3 py-2 text-sm text-gray-200 hover:bg-gray-700/50 transition-colors duration-200", { "bg-gray-700/50": currentLanguage.value.code === lang.code }])
             }, [
               createBaseVNode("span", _hoisted_4$a, toDisplayString(lang.name), 1),
@@ -1148,15 +1149,13 @@ const router = createRouter({
   routes
 });
 const i18n = createI18n({
-  globalInjection: true,
-  locale: "zh-CN",
-  fallbackLocale: "zh-CN",
+  locale: localStorage.getItem("locale") || "zh-TW",
+  fallbackLocale: "en",
   messages,
-  missingWarn: false,
-  fallbackWarn: false
+  globalInjection: true
 });
 const app = createApp(App);
 app.use(router);
 app.use(i18n);
 app.mount("#app");
-//# sourceMappingURL=index.DN862O9U.js.map
+//# sourceMappingURL=index.DrrXqvZi.js.map
