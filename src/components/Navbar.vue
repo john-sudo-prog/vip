@@ -18,6 +18,11 @@
           </a>
         </div>
 
+        <!-- 语言切换 -->
+        <div class="hidden md:flex items-center ml-4">
+          <LanguageSwitcher />
+        </div>
+
         <!-- 移动端菜单按钮 -->
         <div class="md:hidden">
           <button @click="isMenuOpen = !isMenuOpen" 
@@ -41,6 +46,10 @@
                     rounded-lg transition-colors duration-300">
             {{ item.name }}
           </a>
+          <!-- 移动端语言切换 -->
+          <div class="px-3 py-2">
+            <LanguageSwitcher />
+          </div>
         </div>
       </div>
     </div>
@@ -50,6 +59,7 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import { Bars3Icon as MenuIcon, XMarkIcon as CloseIcon } from '@heroicons/vue/24/outline'
+import LanguageSwitcher from './LanguageSwitcher.vue'
 
 const isMenuOpen = ref(false)
 

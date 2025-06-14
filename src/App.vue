@@ -1,6 +1,6 @@
 <template>
-  <div class="min-h-screen bg-gray-900">
-    <router-view></router-view>
+  <div class="min-h-screen bg-gray-900 text-white">
+    <router-view />
   </div>
 </template>
 
@@ -17,12 +17,9 @@ export default {
 
 body {
   margin: 0;
-  padding: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #111827;
-  color: #fff;
 }
 
 #app {
