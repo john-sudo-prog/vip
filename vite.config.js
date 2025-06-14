@@ -17,7 +17,13 @@ export default defineConfig({
     rollupOptions: {
       output: {
         manualChunks: {
-          'vendor': ['vue', 'vue-router', 'vue-i18n']
+          'vendor': ['vue', 'vue-router', 'vue-i18n'],
+          'i18n': [
+            './src/i18n/index.js',
+            './src/assets/zh-CN.js',
+            './src/assets/zh-TW.js',
+            './src/assets/en.js'
+          ]
         },
         chunkFileNames: 'assets/[name].js',
         entryFileNames: 'assets/[name].js',
