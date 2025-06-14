@@ -1,5 +1,5 @@
 import { a as createElementBlock, b as createTextVNode, d as createVNode, r as resolveComponent, o as openBlock, e as createBaseVNode, u as useI18n, f as ref, g as computed, h as onMounted, i as createCommentVNode, F as Fragment, j as renderList, n as normalizeClass, t as toDisplayString, k as defineComponent, l as createBlock, m as unref, w as withModifiers, p as nextTick, q as resolveDynamicComponent, s as withCtx, v as createStaticVNode, x as createRouter, y as createWebHistory, z as createApp } from "./vendor.js";
-import { m as messages, i as i18n } from "./i18n.js";
+import { i as i18n } from "./i18n.js";
 (function polyfill() {
   const relList = document.createElement("link").relList;
   if (relList && relList.supports && relList.supports("modulepreload")) {
@@ -51,7 +51,7 @@ const _hoisted_1$c = { class: "min-h-screen bg-gray-900 text-white" };
 function _sfc_render$7(_ctx, _cache, $props, $setup, $data, $options) {
   const _component_router_view = resolveComponent("router-view");
   return openBlock(), createElementBlock("div", _hoisted_1$c, [
-    _cache[0] || (_cache[0] = createTextVNode(" 3333 ")),
+    _cache[0] || (_cache[0] = createTextVNode(" 1111 ")),
     createVNode(_component_router_view)
   ]);
 }
@@ -475,7 +475,7 @@ const _hoisted_29$1 = ["alt"];
 const _sfc_main$9 = /* @__PURE__ */ defineComponent({
   __name: "HeroBanner",
   setup(__props) {
-    const { t, locale } = useI18n();
+    const { t, locale, messages } = useI18n();
     const scrollToSection = (href) => {
       const element = document.querySelector(href);
       if (element) {
@@ -485,6 +485,7 @@ const _sfc_main$9 = /* @__PURE__ */ defineComponent({
     onMounted(async () => {
       await nextTick();
       console.log("Current locale:", locale.value);
+      console.log("Available messages:", messages.value);
       console.log("Translation:", t("hero.subtitle"));
     });
     return (_ctx, _cache) => {
@@ -593,7 +594,7 @@ const _sfc_main$9 = /* @__PURE__ */ defineComponent({
     };
   }
 });
-const HeroBanner = /* @__PURE__ */ _export_sfc(_sfc_main$9, [["__scopeId", "data-v-0157cf12"]]);
+const HeroBanner = /* @__PURE__ */ _export_sfc(_sfc_main$9, [["__scopeId", "data-v-ffe9251d"]]);
 const _hoisted_1$8 = {
   id: "services",
   class: "relative py-16 overflow-hidden"
@@ -1162,8 +1163,6 @@ const router = createRouter({
   routes
 });
 const app = createApp(App);
-console.log("i18n messages:", messages);
-console.log("Current locale:", i18n.global.locale.value);
 app.use(i18n);
 app.use(router);
 app.mount("#app");

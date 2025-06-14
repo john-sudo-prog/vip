@@ -425,20 +425,14 @@ const messages = {
   "zh-TW": zhTW,
   "en": en
 };
-const getInitialLocale = () => {
-  const savedLocale = localStorage.getItem("locale");
-  console.log("Initial locale:", savedLocale);
-  return savedLocale || "zh-TW";
-};
 const i18n = createI18n({
-  locale: getInitialLocale(),
+  locale: localStorage.getItem("locale") || "zh-TW",
   fallbackLocale: "en",
   messages,
   globalInjection: true,
-  missingWarn: false,
-  fallbackWarn: false
+  missingWarn: true,
+  fallbackWarn: true
 });
 export {
-  i18n as i,
-  messages as m
+  i18n as i
 };

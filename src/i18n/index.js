@@ -12,23 +12,16 @@ const messages = {
   'en': en
 }
 
-// 获取初始语言设置
-const getInitialLocale = () => {
-  const savedLocale = localStorage.getItem('locale')
-  console.log('Initial locale:', savedLocale)
-  return savedLocale || 'zh-TW'
-}
-
 const i18n = createI18n({
   legacy: false,
-  locale: getInitialLocale(),
+  locale: localStorage.getItem('locale') || 'zh-TW',
   fallbackLocale: 'en',
   messages,
   globalInjection: true,
-  silentTranslationWarn: true,
-  silentFallbackWarn: true,
-  missingWarn: false,
-  fallbackWarn: false
+  silentTranslationWarn: false, // 开启警告以便调试
+  silentFallbackWarn: false,
+  missingWarn: true,
+  fallbackWarn: true
 })
 
 // 导出语言包和实例
