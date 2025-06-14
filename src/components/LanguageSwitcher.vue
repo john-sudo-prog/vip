@@ -51,13 +51,13 @@
 </template>
 
 <script>
-import { ref, computed } from 'vue'
+import { ref, computed, onMounted } from 'vue'
 import { useI18n } from 'vue-i18n'
 
 export default {
   name: 'LanguageSwitcher',
   setup() {
-    const { locale } = useI18n()
+    const { locale, t } = useI18n()
     const isOpen = ref(false)
 
     const languages = [
@@ -68,10 +68,19 @@ export default {
     const currentLocale = computed(() => locale.value)
 
     const switchLanguage = (code) => {
+      console.log('Switching language to:', code)
       locale.value = code
       localStorage.setItem('locale', code)
       isOpen.value = false
+      
+      // 强制刷新页面以确保所有组件都使用新语言
+      window.location.reload()
     }
+
+    onMounted(() => {
+      console.log('Current locale:', locale.value)
+      console.log('Available messages:', t('nav'))
+    })
 
     return {
       isOpen,

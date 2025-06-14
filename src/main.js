@@ -10,4 +10,7 @@ const app = createApp(App)
 app.use(i18n)
 app.use(router)
 
+// 等待 i18n 准备就绪
+i18n.global.locale.value = localStorage.getItem('locale') || 'zh-TW'
+
 app.mount('#app') 
