@@ -1,12 +1,13 @@
 export default {
   nav: {
     home: '首页',
-    services: '服务',
+    services: '产品服务',
     solutions: '解决方案',
-    cases: '案例',
+    cases: '案例中心',
     partners: '合作伙伴',
     news: '公司动态',
-    contact: '联系我们'
+    contact: '联系我们',
+    logo: '点一云科技'
   },
   hero: {
     title: '全球领先的云服务提供商',
@@ -81,13 +82,41 @@ export default {
       crossBorder: {
         title: '跨境电商解决方案',
         desc: '为某知名跨境电商平台提供一站式出海解决方案，包括支付系统、物流对接、多语言支持等，帮助客户快速拓展海外市场。',
-        tags: ['跨境电商', '支付系统', '多语言']
+        tags: {
+          ecommerce: '跨境电商',
+          payment: '支付系统',
+          multilingual: '多语言'
+        }
       },
       ddos: {
         title: '高防DDoS防护方案',
         desc: '为某游戏公司提供高防DDoS解决方案，通过智能防护系统有效抵御各类网络攻击，确保游戏服务器稳定运行。',
-        tags: ['DDoS防护', '游戏服务器', '网络安全']
+        tags: {
+          protection: 'DDoS防护',
+          gameserver: '游戏服务器',
+          security: '网络安全'
+        }
       }
+    },
+    backToHome: '返回首页'
+  },
+  news: {
+    title: '公司动态',
+    subtitle: '了解我们的最新发展',
+    content: {
+      paragraph1: '香港点一云科技有限公司是华为云、腾讯云、阿里云、亚马逊云等云厂科技核心级服务合作伙伴，致力于为客户提供云运维托管、成本管理、架构咨询、云迁移、数据库等服务，覆盖游戏、音视频直播、WEB3、零售电商、AI智能、新能源等行业。始终为客户提供可信赖的云上服务与解决方案，通过与各大云原厂的技术深度集成，为客户提供音视频直播、WEB3区块链生态、现代AI智能分析、游戏托管运维、电商服务、内容审核等多行业解决方案，并将持续探索云计算创新云改革，为客户提供更全面、高效、安全的云服务，助力其在数字化时代取得成功。',
+      paragraph2: '点一云总部位于香港，在迪拜、深圳设有分公司，现有团队已有50+人，公司具有AWS、腾讯云、华为云等专业认证。成员均为在IT互联网行业服务三年以上，拥有丰富的技术以及经验。'
+    }
+  },
+  partners: {
+    title: '合作伙伴',
+    items: {
+      partner1: '华为云',
+      partner2: '腾讯云',
+      partner3: '阿里云',
+      partner4: '亚马逊云',
+      partner5: '微软云',
+      partner6: '谷歌云'
     }
   },
   contact: {
@@ -99,7 +128,7 @@ export default {
     },
     phone: {
       title: '电话',
-      value: '+852 1234 5678'
+      value: '15989283653 刘先生'
     },
     wechat: {
       title: '微信',
