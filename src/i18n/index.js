@@ -3,6 +3,7 @@ import zhCN from './zh-CN'
 import zhTW from './zh-TW'
 import en from './en'
 
+// 创建语言包对象
 const messages = {
   'zh-CN': zhCN,
   'zh-TW': zhTW,
@@ -12,13 +13,11 @@ const messages = {
 // 获取初始语言设置
 const getInitialLocale = () => {
   const savedLocale = localStorage.getItem('locale')
-  if (savedLocale && messages[savedLocale]) {
-    console.log('Using saved locale:', savedLocale)
-    return savedLocale
-  }
-  return 'zh-TW'
+  console.log('Saved locale:', savedLocale)
+  return savedLocale || 'zh-TW'
 }
 
+// 创建i18n实例
 const i18n = createI18n({
   legacy: false,
   locale: getInitialLocale(),
@@ -31,8 +30,6 @@ const i18n = createI18n({
   fallbackWarn: false
 })
 
-// 监听语言变化
-i18n.global.locale.value = getInitialLocale()
-
-// 导出实例和消息
-export { i18n as default, messages } 
+// 导出i18n实例和语言包
+export { messages }
+export default i18n 
