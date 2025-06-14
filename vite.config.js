@@ -13,18 +13,21 @@ export default defineConfig({
   },
   build: {
     minify: 'esbuild',
-    sourcemap: true,
+    sourcemap: false,
     rollupOptions: {
       output: {
         manualChunks: {
+          'vendor': ['vue', 'vue-router', 'vue-i18n'],
           'i18n': [
-            'vue-i18n',
             './src/i18n/index.js',
             './src/i18n/zh-CN.js',
             './src/i18n/zh-TW.js',
             './src/i18n/en.js'
           ]
-        }
+        },
+        chunkFileNames: 'assets/[name]-[hash].js',
+        entryFileNames: 'assets/[name]-[hash].js',
+        assetFileNames: 'assets/[name]-[hash].[ext]'
       }
     }
   },
