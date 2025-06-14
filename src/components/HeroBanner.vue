@@ -138,6 +138,10 @@
 
 <script setup lang="ts">
 import { ArrowRightIcon, PhoneIcon } from '@heroicons/vue/24/outline'
+import { onMounted } from 'vue'
+import { useI18n } from 'vue-i18n'
+
+const { t } = useI18n()
 
 const scrollToSection = (href: string) => {
   const element = document.querySelector(href)
@@ -145,6 +149,10 @@ const scrollToSection = (href: string) => {
     element.scrollIntoView({ behavior: 'smooth' })
   }
 }
+
+onMounted(() => {
+  console.log(t('hero.subtitle'), 111)
+})
 </script>
 
 <style scoped>
