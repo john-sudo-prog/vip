@@ -2,11 +2,10 @@
   <div class="relative">
     <button
       @click="isOpen = !isOpen"
-      class="flex items-center space-x-1 text-white hover:text-blue-200 transition-colors"
+      class="p-2 rounded-lg text-gray-300 hover:text-white hover:bg-gray-800/50 transition-all duration-300"
     >
-      <span>{{ currentLanguage }}</span>
       <svg
-        class="w-4 h-4"
+        class="w-5 h-5"
         fill="none"
         stroke="currentColor"
         viewBox="0 0 24 24"
@@ -15,23 +14,37 @@
           stroke-linecap="round"
           stroke-linejoin="round"
           stroke-width="2"
-          d="M19 9l-7 7-7-7"
+          d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
         />
       </svg>
     </button>
 
     <div
       v-if="isOpen"
-      class="absolute right-0 mt-2 w-32 bg-gray-800 rounded-lg shadow-lg py-1 z-50"
+      class="absolute right-0 mt-2 w-32 bg-gray-800/90 backdrop-blur-sm rounded-lg shadow-xl py-2 z-50 border border-gray-700/50"
     >
       <button
         v-for="lang in languages"
         :key="lang.code"
         @click="switchLanguage(lang.code)"
-        class="block w-full text-left px-4 py-2 text-sm text-white hover:bg-gray-700 transition-colors"
-        :class="{ 'bg-gray-700': currentLocale === lang.code }"
+        class="flex items-center w-full px-3 py-2 text-sm text-gray-200 hover:bg-gray-700/50 transition-colors duration-200"
+        :class="{ 'bg-gray-700/50': currentLocale === lang.code }"
       >
-        {{ lang.name }}
+        <span class="flex-1">{{ lang.name }}</span>
+        <svg
+          v-if="currentLocale === lang.code"
+          class="w-4 h-4 text-blue-400"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M5 13l4 4L19 7"
+          />
+        </svg>
       </button>
     </div>
   </div>

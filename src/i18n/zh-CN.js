@@ -4,47 +4,64 @@ export default {
     services: '产品服务',
     solutions: '解决方案',
     cases: '案例中心',
-    about: '关于我们',
+    partners: '合作伙伴',
+    news: '公司动态',
     contact: '联系我们'
   },
   hero: {
-    title: '专业的云服务提供商',
-    subtitle: '为您的业务提供安全、稳定、高效的云服务解决方案',
-    cta: '了解更多'
+    title: '全球领先的云服务提供商',
+    subtitle: '为企业提供安全、稳定、高效的云计算服务',
+    cta: '立即咨询'
   },
   services: {
     title: '产品服务',
-    subtitle: '全方位的云服务解决方案',
+    subtitle: '为企业提供全方位的云服务解决方案',
     items: {
       cloud: {
-        title: '云服务器',
-        desc: '高性能、高可用的云服务器，支持多种操作系统'
+        title: '公有云代理',
+        desc: '提供稳定、高效、安全的云计算服务，快速开户流程，7x24专业技术支持'
       },
-      cdn: {
-        title: 'CDN加速',
-        desc: '全球节点覆盖，智能路由优化，提升访问速度'
+      gpu: {
+        title: 'GPU算力服务',
+        desc: '专享高性能GPU云主机，适用于AI训练、深度学习等场景'
+      },
+      ai: {
+        title: 'AI海外矩阵营销',
+        desc: '引流一站式方案云手机 + 自动机器人 + AIGC'
+      },
+      edge: {
+        title: '边缘计算',
+        desc: '全球200+边缘节点，提供高效的跨境网络服务'
       },
       security: {
-        title: '安全防护',
-        desc: 'DDoS防护、WAF防火墙、SSL证书等全方位安全服务'
+        title: '人工智能应用',
+        desc: '高效率处理大量数据和复杂模型，为人工智能的应用提供强大的运算能力和资源'
+      },
+      sms: {
+        title: '国际营销短信服务',
+        desc: '覆盖全球 230 个国家和地区，支持全球语言，助力企业拓展海外市场简单、迅速、低成本'
       }
     }
   },
   solutions: {
     title: '解决方案',
-    subtitle: '针对不同行业的专业解决方案',
+    subtitle: '为您的业务提供全方位的技术支持',
     items: {
-      game: {
-        title: '游戏行业',
-        desc: '为游戏企业提供高性能、高可用的云服务解决方案'
+      crossBorder: {
+        title: '一站式出海解决方案',
+        desc: '为企业提供完整的跨境业务平台，包含市场调研、策略规划、运营管理等全方位服务'
       },
-      finance: {
-        title: '金融行业',
-        desc: '安全合规的金融云服务，保障业务稳定运行'
+      sms: {
+        title: '国际营销短信服务',
+        desc: '提供全球覆盖的短信发送服务，支持多语言、高到达率、快速稳定'
       },
-      ecommerce: {
-        title: '电商行业',
-        desc: '支持高并发、高可用的电商云服务解决方案'
+      ddos: {
+        title: '高防DDoS解决方案',
+        desc: '提供强大的DDoS防护能力，保护您的业务免受各类网络攻击的威胁'
+      },
+      acceleration: {
+        title: '跨境加速安全解决方案',
+        desc: '通过全球节点网络，为您的跨境业务提供安全、稳定、高速的网络加速服务'
       }
     }
   },
@@ -69,7 +86,7 @@ export default {
     subtitle: '随时为您提供专业服务',
     email: '邮箱',
     phone: '电话',
-    social: '关注我们',
+    social: '社交媒体',
     qrcode: '扫码添加微信',
     copyright: '© 2024 香港点一云科技有限公司. All rights reserved.'
   }
