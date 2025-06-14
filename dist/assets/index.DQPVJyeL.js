@@ -1,4 +1,4 @@
-import { c as createElementBlock, a as createVNode, r as resolveComponent, o as openBlock, b as createBaseVNode, d as defineComponent, u as useI18n, e as ref, w as watch, f as createCommentVNode, F as Fragment, g as renderList, t as toDisplayString, n as normalizeClass, h as createBlock, i as unref, j as withModifiers, k as resolveDynamicComponent, l as withCtx, m as createStaticVNode, p as createRouter, q as createWebHistory, s as createI18n, v as createApp } from "./vendor.vh1PB0d2.js";
+import { c as createElementBlock, a as createVNode, r as resolveComponent, o as openBlock, b as createBaseVNode, d as defineComponent, u as useI18n, e as ref, w as watch, f as onMounted, g as onUnmounted, h as createCommentVNode, F as Fragment, i as renderList, t as toDisplayString, n as normalizeClass, j as createBlock, k as unref, l as withModifiers, m as resolveDynamicComponent, p as withCtx, q as createStaticVNode, s as createRouter, v as createWebHistory, x as createI18n, y as createApp } from "./vendor.CPVERg6j.js";
 import { m as messages } from "./i18n.DeDtISgX.js";
 (function polyfill() {
   const relList = document.createElement("link").relList;
@@ -243,14 +243,13 @@ function render(_ctx, _cache) {
     })
   ]);
 }
-const _hoisted_1$b = { class: "relative" };
-const _hoisted_2$a = {
+const _hoisted_1$b = {
   key: 0,
   class: "absolute right-0 mt-2 w-32 bg-gray-800/90 backdrop-blur-sm rounded-lg shadow-xl py-2 z-50 border border-gray-700/50"
 };
-const _hoisted_3$a = ["onClick"];
-const _hoisted_4$a = { class: "flex-1" };
-const _hoisted_5$a = {
+const _hoisted_2$a = ["onClick"];
+const _hoisted_3$a = { class: "flex-1" };
+const _hoisted_4$a = {
   key: 0,
   class: "w-4 h-4 text-blue-400",
   fill: "none",
@@ -262,6 +261,7 @@ const _sfc_main$b = /* @__PURE__ */ defineComponent({
   setup(__props) {
     const i18n2 = useI18n();
     const isOpen = ref(false);
+    const dropdownRef = ref(null);
     const languages = [
       { code: "zh-TW", name: "繁體中文" },
       { code: "en", name: "English" },
@@ -276,8 +276,23 @@ const _sfc_main$b = /* @__PURE__ */ defineComponent({
     watch(() => i18n2.locale.value, (newLocale) => {
       currentLanguage.value = languages.find((l) => l.code === newLocale) || languages[0];
     });
+    const handleClickOutside = (event) => {
+      if (dropdownRef.value && !dropdownRef.value.contains(event.target)) {
+        isOpen.value = false;
+      }
+    };
+    onMounted(() => {
+      document.addEventListener("click", handleClickOutside);
+    });
+    onUnmounted(() => {
+      document.removeEventListener("click", handleClickOutside);
+    });
     return (_ctx, _cache) => {
-      return openBlock(), createElementBlock("div", _hoisted_1$b, [
+      return openBlock(), createElementBlock("div", {
+        class: "relative",
+        ref_key: "dropdownRef",
+        ref: dropdownRef
+      }, [
         createBaseVNode("button", {
           onClick: _cache[0] || (_cache[0] = ($event) => isOpen.value = !isOpen.value),
           class: "p-2 rounded-lg text-gray-300 hover:text-white hover:bg-gray-800/50 transition-all duration-300"
@@ -296,15 +311,15 @@ const _sfc_main$b = /* @__PURE__ */ defineComponent({
             })
           ], -1)
         ])),
-        isOpen.value ? (openBlock(), createElementBlock("div", _hoisted_2$a, [
+        isOpen.value ? (openBlock(), createElementBlock("div", _hoisted_1$b, [
           (openBlock(), createElementBlock(Fragment, null, renderList(languages, (lang) => {
             return createBaseVNode("button", {
               key: lang.code,
               onClick: ($event) => switchLanguage(lang.code),
               class: normalizeClass(["flex items-center w-full px-3 py-2 text-sm text-gray-200 hover:bg-gray-700/50 transition-colors duration-200", { "bg-gray-700/50": currentLanguage.value.code === lang.code }])
             }, [
-              createBaseVNode("span", _hoisted_4$a, toDisplayString(lang.name), 1),
-              currentLanguage.value.code === lang.code ? (openBlock(), createElementBlock("svg", _hoisted_5$a, _cache[2] || (_cache[2] = [
+              createBaseVNode("span", _hoisted_3$a, toDisplayString(lang.name), 1),
+              currentLanguage.value.code === lang.code ? (openBlock(), createElementBlock("svg", _hoisted_4$a, _cache[2] || (_cache[2] = [
                 createBaseVNode("path", {
                   "stroke-linecap": "round",
                   "stroke-linejoin": "round",
@@ -312,10 +327,10 @@ const _sfc_main$b = /* @__PURE__ */ defineComponent({
                   d: "M5 13l4 4L19 7"
                 }, null, -1)
               ]))) : createCommentVNode("", true)
-            ], 10, _hoisted_3$a);
+            ], 10, _hoisted_2$a);
           }), 64))
         ])) : createCommentVNode("", true)
-      ]);
+      ], 512);
     };
   }
 });
@@ -1153,4 +1168,4 @@ const app = createApp(App);
 app.use(router);
 app.use(i18n);
 app.mount("#app");
-//# sourceMappingURL=index.Eun9k-Sc.js.map
+//# sourceMappingURL=index.DQPVJyeL.js.map
