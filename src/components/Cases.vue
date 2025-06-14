@@ -8,7 +8,7 @@
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
         <!-- 案例1 -->
-        <a href="/blog/cross-border" class="block bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
+        <router-link to="/cases/cross-border" class="block bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
           <div class="p-6">
             <h3 class="text-xl font-semibold text-gray-900 mb-2">跨境电商解决方案</h3>
             <p class="text-gray-600 mb-4">为某知名跨境电商平台提供一站式出海解决方案，包括支付系统、物流对接、多语言支持等，帮助客户快速拓展海外市场。</p>
@@ -18,10 +18,10 @@
               <span class="px-3 py-1 bg-purple-100 text-purple-600 rounded-full text-sm">多语言</span>
             </div>
           </div>
-        </a>
+        </router-link>
 
         <!-- 案例2 -->
-        <a href="/blog/ddos" class="block bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
+        <router-link to="/cases/ddos" class="block bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
           <div class="p-6">
             <h3 class="text-xl font-semibold text-gray-900 mb-2">高防DDoS防护方案</h3>
             <p class="text-gray-600 mb-4">为某游戏公司提供高防DDoS解决方案，通过智能防护系统有效抵御各类网络攻击，确保游戏服务器稳定运行。</p>
@@ -31,7 +31,7 @@
               <span class="px-3 py-1 bg-indigo-100 text-indigo-600 rounded-full text-sm">网络安全</span>
             </div>
           </div>
-        </a>
+        </router-link>
       </div>
     </div>
   </section>
