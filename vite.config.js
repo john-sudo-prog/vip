@@ -5,7 +5,7 @@ import autoprefixer from 'autoprefixer'
 
 export default defineConfig({
   plugins: [vue()],
-  base: '/vip/',
+  base: '/',
   resolve: {
     alias: {
       '@': '/src'

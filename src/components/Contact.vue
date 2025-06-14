@@ -17,7 +17,7 @@
             </div>
             <div>
               <h3 class="text-sm font-medium text-white mb-0.5">{{ $t('contact.email.title') }}</h3>
-              <p class="text-gray-400 text-sm">{{ $t('contact.email.value') }}</p>
+              <p class="text-gray-400 text-sm">san@dycloud.ai</p>
             </div>
           </div>
         </div>
