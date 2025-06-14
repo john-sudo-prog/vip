@@ -1,4 +1,4 @@
-import { c as createElementBlock, a as createTextVNode, b as createVNode, r as resolveComponent, o as openBlock, d as createBaseVNode, e as defineComponent, u as useI18n, f as ref, w as watch, g as createCommentVNode, F as Fragment, h as renderList, t as toDisplayString, n as normalizeClass, i as createBlock, j as unref, k as withModifiers, l as onMounted, m as nextTick, p as inject, q as resolveDynamicComponent, s as withCtx, v as createStaticVNode, x as createRouter, y as createWebHistory, z as createI18n, A as createApp } from "./vendor.BjSu_IYG.js";
+import { c as createElementBlock, a as createTextVNode, b as createVNode, r as resolveComponent, o as openBlock, d as createBaseVNode, e as defineComponent, u as useI18n, f as ref, w as watch, g as createCommentVNode, F as Fragment, h as renderList, t as toDisplayString, n as normalizeClass, i as createBlock, j as unref, k as withModifiers, l as resolveDynamicComponent, m as withCtx, p as createStaticVNode, q as createRouter, s as createWebHistory, v as createI18n, x as createApp } from "./vendor.BEFd6Lva.js";
 import { m as messages } from "./i18n.DeDtISgX.js";
 (function polyfill() {
   const relList = document.createElement("link").relList;
@@ -51,7 +51,7 @@ const _hoisted_1$c = { class: "min-h-screen bg-gray-900 text-white" };
 function _sfc_render$6(_ctx, _cache, $props, $setup, $data, $options) {
   const _component_router_view = resolveComponent("router-view");
   return openBlock(), createElementBlock("div", _hoisted_1$c, [
-    _cache[0] || (_cache[0] = createTextVNode(" 444444 ")),
+    _cache[0] || (_cache[0] = createTextVNode(" 5555 ")),
     createVNode(_component_router_view)
   ]);
 }
@@ -261,20 +261,20 @@ const _hoisted_5$a = {
 const _sfc_main$b = /* @__PURE__ */ defineComponent({
   __name: "LanguageSwitcher",
   setup(__props) {
-    const { locale } = useI18n();
+    const i18n2 = useI18n();
     const isOpen = ref(false);
     const languages = [
       { code: "zh-CN", name: "简体中文" },
       { code: "zh-TW", name: "繁體中文" },
       { code: "en", name: "English" }
     ];
-    const currentLanguage = ref(languages.find((l) => l.code === locale.value) || languages[0]);
+    const currentLanguage = ref(languages.find((l) => l.code === i18n2.locale.value) || languages[0]);
     const switchLanguage = (code) => {
-      locale.value = code;
+      i18n2.locale.value = code;
       currentLanguage.value = languages.find((l) => l.code === code) || languages[0];
       isOpen.value = false;
     };
-    watch(() => locale.value, (newLocale) => {
+    watch(() => i18n2.locale.value, (newLocale) => {
       currentLanguage.value = languages.find((l) => l.code === newLocale) || languages[0];
     });
     return (_ctx, _cache) => {
@@ -461,19 +461,12 @@ const _hoisted_29$1 = ["alt"];
 const _sfc_main$9 = /* @__PURE__ */ defineComponent({
   __name: "HeroBanner",
   setup(__props) {
-    const i18n2 = inject("i18n");
     const scrollToSection = (href) => {
       const element = document.querySelector(href);
       if (element) {
         element.scrollIntoView({ behavior: "smooth" });
       }
     };
-    onMounted(async () => {
-      await nextTick();
-      if (i18n2) {
-        console.log("Translation:", i18n2.t("hero.subtitle"));
-      }
-    });
     return (_ctx, _cache) => {
       return openBlock(), createElementBlock("section", _hoisted_1$9, [
         _cache[7] || (_cache[7] = createBaseVNode("div", { class: "absolute inset-0" }, [
@@ -580,7 +573,7 @@ const _sfc_main$9 = /* @__PURE__ */ defineComponent({
     };
   }
 });
-const HeroBanner = /* @__PURE__ */ _export_sfc(_sfc_main$9, [["__scopeId", "data-v-d43ecd6d"]]);
+const HeroBanner = /* @__PURE__ */ _export_sfc(_sfc_main$9, [["__scopeId", "data-v-e87a1c7f"]]);
 const _hoisted_1$8 = {
   id: "services",
   class: "relative py-16 overflow-hidden"
@@ -1152,10 +1145,13 @@ const i18n = createI18n({
   locale: localStorage.getItem("locale") || "zh-TW",
   fallbackLocale: "en",
   messages,
-  globalInjection: true
+  silentTranslationWarn: true,
+  silentFallbackWarn: true,
+  missingWarn: false,
+  fallbackWarn: false
 });
 const app = createApp(App);
 app.use(router);
 app.use(i18n);
 app.mount("#app");
-//# sourceMappingURL=index.DrrXqvZi.js.map
+//# sourceMappingURL=index.BGfNfJhg.js.map
