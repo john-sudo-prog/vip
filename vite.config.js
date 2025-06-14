@@ -13,7 +13,18 @@ export default defineConfig({
   },
   build: {
     minify: 'esbuild',
-    sourcemap: true
+    sourcemap: true,
+    rollupOptions: {
+      input: {
+        main: 'index.html',
+        i18n: 'src/i18n/index.js'
+      },
+      output: {
+        entryFileNames: 'assets/[name]-[hash].js',
+        chunkFileNames: 'assets/[name]-[hash].js',
+        assetFileNames: 'assets/[name]-[hash].[ext]'
+      }
+    }
   },
   css: {
     postcss: {
