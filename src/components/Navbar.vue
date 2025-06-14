@@ -7,31 +7,34 @@
           <img src="../assets/img/logo.jpg" alt="点一云科技" class="h-8 transition-transform duration-300 group-hover:scale-105" />
         </div>
 
-        <!-- 桌面端导航 -->
-        <div class="hidden md:flex space-x-8">
-          <a v-for="item in navItems" :key="item.id" 
-             :href="item.href"
-             @click.prevent="scrollToSection(item.href)"
-             class="relative text-gray-600 hover:text-primary-600 transition-colors duration-300 py-2 group">
-            <span class="relative z-10">{{ $t(item.title) }}</span>
-            <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-500 to-purple-500 
-                       group-hover:w-full transition-all duration-300"></span>
-          </a>
-        </div>
+        <!-- 右侧区域 -->
+        <div class="flex items-center space-x-8">
+          <!-- 桌面端导航 -->
+          <div class="hidden md:flex space-x-8">
+            <a v-for="item in navItems" :key="item.id" 
+               :href="item.href"
+               @click.prevent="scrollToSection(item.href)"
+               class="relative text-gray-600 hover:text-primary-600 transition-colors duration-300 py-2 group">
+              <span class="relative z-10">{{ $t(item.title) }}</span>
+              <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-500 to-purple-500 
+                         group-hover:w-full transition-all duration-300"></span>
+            </a>
+          </div>
 
-        <!-- 语言切换 -->
-        <div class="hidden md:flex items-center ml-4">
-          <LanguageSwitcher />
-        </div>
+          <!-- 语言切换 -->
+          <div class="hidden md:flex items-center">
+            <LanguageSwitcher />
+          </div>
 
-        <!-- 移动端菜单按钮 -->
-        <div class="md:hidden">
-          <button @click="isMenuOpen = !isMenuOpen" 
-                  class="p-2 rounded-lg text-gray-600 hover:text-primary-600 hover:bg-gray-100/50 
-                         transition-colors duration-300">
-            <MenuIcon v-if="!isMenuOpen" class="h-6 w-6" />
-            <CloseIcon v-else class="h-6 w-6" />
-          </button>
+          <!-- 移动端菜单按钮 -->
+          <div class="md:hidden">
+            <button @click="isMenuOpen = !isMenuOpen" 
+                    class="p-2 rounded-lg text-gray-600 hover:text-primary-600 hover:bg-gray-100/50 
+                           transition-colors duration-300">
+              <MenuIcon v-if="!isMenuOpen" class="h-6 w-6" />
+              <CloseIcon v-else class="h-6 w-6" />
+            </button>
+          </div>
         </div>
       </div>
 
