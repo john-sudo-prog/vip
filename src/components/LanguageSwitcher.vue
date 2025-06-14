@@ -74,6 +74,7 @@ export default {
 
     const switchLanguage = (code) => {
       locale.value = code
+      localStorage.setItem('locale', code)
       isOpen.value = false
     }
 
