@@ -16,12 +16,14 @@ const getBrowserLanguage = () => {
   return 'zh-TW' // 默认使用繁体中文
 }
 
+// 预加载所有语言文件
 const messages = {
   'zh-CN': zhCN,
   'zh-TW': zhTW,
   'en': en
 }
 
+// 创建 i18n 实例
 const i18n = createI18n({
   legacy: false,
   locale: getBrowserLanguage(),
@@ -31,11 +33,14 @@ const i18n = createI18n({
   silentTranslationWarn: true,
   silentFallbackWarn: true,
   missingWarn: false,
-  fallbackWarn: false
+  fallbackWarn: false,
+  globalInjection: true
 })
 
-// 监听语言变化并保存到 localStorage
-i18n.global.locale.value = getBrowserLanguage()
-localStorage.setItem('locale', i18n.global.locale.value)
+// 确保语言设置被保存
+const currentLocale = getBrowserLanguage()
+i18n.global.locale.value = currentLocale
+localStorage.setItem('locale', currentLocale)
 
+// 导出 i18n 实例
 export default i18n 

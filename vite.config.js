@@ -11,6 +11,19 @@ export default defineConfig({
       '@': '/src'
     }
   },
+  build: {
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          'i18n': [
+            './src/i18n/zh-CN.js',
+            './src/i18n/zh-TW.js',
+            './src/i18n/en.js'
+          ]
+        }
+      }
+    }
+  },
   css: {
     postcss: {
       plugins: [
