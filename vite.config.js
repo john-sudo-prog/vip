@@ -15,14 +15,16 @@ export default defineConfig({
     minify: 'esbuild',
     sourcemap: true,
     rollupOptions: {
-      input: {
-        main: 'index.html',
-        i18n: 'src/i18n/index.js'
-      },
       output: {
-        entryFileNames: 'assets/[name]-[hash].js',
-        chunkFileNames: 'assets/[name]-[hash].js',
-        assetFileNames: 'assets/[name]-[hash].[ext]'
+        manualChunks: {
+          'i18n': [
+            'vue-i18n',
+            './src/i18n/index.js',
+            './src/i18n/zh-CN.js',
+            './src/i18n/zh-TW.js',
+            './src/i18n/en.js'
+          ]
+        }
       }
     }
   },
