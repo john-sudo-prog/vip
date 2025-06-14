@@ -2,8 +2,8 @@
   <div id="contact" class="py-12 bg-gradient-to-b from-gray-900 to-gray-800">
     <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-8">
-        <h2 class="text-2xl font-bold text-white mb-2">联系我们</h2>
-        <p class="text-gray-400 text-sm">随时为您提供专业服务</p>
+        <h2 class="text-2xl font-bold text-white mb-2">{{ $t('contact.title') }}</h2>
+        <p class="text-gray-400 text-sm">{{ $t('contact.subtitle') }}</p>
       </div>
 
       <!-- 联系方式 -->
@@ -16,8 +16,8 @@
               </svg>
             </div>
             <div>
-              <h3 class="text-sm font-medium text-white mb-0.5">邮箱</h3>
-              <p class="text-gray-400 text-sm">support@dianyicloud.com</p>
+              <h3 class="text-sm font-medium text-white mb-0.5">{{ $t('contact.email.title') }}</h3>
+              <p class="text-gray-400 text-sm">{{ $t('contact.email.value') }}</p>
             </div>
           </div>
         </div>
@@ -30,8 +30,8 @@
               </svg>
             </div>
             <div>
-              <h3 class="text-sm font-medium text-white mb-0.5">电话</h3>
-              <p class="text-gray-400 text-sm">+852 1234 5678</p>
+              <h3 class="text-sm font-medium text-white mb-0.5">{{ $t('contact.phone.title') }}</h3>
+              <p class="text-gray-400 text-sm">{{ $t('contact.phone.value') }}</p>
             </div>
           </div>
         </div>
@@ -48,12 +48,12 @@
         </a>
         <a href="#" class="group relative">
           <div class="w-10 h-10 bg-gray-800/50 backdrop-blur-sm rounded-lg border border-gray-700 group-hover:border-green-500/50 transition-all duration-300 flex items-center justify-center">
-            <img src="../assets/img/wechat.png" alt="微信" class="w-5 h-5 text-gray-400 group-hover:text-green-400 transition-colors duration-300" />
+            <img src="../assets/img/wechat.png" :alt="$t('contact.wechat.title')" class="w-5 h-5 text-gray-400 group-hover:text-green-400 transition-colors duration-300" />
           </div>
           <div class="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 hidden group-hover:block">
             <div class="bg-white p-2 rounded-lg shadow-lg w-36 h-36 flex flex-col items-center justify-center">
-              <img src="../assets/img/logo.png" alt="微信二维码" class="w-28 h-28 object-contain rounded" />
-              <div class="text-center mt-1 text-xs text-gray-600">扫码添加微信</div>
+              <img src="../assets/img/logo.png" :alt="$t('contact.wechat.qrcode')" class="w-28 h-28 object-contain rounded" />
+              <div class="text-center mt-1 text-xs text-gray-600">{{ $t('contact.wechat.scan') }}</div>
             </div>
           </div>
         </a>
@@ -67,7 +67,7 @@
       </div>
 
       <div class="mt-8 text-center">
-        <p class="text-gray-500 text-sm">© 2024 香港点一云科技有限公司. All rights reserved.</p>
+        <p class="text-gray-500 text-sm">{{ $t('contact.copyright') }}</p>
       </div>
     </div>
   </div>

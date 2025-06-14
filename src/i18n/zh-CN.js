@@ -11,11 +11,11 @@ export default {
   hero: {
     title: '全球领先的云服务提供商',
     company: '点一云科技',
-    subtitle: '通过技术创新与资源整合，为企业提供全方位的云服务解决方案，助力客户在AI时代实现全球化业务拓展。',
+    subtitle: '通过技术创新和资源整合，为企业提供全方位的云服务解决方案，助力客户在AI时代实现全球业务拓展。',
     learnMore: '了解更多',
     contactUs: '联系我们',
     stats: {
-      countries: '覆盖国家和地区',
+      countries: '国家地区',
       availability: '服务可用性'
     },
     partners: {
@@ -28,27 +28,27 @@ export default {
     items: {
       cloud: {
         title: '公有云代理',
-        desc: '提供稳定、高效、安全的云计算服务，快速开户流程，7x24专业技术支持'
+        desc: '提供稳定、高效、安全的云计算服务，快速开户，7*24小时技术支持'
       },
       gpu: {
         title: 'GPU算力服务',
-        desc: '专享高性能GPU云主机，适用于AI训练、深度学习等场景'
+        desc: '专为AI训练、深度学习等场景打造的高性能GPU云主机'
       },
       ai: {
         title: 'AI海外矩阵营销',
-        desc: '引流一站式方案云手机 + 自动机器人 + AIGC'
+        desc: '一站式解决方案：云手机 + 自动化机器人 + AIGC'
       },
       edge: {
         title: '边缘计算',
-        desc: '全球200+边缘节点，提供高效的跨境网络服务'
+        desc: '200+全球边缘节点，提供高效的跨境网络服务'
       },
       security: {
         title: '人工智能应用',
-        desc: '高效率处理大量数据和复杂模型，为人工智能的应用提供强大的运算能力和资源'
+        desc: '高效处理海量数据和复杂模型，为AI应用提供强大的计算能力和资源'
       },
       sms: {
         title: '国际营销短信服务',
-        desc: '覆盖全球 230 个国家和地区，支持全球语言，助力企业拓展海外市场简单、迅速、低成本'
+        desc: '覆盖全球230个国家和地区，支持多语言，帮助企业简单、快速、低成本地拓展海外市场'
       }
     }
   },
@@ -93,10 +93,19 @@ export default {
   contact: {
     title: '联系我们',
     subtitle: '随时为您提供专业服务',
-    email: '邮箱',
-    phone: '电话',
-    social: '社交媒体',
-    qrcode: '扫码添加微信',
+    email: {
+      title: '邮箱',
+      value: 'support@dianyicloud.com'
+    },
+    phone: {
+      title: '电话',
+      value: '+852 1234 5678'
+    },
+    wechat: {
+      title: '微信',
+      qrcode: '微信二维码',
+      scan: '扫码添加微信'
+    },
     copyright: '© 2024 香港点一云科技有限公司. All rights reserved.'
   }
 } 

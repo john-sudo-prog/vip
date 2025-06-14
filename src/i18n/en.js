@@ -58,19 +58,19 @@ export default {
     items: {
       crossBorder: {
         title: 'One-Stop Overseas Solution',
-        desc: 'Providing complete cross-border business platform for enterprises, including market research, strategy planning, and operation management'
+        desc: 'Complete cross-border business platform for enterprises, including market research, strategy planning, and operation management'
       },
       sms: {
-        title: 'International SMS Service',
+        title: 'International SMS Marketing Service',
         desc: 'Global SMS delivery service with multi-language support, high delivery rate, and fast stability'
       },
       ddos: {
-        title: 'DDoS Protection Solution',
-        desc: 'Providing powerful DDoS protection capabilities to protect your business from various network attacks'
+        title: 'High-Defense DDoS Solution',
+        desc: 'Powerful DDoS protection capabilities to safeguard your business from various network attacks'
       },
       acceleration: {
         title: 'Cross-Border Acceleration Security Solution',
-        desc: 'Providing secure, stable, and high-speed network acceleration services for your cross-border business through global node network'
+        desc: 'Providing secure, stable, and high-speed network acceleration services for your cross-border business through our global node network'
       }
     }
   },
@@ -90,13 +90,41 @@ export default {
       }
     }
   },
+  news: {
+    title: 'Company News',
+    subtitle: 'Stay updated with our latest developments',
+    content: {
+      paragraph1: 'DianYi Cloud Technology Limited is a core service partner of Huawei Cloud, Tencent Cloud, Alibaba Cloud, AWS, and other cloud providers. We are dedicated to providing cloud operations management, cost management, architecture consulting, cloud migration, database services, and more, covering industries such as gaming, video streaming, WEB3, retail e-commerce, AI intelligence, and new energy. We consistently provide reliable cloud services and solutions to our clients. Through deep technical integration with major cloud providers, we offer multi-industry solutions including video streaming, WEB3 blockchain ecosystem, modern AI intelligent analysis, game hosting operations, e-commerce services, and content moderation. We will continue to explore cloud computing innovation and reform to provide more comprehensive, efficient, and secure cloud services, helping our clients succeed in the digital era.',
+      paragraph2: 'DianYi Cloud is headquartered in Hong Kong with branch offices in Dubai and Shenzhen. Our team consists of over 50 members, and the company holds professional certifications from AWS, Tencent Cloud, and Huawei Cloud. All team members have served in the IT and internet industry for over three years, possessing rich technical expertise and experience.'
+    }
+  },
+  partners: {
+    title: 'Our Partners',
+    items: {
+      partner1: 'Huawei Cloud',
+      partner2: 'Tencent Cloud',
+      partner3: 'Alibaba Cloud',
+      partner4: 'Amazon Web Services',
+      partner5: 'Microsoft Azure',
+      partner6: 'Google Cloud'
+    }
+  },
   contact: {
     title: 'Contact Us',
     subtitle: 'Professional service available anytime',
-    email: 'Email',
-    phone: 'Phone',
-    social: 'Social Media',
-    qrcode: 'Scan QR Code to Add WeChat',
-    copyright: '© 2024 Hong Kong Dianyi Cloud Technology Co., Ltd. All rights reserved.'
+    email: {
+      title: 'Email',
+      value: 'support@dianyicloud.com'
+    },
+    phone: {
+      title: 'Phone',
+      value: '+852 1234 5678'
+    },
+    wechat: {
+      title: 'WeChat',
+      qrcode: 'WeChat QR Code',
+      scan: 'Scan to add WeChat'
+    },
+    copyright: '© 2024 DianYi Cloud Technology Limited. All rights reserved.'
   }
 } 
