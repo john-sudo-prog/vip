@@ -1,17 +1,26 @@
 export default {
   nav: {
     home: '首页',
-    services: '产品服务',
+    services: '服务',
     solutions: '解决方案',
-    cases: '案例中心',
+    cases: '案例',
     partners: '合作伙伴',
     news: '公司动态',
     contact: '联系我们'
   },
   hero: {
     title: '全球领先的云服务提供商',
-    subtitle: '为企业提供安全、稳定、高效的云计算服务',
-    cta: '立即咨询'
+    company: '点一云科技',
+    subtitle: '通过技术创新与资源整合，为企业提供全方位的云服务解决方案，助力客户在AI时代实现全球化业务拓展。',
+    learnMore: '了解更多',
+    contactUs: '联系我们',
+    stats: {
+      countries: '覆盖国家和地区',
+      availability: '服务可用性'
+    },
+    partners: {
+      alt: '合作伙伴'
+    }
   },
   services: {
     title: '产品服务',

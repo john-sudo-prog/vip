@@ -18,21 +18,20 @@
                         transition-all duration-500">
               <span class="animate-pulse w-2 h-2 rounded-full bg-gradient-to-r from-blue-400 to-purple-400"></span>
               <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400 text-sm font-medium">
-                全球领先的云服务提供商
+                {{ $t('hero.title') }}
               </span>
             </div>
             
             <h1 class="text-5xl lg:text-7xl font-bold tracking-tight">
               <span class="block text-transparent bg-clip-text animate-gradient-fast
                            bg-gradient-to-r from-white via-blue-300 to-purple-300">
-                点一云科技
+                {{ $t('hero.company') }}
               </span>
             </h1>
           </div>
 
           <div class="text-white">
-            通过技术创新与资源整合，为企业提供全方位的云服务解决方案，
-            助力客户在AI时代实现全球化业务拓展。
+            {{ $t('hero.subtitle') }}
           </div>
 
           <div class="flex flex-wrap gap-4">
@@ -40,7 +39,7 @@
                       class="group inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-blue-600 
                                    transition-all duration-500 hover:scale-105 
                                    hover:shadow-lg hover:shadow-blue-500/25">
-              <span>了解更多</span>
+              <span>{{ $t('hero.learnMore') }}</span>
               <ArrowRightIcon class="w-4 h-4 transition-transform group-hover:translate-x-1" />
             </button>
             <button @click="scrollToSection('#contact')"
@@ -49,7 +48,7 @@
                            hover:bg-gradient-to-r hover:from-blue-500/10 hover:to-purple-500/10
                            rounded-lg font-semibold text-white
                            transition-all duration-500">
-              <span>联系我们</span>
+              <span>{{ $t('hero.contactUs') }}</span>
               <PhoneIcon class="w-4 h-4 transition-transform group-hover:scale-110" />
             </button>
           </div>
@@ -63,7 +62,7 @@
                             transition-all duration-500">200+</span>
               </div>
               <p class="text-sm text-blue-200/70 group-hover:text-purple-200/70 transition-colors duration-500">
-                覆盖国家和地区
+                {{ $t('hero.stats.countries') }}
               </p>
             </div>
             <div class="space-y-2 group">
@@ -73,7 +72,7 @@
                             transition-all duration-500">99.9%</span>
               </div>
               <p class="text-sm text-purple-200/70 group-hover:text-blue-200/70 transition-colors duration-500">
-                服务可用性
+                {{ $t('hero.stats.availability') }}
               </p>
             </div>
           </div>
@@ -92,27 +91,27 @@
               <div class="absolute top-[10%] left-[15%] w-32 h-32 bg-white/10 backdrop-blur-sm rounded-lg 
                           border border-white/20 shadow-lg transform rotate-4
                           animate-float-1">
-                <img src="../assets/img/partner/1.jpg" alt="合作伙伴" class="w-full h-full object-contain p-4" />
+                <img src="../assets/img/partner/1.jpg" :alt="$t('hero.partners.alt')" class="w-full h-full object-contain p-4" />
               </div>
               <div class="absolute top-[25%] right-[20%] w-28 h-28 bg-white/10 backdrop-blur-sm rounded-lg 
                           border border-white/20 shadow-lg transform -rotate-6
                           animate-float-2">
-                <img src="../assets/img/partner/2.jpg" alt="合作伙伴" class="w-full h-full object-contain p-4" />
+                <img src="../assets/img/partner/2.jpg" :alt="$t('hero.partners.alt')" class="w-full h-full object-contain p-4" />
               </div>
               <div class="absolute bottom-[20%] left-[25%] w-36 h-36 bg-white/10 backdrop-blur-sm rounded-lg 
                           border border-white/20 shadow-lg transform rotate-3
                           animate-float-3">
-                <img src="../assets/img/partner/3.jpg" alt="合作伙伴" class="w-full h-full object-contain p-4" />
+                <img src="../assets/img/partner/3.jpg" :alt="$t('hero.partners.alt')" class="w-full h-full object-contain p-4" />
               </div>
               <div class="absolute top-[60%] right-[25%] w-24 h-24 bg-white/10 backdrop-blur-sm rounded-lg 
                           border border-white/20 shadow-lg transform -rotate-3
                           animate-float-4">
-                <img src="../assets/img/partner/4.jpg" alt="合作伙伴" class="w-full h-full object-contain p-4" />
+                <img src="../assets/img/partner/4.jpg" :alt="$t('hero.partners.alt')" class="w-full h-full object-contain p-4" />
               </div>
               <div class="absolute bottom-[35%] left-[10%] w-28 h-28 bg-white/10 backdrop-blur-sm rounded-lg 
                           border border-white/20 shadow-lg transform rotate-12
                           animate-float-5">
-                <img src="../assets/img/partner/5.jpg" alt="合作伙伴" class="w-full h-full object-contain p-4" />
+                <img src="../assets/img/partner/5.jpg" :alt="$t('hero.partners.alt')" class="w-full h-full object-contain p-4" />
               </div>
               
               <!-- 装饰线条 -->

@@ -8,8 +8,8 @@
     
     <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-12">
-        <h2 class="text-3xl font-bold text-white mb-3">产品服务</h2>
-        <p class="text-base text-gray-300">为企业提供全方位的云服务解决方案</p>
+        <h2 class="text-3xl font-bold text-white mb-3">{{ $t('services.title') }}</h2>
+        <p class="text-base text-gray-300">{{ $t('services.subtitle') }}</p>
       </div>
 
       <!-- 服务网格 -->
@@ -19,8 +19,8 @@
           <div class="w-14 h-14 bg-gradient-to-br from-blue-500/30 to-blue-400/20 rounded-lg flex items-center justify-center mb-4 group-hover:from-blue-500/40 group-hover:to-blue-400/30 transition-all duration-300">
             <component :is="service.icon" class="w-7 h-7 text-blue-300" />
           </div>
-          <h3 class="text-xl font-semibold text-white mb-3">{{ service.title }}</h3>
-          <p class="text-base text-gray-200">{{ service.description }}</p>
+          <h3 class="text-xl font-semibold text-white mb-3">{{ $t(`services.items.${service.key}.title`) }}</h3>
+          <p class="text-base text-gray-200">{{ $t(`services.items.${service.key}.desc`) }}</p>
         </div>
       </div>
     </div>
@@ -39,33 +39,27 @@ import {
 
 const services = [
   {
-    title: '公有云代理',
-    description: '提供稳定、高效、安全的云计算服务，快速开户流程，7x24专业技术支持',
+    key: 'cloud',
     icon: CloudIcon
   },
   {
-    title: 'GPU算力服务',
-    description: '专享高性能GPU云主机，适用于AI训练、深度学习等场景',
+    key: 'gpu',
     icon: CpuChipIcon
   },
   {
-    title: 'AI海外矩阵营销',
-    description: '引流一站式方案云手机 + 自动机器人 + AIGC',
+    key: 'ai',
     icon: RocketLaunchIcon
   },
   {
-    title: '边缘计算',
-    description: '全球200+边缘节点，提供高效的跨境网络服务',
+    key: 'edge',
     icon: GlobeAltIcon
   },
   {
-    title: '人工智能应用',
-    description: '高效率处理大量数据和复杂模型，为人工智能的应用提供强大的运算能力和资源',
+    key: 'security',
     icon: ShieldCheckIcon
   },
   {
-    title: '国际营销短信服务',
-    description: '覆盖全球 230 个国家和地区，支持全球语言，助力企业拓展海外市场简单、迅速、低成本',
+    key: 'sms',
     icon: EnvelopeIcon
   }
 ]

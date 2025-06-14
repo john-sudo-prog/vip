@@ -9,9 +9,18 @@ export default {
     contact: 'Contact'
   },
   hero: {
-    title: 'Global Leading Cloud Service Provider',
-    subtitle: 'Providing secure, stable, and efficient cloud computing services for enterprises',
-    cta: 'Contact Now'
+    title: 'Leading Global Cloud Service Provider',
+    company: 'DianYi Cloud Tech',
+    subtitle: 'Through technological innovation and resource integration, we provide comprehensive cloud service solutions for enterprises, helping customers achieve global business expansion in the AI era.',
+    learnMore: 'Learn More',
+    contactUs: 'Contact Us',
+    stats: {
+      countries: 'Countries & Regions',
+      availability: 'Service Availability'
+    },
+    partners: {
+      alt: 'Partners'
+    }
   },
   services: {
     title: 'Our Services',
@@ -23,7 +32,7 @@ export default {
       },
       gpu: {
         title: 'GPU Computing Service',
-        desc: 'Dedicated high-performance GPU cloud hosts for AI training, deep learning, and other scenarios'
+        desc: 'Dedicated high-performance GPU cloud hosts for AI training and deep learning scenarios'
       },
       ai: {
         title: 'AI Overseas Matrix Marketing',
@@ -35,7 +44,7 @@ export default {
       },
       security: {
         title: 'AI Applications',
-        desc: 'Efficiently processing large amounts of data and complex models, providing powerful computing capabilities and resources for AI applications'
+        desc: 'Efficiently process large amounts of data and complex models, providing powerful computing capabilities and resources for AI applications'
       },
       sms: {
         title: 'International SMS Marketing',
