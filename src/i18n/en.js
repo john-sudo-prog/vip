@@ -79,14 +79,22 @@ export default {
     subtitle: 'Explore our success stories and learn how we create value for our clients',
     items: {
       crossBorder: {
-        title: 'Cross-Border E-commerce Solution',
-        desc: 'Providing one-stop overseas solution for a well-known cross-border e-commerce platform, including payment systems, logistics integration, and multi-language support, helping clients quickly expand into overseas markets.',
-        tags: ['Cross-Border E-commerce', 'Payment System', 'Multi-language']
+        title: 'Cross-border E-commerce Solution',
+        desc: 'Provided a one-stop overseas solution for a well-known cross-border e-commerce platform, including payment systems, logistics integration, and multilingual support, helping clients rapidly expand into international markets.',
+        tags: {
+          ecommerce: 'Cross-border E-commerce',
+          payment: 'Payment System',
+          multilingual: 'Multilingual'
+        }
       },
       ddos: {
-        title: 'DDoS Protection Solution',
-        desc: 'Providing DDoS protection solution for a gaming company, effectively defending against various network attacks through intelligent protection system, ensuring stable operation of game servers.',
-        tags: ['DDoS Protection', 'Game Server', 'Network Security']
+        title: 'High-Defense DDoS Protection Solution',
+        desc: 'Provided a high-defense DDoS solution for a gaming company, effectively defending against various network attacks through an intelligent protection system, ensuring stable operation of game servers.',
+        tags: {
+          protection: 'DDoS Protection',
+          gameserver: 'Game Server',
+          security: 'Network Security'
+        }
       }
     }
   },
