@@ -1,5 +1,5 @@
 <template>
-  <div class="relative">
+  <div class="relative" ref="dropdownRef">
     <button
       @click="isOpen = !isOpen"
       class="p-2 rounded-lg text-gray-300 hover:text-white hover:bg-gray-800/50 transition-all duration-300"
@@ -51,7 +51,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, watch } from 'vue'
+import { ref, watch, onMounted, onUnmounted } from 'vue'
 import { useI18n } from 'vue-i18n'
 
 interface Language {
@@ -61,6 +61,7 @@ interface Language {
 
 const i18n = useI18n()
 const isOpen = ref(false)
+const dropdownRef = ref<HTMLElement | null>(null)
 
 const languages: Language[] = [
   { code: 'zh-TW', name: '繁體中文' },
@@ -79,5 +80,22 @@ const switchLanguage = (code: string) => {
 // 监听语言变化
 watch(() => i18n.locale.value, (newLocale) => {
   currentLanguage.value = languages.find(l => l.code === newLocale) || languages[0]
+})
+
+// 处理点击外部区域
+const handleClickOutside = (event: MouseEvent) => {
+  if (dropdownRef.value && !dropdownRef.value.contains(event.target as Node)) {
+    isOpen.value = false
+  }
+}
+
+// 组件挂载时添加事件监听
+onMounted(() => {
+  document.addEventListener('click', handleClickOutside)
+})
+
+// 组件卸载时移除事件监听
+onUnmounted(() => {
+  document.removeEventListener('click', handleClickOutside)
 })
 </script> 
