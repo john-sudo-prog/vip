@@ -51,7 +51,7 @@ const _hoisted_1$c = { class: "min-h-screen bg-gray-900 text-white" };
 function _sfc_render$7(_ctx, _cache, $props, $setup, $data, $options) {
   const _component_router_view = resolveComponent("router-view");
   return openBlock(), createElementBlock("div", _hoisted_1$c, [
-    _cache[0] || (_cache[0] = createTextVNode(" 222 ")),
+    _cache[0] || (_cache[0] = createTextVNode(" 3333 ")),
     createVNode(_component_router_view)
   ]);
 }
@@ -475,12 +475,16 @@ const _hoisted_29$1 = ["alt"];
 const _sfc_main$9 = /* @__PURE__ */ defineComponent({
   __name: "HeroBanner",
   setup(__props) {
+    const { t } = useI18n();
     const scrollToSection = (href) => {
       const element = document.querySelector(href);
       if (element) {
         element.scrollIntoView({ behavior: "smooth" });
       }
     };
+    onMounted(() => {
+      console.log(t("hero.subtitle"), 111);
+    });
     return (_ctx, _cache) => {
       return openBlock(), createElementBlock("section", _hoisted_1$9, [
         _cache[7] || (_cache[7] = createBaseVNode("div", { class: "absolute inset-0" }, [
@@ -587,7 +591,7 @@ const _sfc_main$9 = /* @__PURE__ */ defineComponent({
     };
   }
 });
-const HeroBanner = /* @__PURE__ */ _export_sfc(_sfc_main$9, [["__scopeId", "data-v-e87a1c7f"]]);
+const HeroBanner = /* @__PURE__ */ _export_sfc(_sfc_main$9, [["__scopeId", "data-v-3e15a156"]]);
 const _hoisted_1$8 = {
   id: "services",
   class: "relative py-16 overflow-hidden"
