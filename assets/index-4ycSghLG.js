@@ -50,7 +50,7 @@ const _hoisted_1$c = { class: "min-h-screen bg-gray-900 text-white" };
 function _sfc_render$7(_ctx, _cache, $props, $setup, $data, $options) {
   const _component_router_view = resolveComponent("router-view");
   return openBlock(), createElementBlock("div", _hoisted_1$c, [
-    _cache[0] || (_cache[0] = createTextVNode(" 222 ")),
+    _cache[0] || (_cache[0] = createTextVNode(" 3333 ")),
     createVNode(_component_router_view)
   ]);
 }
