@@ -1,4 +1,4 @@
-import { c as createElementBlock, a as createTextVNode, b as createVNode, r as resolveComponent, o as openBlock, d as createBaseVNode, e as defineComponent, u as useI18n, f as ref, w as watch, g as createCommentVNode, F as Fragment, h as renderList, t as toDisplayString, n as normalizeClass, i as createBlock, j as unref, k as withModifiers, l as resolveDynamicComponent, m as withCtx, p as createStaticVNode, q as createRouter, s as createWebHistory, v as createI18n, x as createApp } from "./vendor.BEFd6Lva.js";
+import { c as createElementBlock, a as createVNode, r as resolveComponent, o as openBlock, b as createBaseVNode, d as defineComponent, u as useI18n, e as ref, w as watch, f as createCommentVNode, F as Fragment, g as renderList, t as toDisplayString, n as normalizeClass, h as createBlock, i as unref, j as withModifiers, k as resolveDynamicComponent, l as withCtx, m as createStaticVNode, p as createRouter, q as createWebHistory, s as createI18n, v as createApp } from "./vendor.vh1PB0d2.js";
 import { m as messages } from "./i18n.DeDtISgX.js";
 (function polyfill() {
   const relList = document.createElement("link").relList;
@@ -51,7 +51,6 @@ const _hoisted_1$c = { class: "min-h-screen bg-gray-900 text-white" };
 function _sfc_render$6(_ctx, _cache, $props, $setup, $data, $options) {
   const _component_router_view = resolveComponent("router-view");
   return openBlock(), createElementBlock("div", _hoisted_1$c, [
-    _cache[0] || (_cache[0] = createTextVNode(" 5555 ")),
     createVNode(_component_router_view)
   ]);
 }
@@ -264,9 +263,9 @@ const _sfc_main$b = /* @__PURE__ */ defineComponent({
     const i18n2 = useI18n();
     const isOpen = ref(false);
     const languages = [
-      { code: "zh-CN", name: "简体中文" },
       { code: "zh-TW", name: "繁體中文" },
-      { code: "en", name: "English" }
+      { code: "en", name: "English" },
+      { code: "zh-CN", name: "简体中文" }
     ];
     const currentLanguage = ref(languages.find((l) => l.code === i18n2.locale.value) || languages[0]);
     const switchLanguage = (code) => {
@@ -1142,8 +1141,8 @@ const router = createRouter({
   routes
 });
 const i18n = createI18n({
-  locale: localStorage.getItem("locale") || "zh-TW",
-  fallbackLocale: "en",
+  locale: "zh-TW",
+  fallbackLocale: "zh-TW",
   messages,
   silentTranslationWarn: true,
   silentFallbackWarn: true,
@@ -1154,4 +1153,4 @@ const app = createApp(App);
 app.use(router);
 app.use(i18n);
 app.mount("#app");
-//# sourceMappingURL=index.BGfNfJhg.js.map
+//# sourceMappingURL=index.Eun9k-Sc.js.map

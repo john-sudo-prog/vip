@@ -6,8 +6,8 @@ import './assets/main.css'
 import { messages } from './i18n'
 
 const i18n = createI18n({
-  locale: localStorage.getItem('locale') || 'zh-TW',
-  fallbackLocale: 'en',
+  locale: 'zh-TW',
+  fallbackLocale: 'zh-TW',
   messages,
   silentTranslationWarn: true,
   silentFallbackWarn: true,

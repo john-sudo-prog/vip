@@ -63,9 +63,9 @@ const i18n = useI18n()
 const isOpen = ref(false)
 
 const languages: Language[] = [
-  { code: 'zh-CN', name: '简体中文' },
   { code: 'zh-TW', name: '繁體中文' },
-  { code: 'en', name: 'English' }
+  { code: 'en', name: 'English' },
+  { code: 'zh-CN', name: '简体中文' }
 ]
 
 const currentLanguage = ref<Language>(languages.find(l => l.code === i18n.locale.value) || languages[0])
