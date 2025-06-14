@@ -18,15 +18,7 @@ export default defineConfig({
       output: {
         manualChunks: {
           'vendor': ['vue', 'vue-router', 'vue-i18n']
-        },
-        chunkFileNames: (chunkInfo) => {
-          if (chunkInfo.name.includes('i18n')) {
-            return '[name].js'
-          }
-          return 'assets/[name]-[hash].js'
-        },
-        entryFileNames: 'assets/[name]-[hash].js',
-        assetFileNames: 'assets/[name]-[hash].[ext]'
+        }
       }
     }
   },
