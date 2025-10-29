@@ -7,6 +7,7 @@ export default {
     partners: '合作夥伴',
     news: '公司動態',
     contact: '聯繫我們',
+    smb: 'SMB 服務',
     logo: '點一雲科技'
   },
   hero: {

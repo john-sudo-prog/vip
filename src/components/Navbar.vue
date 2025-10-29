@@ -13,7 +13,7 @@
           <div class="hidden md:flex space-x-8">
             <a v-for="item in navItems" :key="item.id" 
                :href="item.href"
-               @click.prevent="scrollToSection(item.href)"
+               @click="onNavClick(item, $event)"
                class="relative text-gray-600 hover:text-primary-600 transition-colors duration-300 py-2 group">
               <span class="relative z-10">{{ $t(item.title) }}</span>
               <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-500 to-purple-500 
@@ -45,7 +45,7 @@
         <div class="px-2 pt-2 pb-3 space-y-1">
           <a v-for="item in navItems" :key="item.id"
              :href="item.href"
-             @click.prevent="scrollToSection(item.href)"
+             @click="onNavClick(item, $event)"
              class="block px-3 py-2 text-gray-600 hover:text-primary-600 hover:bg-gray-50/50 
                     rounded-lg transition-colors duration-300">
             {{ $t(item.title) }}
@@ -73,16 +73,25 @@ const navItems = [
   { id: 3, title: 'nav.solutions', href: '#solutions' },
   { id: 4, title: 'nav.cases', href: '#cases' },
   { id: 5, title: 'nav.partners', href: '#partners' },
-  { id: 6, title: 'nav.news', href: '#news' },
-  { id: 7, title: 'nav.contact', href: '#contact' }
+  { id: 8, title: 'nav.smb', href: '/smb' },
+  // { id: 6, title: 'nav.news', href: '#news' },
+  { id: 7, title: 'nav.contact', href: '#contact' },
 ]
 
-const scrollToSection = (href: string) => {
-  const element = document.querySelector(href)
-  if (element) {
-    element.scrollIntoView({ behavior: 'smooth' })
+const onNavClick = (item: { href: string }, event: MouseEvent) => {
+  const href = item.href
+  if (href && href.startsWith('#')) {
+    event.preventDefault()
+    const element = document.querySelector(href)
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' })
+    }
+    isMenuOpen.value = false
+  } else if (href) {
+    // 非锚点：交由浏览器/路由处理（支持 /smb 重定向）
+    isMenuOpen.value = false
+    window.location.href = href
   }
-  isMenuOpen.value = false
 }
 </script>
 
@@ -101,4 +110,4 @@ const scrollToSection = (href: string) => {
     transform: translateY(0);
   }
 }
-</style> 
+</style>

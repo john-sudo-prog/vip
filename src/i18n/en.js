@@ -7,6 +7,7 @@ export default {
     partners: 'Partners',
     news: 'News',
     contact: 'Contact',
+    smb: 'SMB',
     logo: 'DianYi Cloud'
   },
   hero: {
