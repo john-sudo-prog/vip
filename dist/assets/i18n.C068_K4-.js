@@ -7,6 +7,7 @@ const zhCN = {
     partners: "合作伙伴",
     news: "公司动态",
     contact: "联系我们",
+    smb: "SMB服务",
     logo: "点一云科技"
   },
   hero: {
@@ -147,6 +148,7 @@ const zhTW = {
     partners: "合作夥伴",
     news: "公司動態",
     contact: "聯繫我們",
+    smb: "SMB 服務",
     logo: "點一雲科技"
   },
   hero: {
@@ -287,6 +289,7 @@ const en = {
     partners: "Partners",
     news: "News",
     contact: "Contact",
+    smb: "SMB",
     logo: "DianYi Cloud"
   },
   hero: {
@@ -449,4 +452,4 @@ new Lang();
 export {
   messages as m
 };
-//# sourceMappingURL=i18n.DeDtISgX.js.map
+//# sourceMappingURL=i18n.C068_K4-.js.map
