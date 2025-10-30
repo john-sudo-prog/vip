@@ -1,4 +1,4 @@
-import { c as createElementBlock, a as createVNode, r as resolveComponent, o as openBlock, b as createBaseVNode, d as defineComponent, u as useI18n, e as ref, w as watch, f as onMounted, g as onUnmounted, h as createCommentVNode, F as Fragment, i as renderList, t as toDisplayString, n as normalizeClass, j as createBlock, k as unref, l as resolveDynamicComponent, m as createStaticVNode, p as withCtx, q as createTextVNode, s as createRouter, v as createWebHashHistory, x as createI18n, y as createApp } from "./vendor.hgTvilCP.js";
+import { c as createElementBlock, a as createVNode, r as resolveComponent, o as openBlock, b as createBaseVNode, d as defineComponent, u as useI18n, e as ref, w as watch, f as onMounted, g as onUnmounted, h as createCommentVNode, F as Fragment, i as renderList, t as toDisplayString, n as normalizeClass, j as createBlock, k as unref, l as useRouter, m as resolveDynamicComponent, p as withCtx, q as createTextVNode, s as createStaticVNode, v as createRouter, x as createWebHashHistory, y as createI18n, z as createApp } from "./vendor.CAtqUtev.js";
 import { m as messages } from "./i18n.C068_K4-.js";
 (function polyfill() {
   const relList = document.createElement("link").relList;
@@ -339,21 +339,22 @@ const _hoisted_2$e = { class: "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" };
 const _hoisted_3$e = { class: "flex justify-between items-center h-16" };
 const _hoisted_4$e = { class: "flex items-center space-x-8" };
 const _hoisted_5$a = { class: "hidden md:flex space-x-8" };
-const _hoisted_6$7 = ["href", "onClick"];
-const _hoisted_7$6 = { class: "relative z-10" };
-const _hoisted_8$6 = { class: "hidden md:flex items-center" };
-const _hoisted_9$6 = { class: "md:hidden" };
-const _hoisted_10$5 = {
+const _hoisted_6$8 = ["href", "onClick"];
+const _hoisted_7$7 = { class: "relative z-10" };
+const _hoisted_8$7 = { class: "hidden md:flex items-center" };
+const _hoisted_9$7 = { class: "md:hidden" };
+const _hoisted_10$6 = {
   key: 0,
   class: "md:hidden absolute left-0 right-0 bg-white/95 backdrop-blur-md border-b border-gray-100/50 animate-slide-down"
 };
-const _hoisted_11$4 = { class: "px-2 pt-2 pb-3 space-y-1" };
-const _hoisted_12$4 = ["href", "onClick"];
-const _hoisted_13$4 = { class: "px-3 py-2" };
+const _hoisted_11$5 = { class: "px-2 pt-2 pb-3 space-y-1" };
+const _hoisted_12$5 = ["href", "onClick"];
+const _hoisted_13$5 = { class: "px-3 py-2" };
 const _sfc_main$f = /* @__PURE__ */ defineComponent({
   __name: "Navbar",
   setup(__props) {
     const isMenuOpen = ref(false);
+    const router2 = useRouter();
     const navItems = [
       { id: 1, title: "nav.home", href: "#home" },
       { id: 2, title: "nav.services", href: "#services" },
@@ -374,6 +375,12 @@ const _sfc_main$f = /* @__PURE__ */ defineComponent({
         }
         isMenuOpen.value = false;
       } else if (href) {
+        if (href.startsWith("/") && !href.startsWith("//")) {
+          event.preventDefault();
+          router2.push(href);
+          isMenuOpen.value = false;
+          return;
+        }
         isMenuOpen.value = false;
         window.location.href = href;
       }
@@ -398,15 +405,15 @@ const _sfc_main$f = /* @__PURE__ */ defineComponent({
                     onClick: ($event) => onNavClick(item, $event),
                     class: "relative text-gray-600 hover:text-primary-600 transition-colors duration-300 py-2 group"
                   }, [
-                    createBaseVNode("span", _hoisted_7$6, toDisplayString(_ctx.$t(item.title)), 1),
+                    createBaseVNode("span", _hoisted_7$7, toDisplayString(_ctx.$t(item.title)), 1),
                     _cache[1] || (_cache[1] = createBaseVNode("span", { class: "absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-500 to-purple-500 group-hover:w-full transition-all duration-300" }, null, -1))
-                  ], 8, _hoisted_6$7);
+                  ], 8, _hoisted_6$8);
                 }), 64))
               ]),
-              createBaseVNode("div", _hoisted_8$6, [
+              createBaseVNode("div", _hoisted_8$7, [
                 createVNode(_sfc_main$g)
               ]),
-              createBaseVNode("div", _hoisted_9$6, [
+              createBaseVNode("div", _hoisted_9$7, [
                 createBaseVNode("button", {
                   onClick: _cache[0] || (_cache[0] = ($event) => isMenuOpen.value = !isMenuOpen.value),
                   class: "p-2 rounded-lg text-gray-600 hover:text-primary-600 hover:bg-gray-100/50 transition-colors duration-300"
@@ -422,17 +429,17 @@ const _sfc_main$f = /* @__PURE__ */ defineComponent({
               ])
             ])
           ]),
-          isMenuOpen.value ? (openBlock(), createElementBlock("div", _hoisted_10$5, [
-            createBaseVNode("div", _hoisted_11$4, [
+          isMenuOpen.value ? (openBlock(), createElementBlock("div", _hoisted_10$6, [
+            createBaseVNode("div", _hoisted_11$5, [
               (openBlock(), createElementBlock(Fragment, null, renderList(navItems, (item) => {
                 return createBaseVNode("a", {
                   key: item.id,
                   href: item.href,
                   onClick: ($event) => onNavClick(item, $event),
                   class: "block px-3 py-2 text-gray-600 hover:text-primary-600 hover:bg-gray-50/50 rounded-lg transition-colors duration-300"
-                }, toDisplayString(_ctx.$t(item.title)), 9, _hoisted_12$4);
+                }, toDisplayString(_ctx.$t(item.title)), 9, _hoisted_12$5);
               }), 64)),
-              createBaseVNode("div", _hoisted_13$4, [
+              createBaseVNode("div", _hoisted_13$5, [
                 createVNode(_sfc_main$g)
               ])
             ])
@@ -442,7 +449,7 @@ const _sfc_main$f = /* @__PURE__ */ defineComponent({
     };
   }
 });
-const Navbar = /* @__PURE__ */ _export_sfc(_sfc_main$f, [["__scopeId", "data-v-8304f352"]]);
+const Navbar = /* @__PURE__ */ _export_sfc(_sfc_main$f, [["__scopeId", "data-v-82913f94"]]);
 const _imports_0$1 = "/assets/1.BkiepcgT.jpg";
 const _imports_1$1 = "/assets/2.D2zvkKpT.jpg";
 const _imports_2$1 = "/assets/3.BF3sJ9Id.jpg";
@@ -456,15 +463,15 @@ const _hoisted_2$d = { class: "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative" 
 const _hoisted_3$d = { class: "grid lg:grid-cols-2 gap-12 items-center min-h-[calc(90vh-4rem)]" };
 const _hoisted_4$d = { class: "text-white space-y-8" };
 const _hoisted_5$9 = { class: "space-y-4" };
-const _hoisted_6$6 = { class: "inline-flex items-center space-x-2 bg-gradient-to-r from-blue-500/20 to-purple-500/20 rounded-full px-4 py-1 border border-blue-400/30 backdrop-blur-sm hover:from-blue-500/30 hover:to-purple-500/30 hover:border-blue-400/50 transition-all duration-500" };
-const _hoisted_7$5 = { class: "text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400 text-sm font-medium" };
-const _hoisted_8$5 = { class: "text-5xl lg:text-7xl font-bold tracking-tight" };
-const _hoisted_9$5 = { class: "block text-transparent bg-clip-text animate-gradient-fast bg-gradient-to-r from-white via-blue-300 to-purple-300" };
-const _hoisted_10$4 = { class: "text-white" };
-const _hoisted_11$3 = { class: "flex flex-wrap gap-4" };
-const _hoisted_12$3 = { class: "grid grid-cols-2 gap-4 pt-8 border-t border-gradient-to-r from-blue-500/20 to-purple-500/20" };
-const _hoisted_13$3 = { class: "space-y-2 group" };
-const _hoisted_14$3 = { class: "text-sm text-blue-200/70 group-hover:text-purple-200/70 transition-colors duration-500" };
+const _hoisted_6$7 = { class: "inline-flex items-center space-x-2 bg-gradient-to-r from-blue-500/20 to-purple-500/20 rounded-full px-4 py-1 border border-blue-400/30 backdrop-blur-sm hover:from-blue-500/30 hover:to-purple-500/30 hover:border-blue-400/50 transition-all duration-500" };
+const _hoisted_7$6 = { class: "text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400 text-sm font-medium" };
+const _hoisted_8$6 = { class: "text-5xl lg:text-7xl font-bold tracking-tight" };
+const _hoisted_9$6 = { class: "block text-transparent bg-clip-text animate-gradient-fast bg-gradient-to-r from-white via-blue-300 to-purple-300" };
+const _hoisted_10$5 = { class: "text-white" };
+const _hoisted_11$4 = { class: "flex flex-wrap gap-4" };
+const _hoisted_12$4 = { class: "grid grid-cols-2 gap-4 pt-8 border-t border-gradient-to-r from-blue-500/20 to-purple-500/20" };
+const _hoisted_13$4 = { class: "space-y-2 group" };
+const _hoisted_14$4 = { class: "text-sm text-blue-200/70 group-hover:text-purple-200/70 transition-colors duration-500" };
 const _hoisted_15$3 = { class: "space-y-2 group" };
 const _hoisted_16$2 = { class: "text-sm text-purple-200/70 group-hover:text-blue-200/70 transition-colors duration-500" };
 const _hoisted_17$1 = { class: "relative hidden lg:block" };
@@ -500,16 +507,16 @@ const _sfc_main$e = /* @__PURE__ */ defineComponent({
           createBaseVNode("div", _hoisted_3$d, [
             createBaseVNode("div", _hoisted_4$d, [
               createBaseVNode("div", _hoisted_5$9, [
-                createBaseVNode("div", _hoisted_6$6, [
+                createBaseVNode("div", _hoisted_6$7, [
                   _cache[2] || (_cache[2] = createBaseVNode("span", { class: "animate-pulse w-2 h-2 rounded-full bg-gradient-to-r from-blue-400 to-purple-400" }, null, -1)),
-                  createBaseVNode("span", _hoisted_7$5, toDisplayString(_ctx.$t("hero.title")), 1)
+                  createBaseVNode("span", _hoisted_7$6, toDisplayString(_ctx.$t("hero.title")), 1)
                 ]),
-                createBaseVNode("h1", _hoisted_8$5, [
-                  createBaseVNode("span", _hoisted_9$5, toDisplayString(_ctx.$t("hero.company")), 1)
+                createBaseVNode("h1", _hoisted_8$6, [
+                  createBaseVNode("span", _hoisted_9$6, toDisplayString(_ctx.$t("hero.company")), 1)
                 ])
               ]),
-              createBaseVNode("div", _hoisted_10$4, toDisplayString(_ctx.$t("hero.subtitle")), 1),
-              createBaseVNode("div", _hoisted_11$3, [
+              createBaseVNode("div", _hoisted_10$5, toDisplayString(_ctx.$t("hero.subtitle")), 1),
+              createBaseVNode("div", _hoisted_11$4, [
                 createBaseVNode("button", {
                   onClick: _cache[0] || (_cache[0] = ($event) => scrollToSection("#news")),
                   class: "group inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-blue-600 transition-all duration-500 hover:scale-105 hover:shadow-lg hover:shadow-blue-500/25"
@@ -525,12 +532,12 @@ const _sfc_main$e = /* @__PURE__ */ defineComponent({
                   createVNode(unref(render$3), { class: "w-4 h-4 transition-transform group-hover:scale-110" })
                 ])
               ]),
-              createBaseVNode("div", _hoisted_12$3, [
-                createBaseVNode("div", _hoisted_13$3, [
+              createBaseVNode("div", _hoisted_12$4, [
+                createBaseVNode("div", _hoisted_13$4, [
                   _cache[3] || (_cache[3] = createBaseVNode("div", { class: "flex items-baseline gap-1" }, [
                     createBaseVNode("span", { class: "text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400 group-hover:from-blue-300 group-hover:to-purple-300 transition-all duration-500" }, "200+")
                   ], -1)),
-                  createBaseVNode("p", _hoisted_14$3, toDisplayString(_ctx.$t("hero.stats.countries")), 1)
+                  createBaseVNode("p", _hoisted_14$4, toDisplayString(_ctx.$t("hero.stats.countries")), 1)
                 ]),
                 createBaseVNode("div", _hoisted_15$3, [
                   _cache[4] || (_cache[4] = createBaseVNode("div", { class: "flex items-baseline gap-1" }, [
@@ -604,10 +611,10 @@ const _hoisted_2$c = { class: "relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" 
 const _hoisted_3$c = { class: "text-center mb-12" };
 const _hoisted_4$c = { class: "text-3xl font-bold text-white mb-3" };
 const _hoisted_5$8 = { class: "text-base text-gray-300" };
-const _hoisted_6$5 = { class: "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" };
-const _hoisted_7$4 = { class: "w-14 h-14 bg-gradient-to-br from-blue-500/30 to-blue-400/20 rounded-lg flex items-center justify-center mb-4 group-hover:from-blue-500/40 group-hover:to-blue-400/30 transition-all duration-300" };
-const _hoisted_8$4 = { class: "text-xl font-semibold text-white mb-3" };
-const _hoisted_9$4 = { class: "text-base text-gray-200" };
+const _hoisted_6$6 = { class: "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" };
+const _hoisted_7$5 = { class: "w-14 h-14 bg-gradient-to-br from-blue-500/30 to-blue-400/20 rounded-lg flex items-center justify-center mb-4 group-hover:from-blue-500/40 group-hover:to-blue-400/30 transition-all duration-300" };
+const _hoisted_8$5 = { class: "text-xl font-semibold text-white mb-3" };
+const _hoisted_9$5 = { class: "text-base text-gray-200" };
 const _sfc_main$d = /* @__PURE__ */ defineComponent({
   __name: "Services",
   setup(__props) {
@@ -648,17 +655,17 @@ const _sfc_main$d = /* @__PURE__ */ defineComponent({
             createBaseVNode("h2", _hoisted_4$c, toDisplayString(_ctx.$t("services.title")), 1),
             createBaseVNode("p", _hoisted_5$8, toDisplayString(_ctx.$t("services.subtitle")), 1)
           ]),
-          createBaseVNode("div", _hoisted_6$5, [
+          createBaseVNode("div", _hoisted_6$6, [
             (openBlock(), createElementBlock(Fragment, null, renderList(services, (service, index) => {
               return createBaseVNode("div", {
                 key: index,
                 class: "bg-gradient-to-br from-white/15 to-white/5 backdrop-blur-lg rounded-xl p-6 border border-white/30 hover:border-white/50 transition-all duration-300 group shadow-lg hover:shadow-xl"
               }, [
-                createBaseVNode("div", _hoisted_7$4, [
+                createBaseVNode("div", _hoisted_7$5, [
                   (openBlock(), createBlock(resolveDynamicComponent(service.icon), { class: "w-7 h-7 text-blue-300" }))
                 ]),
-                createBaseVNode("h3", _hoisted_8$4, toDisplayString(_ctx.$t(`services.items.${service.key}.title`)), 1),
-                createBaseVNode("p", _hoisted_9$4, toDisplayString(_ctx.$t(`services.items.${service.key}.desc`)), 1)
+                createBaseVNode("h3", _hoisted_8$5, toDisplayString(_ctx.$t(`services.items.${service.key}.title`)), 1),
+                createBaseVNode("p", _hoisted_9$5, toDisplayString(_ctx.$t(`services.items.${service.key}.desc`)), 1)
               ]);
             }), 64))
           ])
@@ -675,15 +682,15 @@ const _hoisted_2$b = { class: "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative" 
 const _hoisted_3$b = { class: "text-center mb-12" };
 const _hoisted_4$b = { class: "text-3xl font-bold mb-4 text-white" };
 const _hoisted_5$7 = { class: "text-gray-400" };
-const _hoisted_6$4 = { class: "grid grid-cols-1 md:grid-cols-2 gap-8" };
-const _hoisted_7$3 = { class: "bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl overflow-hidden" };
-const _hoisted_8$3 = { class: "p-8" };
-const _hoisted_9$3 = { class: "flex items-center space-x-4 mb-6" };
-const _hoisted_10$3 = { class: "w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center backdrop-blur-sm" };
-const _hoisted_11$2 = { class: "text-xl font-bold text-white" };
-const _hoisted_12$2 = { class: "text-blue-100" };
-const _hoisted_13$2 = { class: "bg-gradient-to-br from-green-500 to-green-600 rounded-2xl overflow-hidden" };
-const _hoisted_14$2 = { class: "p-8" };
+const _hoisted_6$5 = { class: "grid grid-cols-1 md:grid-cols-2 gap-8" };
+const _hoisted_7$4 = { class: "bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl overflow-hidden" };
+const _hoisted_8$4 = { class: "p-8" };
+const _hoisted_9$4 = { class: "flex items-center space-x-4 mb-6" };
+const _hoisted_10$4 = { class: "w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center backdrop-blur-sm" };
+const _hoisted_11$3 = { class: "text-xl font-bold text-white" };
+const _hoisted_12$3 = { class: "text-blue-100" };
+const _hoisted_13$3 = { class: "bg-gradient-to-br from-green-500 to-green-600 rounded-2xl overflow-hidden" };
+const _hoisted_14$3 = { class: "p-8" };
 const _hoisted_15$2 = { class: "flex items-center space-x-4 mb-6" };
 const _hoisted_16$1 = { class: "w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center backdrop-blur-sm" };
 const _hoisted_17 = { class: "text-xl font-bold text-white" };
@@ -714,20 +721,20 @@ const _sfc_main$c = /* @__PURE__ */ defineComponent({
             createBaseVNode("h2", _hoisted_4$b, toDisplayString(_ctx.$t("solutions.title")), 1),
             createBaseVNode("p", _hoisted_5$7, toDisplayString(_ctx.$t("solutions.subtitle")), 1)
           ]),
-          createBaseVNode("div", _hoisted_6$4, [
-            createBaseVNode("div", _hoisted_7$3, [
-              createBaseVNode("div", _hoisted_8$3, [
-                createBaseVNode("div", _hoisted_9$3, [
-                  createBaseVNode("div", _hoisted_10$3, [
+          createBaseVNode("div", _hoisted_6$5, [
+            createBaseVNode("div", _hoisted_7$4, [
+              createBaseVNode("div", _hoisted_8$4, [
+                createBaseVNode("div", _hoisted_9$4, [
+                  createBaseVNode("div", _hoisted_10$4, [
                     createVNode(unref(render$4), { class: "h-6 w-6 text-white" })
                   ]),
-                  createBaseVNode("h3", _hoisted_11$2, toDisplayString(_ctx.$t("solutions.items.crossBorder.title")), 1)
+                  createBaseVNode("h3", _hoisted_11$3, toDisplayString(_ctx.$t("solutions.items.crossBorder.title")), 1)
                 ]),
-                createBaseVNode("p", _hoisted_12$2, toDisplayString(_ctx.$t("solutions.items.crossBorder.desc")), 1)
+                createBaseVNode("p", _hoisted_12$3, toDisplayString(_ctx.$t("solutions.items.crossBorder.desc")), 1)
               ])
             ]),
-            createBaseVNode("div", _hoisted_13$2, [
-              createBaseVNode("div", _hoisted_14$2, [
+            createBaseVNode("div", _hoisted_13$3, [
+              createBaseVNode("div", _hoisted_14$3, [
                 createBaseVNode("div", _hoisted_15$2, [
                   createBaseVNode("div", _hoisted_16$1, [
                     createVNode(unref(render$8), { class: "h-6 w-6 text-white" })
@@ -775,14 +782,93 @@ const _hoisted_2$a = { class: "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" };
 const _hoisted_3$a = { class: "text-center mb-16" };
 const _hoisted_4$a = { class: "text-3xl font-bold text-gray-900 mb-4" };
 const _hoisted_5$6 = { class: "text-lg text-gray-600" };
+const _hoisted_6$4 = { class: "grid grid-cols-1 md:grid-cols-2 gap-8" };
+const _hoisted_7$3 = { class: "bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300" };
+const _hoisted_8$3 = { class: "p-6" };
+const _hoisted_9$3 = { class: "bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300" };
+const _hoisted_10$3 = { class: "p-6" };
+const _hoisted_11$2 = { class: "bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300" };
+const _hoisted_12$2 = { class: "p-6" };
+const _hoisted_13$2 = { class: "bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300" };
+const _hoisted_14$2 = { class: "p-6" };
 function _sfc_render$6(_ctx, _cache) {
+  const _component_RouterLink = resolveComponent("RouterLink");
   return openBlock(), createElementBlock("section", _hoisted_1$b, [
     createBaseVNode("div", _hoisted_2$a, [
       createBaseVNode("div", _hoisted_3$a, [
         createBaseVNode("h2", _hoisted_4$a, toDisplayString(_ctx.$t("cases.title")), 1),
         createBaseVNode("p", _hoisted_5$6, toDisplayString(_ctx.$t("cases.subtitle")), 1)
       ]),
-      _cache[0] || (_cache[0] = createStaticVNode('<div class="grid grid-cols-1 md:grid-cols-2 gap-8"><div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300"><div class="p-6"><h3 class="text-xl font-semibold text-gray-900 mb-2">广西锋锐信息技术服务有限公司上云成功案例 </h3><p class="text-gray-600 mb-4">帮助企业完成AWS云迁移，提升系统性能，降低运维成本</p><a href="/cases/fengrui" target="_blank" rel="noopener" class="inline-flex items-center px-4 py-2 text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 rounded-md transition-colors">查看详情</a></div></div><div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300"><div class="p-6"><h3 class="text-xl font-semibold text-gray-900 mb-2">武汉柏锐科技有限公司上云成功案例</h3><p class="text-gray-600 mb-4">为游戏公司提供高性能云托管服务，支持全球玩家同时在线</p><a href="/cases/bairui" target="_blank" rel="noopener" class="inline-flex items-center px-4 py-2 text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 rounded-md transition-colors">查看详情</a></div></div><div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300"><div class="p-6"><h3 class="text-xl font-semibold text-gray-900 mb-2">某企业库存管理系统上云成功案例</h3><p class="text-gray-600 mb-4">为库存管理系统提供稳定可靠的云服务，提升用户体验</p><a href="/cases/inventory-game" target="_blank" rel="noopener" class="inline-flex items-center px-4 py-2 text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 rounded-md transition-colors">查看详情</a></div></div><div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300"><div class="p-6"><h3 class="text-xl font-semibold text-gray-900 mb-2">某企业数据管理系统上云成功案例 </h3><p class="text-gray-600 mb-4">为企业提供强大的计算和存储资源，提高数据处理能力</p><a href="/cases/inventory-stable" target="_blank" rel="noopener" class="inline-flex items-center px-4 py-2 text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 rounded-md transition-colors">查看详情</a></div></div></div>', 1))
+      createBaseVNode("div", _hoisted_6$4, [
+        createBaseVNode("div", _hoisted_7$3, [
+          createBaseVNode("div", _hoisted_8$3, [
+            _cache[1] || (_cache[1] = createBaseVNode("h3", { class: "text-xl font-semibold text-gray-900 mb-2" }, "广西锋锐信息技术服务有限公司上云成功案例 ", -1)),
+            _cache[2] || (_cache[2] = createBaseVNode("p", { class: "text-gray-600 mb-4" }, "帮助企业完成AWS云迁移，提升系统性能，降低运维成本", -1)),
+            createVNode(_component_RouterLink, {
+              to: "/cases/fengrui",
+              target: "_blank",
+              rel: "noopener",
+              class: "inline-flex items-center px-4 py-2 text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 rounded-md transition-colors"
+            }, {
+              default: withCtx(() => [..._cache[0] || (_cache[0] = [
+                createTextVNode("查看详情", -1)
+              ])]),
+              _: 1
+            })
+          ])
+        ]),
+        createBaseVNode("div", _hoisted_9$3, [
+          createBaseVNode("div", _hoisted_10$3, [
+            _cache[4] || (_cache[4] = createBaseVNode("h3", { class: "text-xl font-semibold text-gray-900 mb-2" }, "武汉柏锐科技有限公司上云成功案例", -1)),
+            _cache[5] || (_cache[5] = createBaseVNode("p", { class: "text-gray-600 mb-4" }, "为游戏公司提供高性能云托管服务，支持全球玩家同时在线", -1)),
+            createVNode(_component_RouterLink, {
+              to: "/cases/bairui",
+              target: "_blank",
+              rel: "noopener",
+              class: "inline-flex items-center px-4 py-2 text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 rounded-md transition-colors"
+            }, {
+              default: withCtx(() => [..._cache[3] || (_cache[3] = [
+                createTextVNode("查看详情", -1)
+              ])]),
+              _: 1
+            })
+          ])
+        ]),
+        createBaseVNode("div", _hoisted_11$2, [
+          createBaseVNode("div", _hoisted_12$2, [
+            _cache[7] || (_cache[7] = createBaseVNode("h3", { class: "text-xl font-semibold text-gray-900 mb-2" }, "某企业库存管理系统上云成功案例", -1)),
+            _cache[8] || (_cache[8] = createBaseVNode("p", { class: "text-gray-600 mb-4" }, "为库存管理系统提供稳定可靠的云服务，提升用户体验", -1)),
+            createVNode(_component_RouterLink, {
+              to: "/cases/inventory-game",
+              target: "_blank",
+              rel: "noopener",
+              class: "inline-flex items-center px-4 py-2 text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 rounded-md transition-colors"
+            }, {
+              default: withCtx(() => [..._cache[6] || (_cache[6] = [
+                createTextVNode("查看详情", -1)
+              ])]),
+              _: 1
+            })
+          ])
+        ]),
+        createBaseVNode("div", _hoisted_13$2, [
+          createBaseVNode("div", _hoisted_14$2, [
+            _cache[10] || (_cache[10] = createBaseVNode("h3", { class: "text-xl font-semibold text-gray-900 mb-2" }, "某企业数据管理系统上云成功案例 ", -1)),
+            _cache[11] || (_cache[11] = createBaseVNode("p", { class: "text-gray-600 mb-4" }, "为企业提供强大的计算和存储资源，提高数据处理能力", -1)),
+            createVNode(_component_RouterLink, {
+              to: "/cases/inventory-stable",
+              target: "_blank",
+              rel: "noopener",
+              class: "inline-flex items-center px-4 py-2 text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 rounded-md transition-colors"
+            }, {
+              default: withCtx(() => [..._cache[9] || (_cache[9] = [
+                createTextVNode("查看详情", -1)
+              ])]),
+              _: 1
+            })
+          ])
+        ])
+      ])
     ])
   ]);
 }
@@ -1318,4 +1404,4 @@ const app = createApp(App);
 app.use(router);
 app.use(i18n);
 app.mount("#app");
-//# sourceMappingURL=index.5SGjPeJe.js.map
+//# sourceMappingURL=index.qhpj9EeY.js.map

@@ -12717,6 +12717,9 @@ function createRouter(options) {
   }
   return router;
 }
+function useRouter() {
+  return inject(routerKey);
+}
 export {
   Fragment as F,
   createVNode as a,
@@ -12730,19 +12733,20 @@ export {
   renderList as i,
   createBlock as j,
   unref as k,
-  resolveDynamicComponent as l,
-  createStaticVNode as m,
+  useRouter as l,
+  resolveDynamicComponent as m,
   normalizeClass as n,
   openBlock as o,
   withCtx as p,
   createTextVNode as q,
   resolveComponent as r,
-  createRouter as s,
+  createStaticVNode as s,
   toDisplayString$1 as t,
   useI18n as u,
-  createWebHashHistory as v,
+  createRouter as v,
   watch as w,
-  createI18n as x,
-  createApp as y
+  createWebHashHistory as x,
+  createI18n as y,
+  createApp as z
 };
-//# sourceMappingURL=vendor.hgTvilCP.js.map
+//# sourceMappingURL=vendor.CAtqUtev.js.map

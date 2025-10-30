@@ -1773,10 +1773,10 @@ body {
 }
 }
 
-.animate-slide-down[data-v-8304f352] {
-  animation: slideDown-8304f352 1s ease-out;
+.animate-slide-down[data-v-82913f94] {
+  animation: slideDown-82913f94 1s ease-out;
 }
-@keyframes slideDown-8304f352 {
+@keyframes slideDown-82913f94 {
 from {
     opacity: 0;
     transform: translateY(-20px);

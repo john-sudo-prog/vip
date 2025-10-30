@@ -62,10 +62,12 @@
 
 <script setup lang="ts">
 import { ref } from 'vue'
+import { useRouter } from 'vue-router'
 import { Bars3Icon as MenuIcon, XMarkIcon as CloseIcon } from '@heroicons/vue/24/outline'
 import LanguageSwitcher from './LanguageSwitcher.vue'
 
 const isMenuOpen = ref(false)
+const router = useRouter()
 
 const navItems = [
   { id: 1, title: 'nav.home', href: '#home' },
@@ -88,7 +90,14 @@ const onNavClick = (item: { href: string }, event: MouseEvent) => {
     }
     isMenuOpen.value = false
   } else if (href) {
-    // 非锚点：交由浏览器/路由处理（支持 /smb 重定向）
+    // 应用内路由（如 /smb）：使用路由跳转，适配 hash 模式
+    if (href.startsWith('/') && !href.startsWith('//')) {
+      event.preventDefault()
+      router.push(href)
+      isMenuOpen.value = false
+      return
+    }
+    // 外部链接或协议：走浏览器默认行为
     isMenuOpen.value = false
     window.location.href = href
   }
