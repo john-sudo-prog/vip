@@ -79,6 +79,25 @@ export default {
   cases: {
     title: '案例中心',
     subtitle: '探索我们的成功案例，了解如何为客户创造价值',
+    viewDetails: '查看详情',
+    cards: {
+      fengrui: {
+        title: '广西锋锐信息技术服务有限公司上云成功案例',
+        desc: '帮助企业完成 AWS 云迁移，提升系统性能，降低运维成本'
+      },
+      bairui: {
+        title: '武汉柏锐科技有限公司上云成功案例',
+        desc: '为游戏公司提供高性能云托管服务，支持全球玩家同时在线'
+      },
+      inventoryGame: {
+        title: '某企业库存管理系统上云成功案例',
+        desc: '为库存管理系统提供稳定可靠的云服务，提升用户体验'
+      },
+      inventoryStable: {
+        title: '某企业数据管理系统上云成功案例',
+        desc: '为企业提供强大的计算和存储资源，提高数据处理能力'
+      }
+    },
     items: {
       crossBorder: {
         title: '跨境电商解决方案',

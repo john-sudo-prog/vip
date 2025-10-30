@@ -79,6 +79,25 @@ const zhCN = {
   cases: {
     title: "案例中心",
     subtitle: "探索我们的成功案例，了解如何为客户创造价值",
+    viewDetails: "查看详情",
+    cards: {
+      fengrui: {
+        title: "广西锋锐信息技术服务有限公司上云成功案例",
+        desc: "帮助企业完成 AWS 云迁移，提升系统性能，降低运维成本"
+      },
+      bairui: {
+        title: "武汉柏锐科技有限公司上云成功案例",
+        desc: "为游戏公司提供高性能云托管服务，支持全球玩家同时在线"
+      },
+      inventoryGame: {
+        title: "某企业库存管理系统上云成功案例",
+        desc: "为库存管理系统提供稳定可靠的云服务，提升用户体验"
+      },
+      inventoryStable: {
+        title: "某企业数据管理系统上云成功案例",
+        desc: "为企业提供强大的计算和存储资源，提高数据处理能力"
+      }
+    },
     items: {
       crossBorder: {
         title: "跨境电商解决方案",
@@ -220,6 +239,25 @@ const zhTW = {
   cases: {
     title: "案例中心",
     subtitle: "探索我們的成功案例，了解如何為客戶創造價值",
+    viewDetails: "查看詳情",
+    cards: {
+      fengrui: {
+        title: "廣西鋒銳信息技術服務有限公司上雲成功案例",
+        desc: "幫助企業完成 AWS 雲遷移，提升系統性能，降低運維成本"
+      },
+      bairui: {
+        title: "武漢柏銳科技有限公司上雲成功案例",
+        desc: "為遊戲公司提供高性能雲託管服務，支持全球玩家同時在線"
+      },
+      inventoryGame: {
+        title: "某企業庫存管理系統上雲成功案例",
+        desc: "為庫存管理系統提供穩定可靠的雲服務，提升用戶體驗"
+      },
+      inventoryStable: {
+        title: "某企業數據管理系統上雲成功案例",
+        desc: "為企業提供強大的計算和存儲資源，提高數據處理能力"
+      }
+    },
     items: {
       crossBorder: {
         title: "跨境電商解決方案",
@@ -361,6 +399,25 @@ const en = {
   cases: {
     title: "Case Studies",
     subtitle: "Explore our success stories and learn how we create value for our clients",
+    viewDetails: "View Details",
+    cards: {
+      fengrui: {
+        title: "Guangxi Fengrui Information Technology Cloud Migration Success",
+        desc: "Helped the enterprise migrate to AWS Cloud, improving performance and reducing O&M costs"
+      },
+      bairui: {
+        title: "Wuhan Bairui Technology Cloud Hosting Success",
+        desc: "Provided high-performance cloud hosting for a gaming company, supporting players worldwide"
+      },
+      inventoryGame: {
+        title: "Inventory Management System Migration Success",
+        desc: "Delivered reliable cloud services for the inventory system to enhance user experience"
+      },
+      inventoryStable: {
+        title: "Data Management System Cloud Enablement",
+        desc: "Provided strong compute and storage resources to improve data processing capacity"
+      }
+    },
     items: {
       crossBorder: {
         title: "Cross-Border E-commerce Solution",
@@ -452,4 +509,4 @@ new Lang();
 export {
   messages as m
 };
-//# sourceMappingURL=i18n.C068_K4-.js.map
+//# sourceMappingURL=i18n.CZqulTHw.js.map

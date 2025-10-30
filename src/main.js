@@ -5,10 +5,11 @@ import router from './router'
 import './assets/main.css'
 import { messages } from './i18n'
 
+const savedLocale = localStorage.getItem('locale') || 'zh-TW'
 const i18n = createI18n({
   // 使用 Composition API 模式，支持 useI18n()
   legacy: false,
-  locale: 'zh-TW',
+  locale: savedLocale,
   fallbackLocale: 'zh-TW',
   messages,
   // 允许在模板中直接使用 `$t`

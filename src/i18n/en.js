@@ -79,6 +79,25 @@ export default {
   cases: {
     title: 'Case Studies',
     subtitle: 'Explore our success stories and learn how we create value for our clients',
+    viewDetails: 'View Details',
+    cards: {
+      fengrui: {
+        title: 'Guangxi Fengrui Information Technology Cloud Migration Success',
+        desc: 'Helped the enterprise migrate to AWS Cloud, improving performance and reducing O&M costs'
+      },
+      bairui: {
+        title: 'Wuhan Bairui Technology Cloud Hosting Success',
+        desc: 'Provided high-performance cloud hosting for a gaming company, supporting players worldwide'
+      },
+      inventoryGame: {
+        title: 'Inventory Management System Migration Success',
+        desc: 'Delivered reliable cloud services for the inventory system to enhance user experience'
+      },
+      inventoryStable: {
+        title: 'Data Management System Cloud Enablement',
+        desc: 'Provided strong compute and storage resources to improve data processing capacity'
+      }
+    },
     items: {
       crossBorder: {
         title: 'Cross-Border E-commerce Solution',

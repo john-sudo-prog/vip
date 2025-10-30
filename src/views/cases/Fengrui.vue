@@ -35,14 +35,13 @@
         </ul>
       </div>
     </div>
-    <div class="fixed bottom-0 left-0 right-0 py-4 text-center text-gray-400 text-sm bg-gradient-to-b from-gray-900 to-gray-800 z-40">
-      © 2024 香港點一雲科技有限公司. All rights reserved.
-    </div>
+    <CaseFooter />
   </div>
 </template>
 
 <script setup>
 import SimpleNavbar from '../../components/SimpleNavbar.vue'
+import CaseFooter from '../../components/CaseFooter.vue'
 import archImg from '../../assets/img/cases/case1-architecture.png'
 </script>
 

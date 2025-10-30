@@ -1,5 +1,5 @@
 import { c as createElementBlock, a as createVNode, r as resolveComponent, o as openBlock, b as createBaseVNode, d as defineComponent, u as useI18n, e as ref, w as watch, f as onMounted, g as onUnmounted, h as createCommentVNode, F as Fragment, i as renderList, t as toDisplayString, n as normalizeClass, j as createBlock, k as unref, l as useRouter, m as resolveDynamicComponent, p as withCtx, q as createTextVNode, s as createStaticVNode, v as createRouter, x as createWebHashHistory, y as createI18n, z as createApp } from "./vendor.CAtqUtev.js";
-import { m as messages } from "./i18n.C068_K4-.js";
+import { m as messages } from "./i18n.CZqulTHw.js";
 (function polyfill() {
   const relList = document.createElement("link").relList;
   if (relList && relList.supports && relList.supports("modulepreload")) {
@@ -44,17 +44,17 @@ const _export_sfc = (sfc, props) => {
   }
   return target;
 };
-const _sfc_main$h = {
+const _sfc_main$i = {
   name: "App"
 };
-const _hoisted_1$h = { class: "min-h-screen bg-gray-900 text-white" };
-function _sfc_render$7(_ctx, _cache, $props, $setup, $data, $options) {
+const _hoisted_1$i = { class: "min-h-screen bg-gray-900 text-white" };
+function _sfc_render$8(_ctx, _cache, $props, $setup, $data, $options) {
   const _component_router_view = resolveComponent("router-view");
-  return openBlock(), createElementBlock("div", _hoisted_1$h, [
+  return openBlock(), createElementBlock("div", _hoisted_1$i, [
     createVNode(_component_router_view)
   ]);
 }
-const App = /* @__PURE__ */ _export_sfc(_sfc_main$h, [["render", _sfc_render$7]]);
+const App = /* @__PURE__ */ _export_sfc(_sfc_main$i, [["render", _sfc_render$8]]);
 const _imports_0$2 = "/assets/logo.CX6W3yQJ.jpg";
 function render$a(_ctx, _cache) {
   return openBlock(), createElementBlock("svg", {
@@ -243,7 +243,7 @@ function render(_ctx, _cache) {
     })
   ]);
 }
-const _hoisted_1$g = {
+const _hoisted_1$h = {
   key: 0,
   class: "absolute right-0 mt-2 w-32 bg-gray-800/90 backdrop-blur-sm rounded-lg shadow-xl py-2 z-50 border border-gray-700/50"
 };
@@ -256,7 +256,7 @@ const _hoisted_4$f = {
   stroke: "currentColor",
   viewBox: "0 0 24 24"
 };
-const _sfc_main$g = /* @__PURE__ */ defineComponent({
+const _sfc_main$h = /* @__PURE__ */ defineComponent({
   __name: "LanguageSwitcher",
   setup(__props) {
     const i18n2 = useI18n();
@@ -270,6 +270,7 @@ const _sfc_main$g = /* @__PURE__ */ defineComponent({
     const currentLanguage = ref(languages.find((l) => l.code === i18n2.locale.value) || languages[0]);
     const switchLanguage = (code) => {
       i18n2.locale.value = code;
+      localStorage.setItem("locale", code);
       currentLanguage.value = languages.find((l) => l.code === code) || languages[0];
       isOpen.value = false;
     };
@@ -311,7 +312,7 @@ const _sfc_main$g = /* @__PURE__ */ defineComponent({
             })
           ], -1)
         ])]),
-        isOpen.value ? (openBlock(), createElementBlock("div", _hoisted_1$g, [
+        isOpen.value ? (openBlock(), createElementBlock("div", _hoisted_1$h, [
           (openBlock(), createElementBlock(Fragment, null, renderList(languages, (lang) => {
             return createBaseVNode("button", {
               key: lang.code,
@@ -334,7 +335,7 @@ const _sfc_main$g = /* @__PURE__ */ defineComponent({
     };
   }
 });
-const _hoisted_1$f = { class: "fixed w-full bg-white backdrop-blur-md z-50 shadow-sm border-b border-gray-100/50" };
+const _hoisted_1$g = { class: "fixed w-full bg-white backdrop-blur-md z-50 shadow-sm border-b border-gray-100/50" };
 const _hoisted_2$e = { class: "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" };
 const _hoisted_3$e = { class: "flex justify-between items-center h-16" };
 const _hoisted_4$e = { class: "flex items-center space-x-8" };
@@ -350,7 +351,7 @@ const _hoisted_10$6 = {
 const _hoisted_11$5 = { class: "px-2 pt-2 pb-3 space-y-1" };
 const _hoisted_12$5 = ["href", "onClick"];
 const _hoisted_13$5 = { class: "px-3 py-2" };
-const _sfc_main$f = /* @__PURE__ */ defineComponent({
+const _sfc_main$g = /* @__PURE__ */ defineComponent({
   __name: "Navbar",
   setup(__props) {
     const isMenuOpen = ref(false);
@@ -386,7 +387,7 @@ const _sfc_main$f = /* @__PURE__ */ defineComponent({
       }
     };
     return (_ctx, _cache) => {
-      return openBlock(), createElementBlock("nav", _hoisted_1$f, [
+      return openBlock(), createElementBlock("nav", _hoisted_1$g, [
         createBaseVNode("div", _hoisted_2$e, [
           createBaseVNode("div", _hoisted_3$e, [
             _cache[2] || (_cache[2] = createBaseVNode("div", { class: "flex-shrink-0 group" }, [
@@ -411,7 +412,7 @@ const _sfc_main$f = /* @__PURE__ */ defineComponent({
                 }), 64))
               ]),
               createBaseVNode("div", _hoisted_8$7, [
-                createVNode(_sfc_main$g)
+                createVNode(_sfc_main$h)
               ]),
               createBaseVNode("div", _hoisted_9$7, [
                 createBaseVNode("button", {
@@ -440,7 +441,7 @@ const _sfc_main$f = /* @__PURE__ */ defineComponent({
                 }, toDisplayString(_ctx.$t(item.title)), 9, _hoisted_12$5);
               }), 64)),
               createBaseVNode("div", _hoisted_13$5, [
-                createVNode(_sfc_main$g)
+                createVNode(_sfc_main$h)
               ])
             ])
           ])) : createCommentVNode("", true)
@@ -449,13 +450,13 @@ const _sfc_main$f = /* @__PURE__ */ defineComponent({
     };
   }
 });
-const Navbar = /* @__PURE__ */ _export_sfc(_sfc_main$f, [["__scopeId", "data-v-82913f94"]]);
+const Navbar = /* @__PURE__ */ _export_sfc(_sfc_main$g, [["__scopeId", "data-v-82913f94"]]);
 const _imports_0$1 = "/assets/1.BkiepcgT.jpg";
 const _imports_1$1 = "/assets/2.D2zvkKpT.jpg";
 const _imports_2$1 = "/assets/3.BF3sJ9Id.jpg";
 const _imports_3$1 = "/assets/4.Ca7N3nEU.jpg";
 const _imports_4$1 = "/assets/5.DtazJjHU.jpg";
-const _hoisted_1$e = {
+const _hoisted_1$f = {
   id: "home",
   class: "min-h-[90vh] pt-16 bg-gradient-to-br from-gray-900 via-primary-900 to-gray-900 relative overflow-hidden"
 };
@@ -472,14 +473,14 @@ const _hoisted_11$4 = { class: "flex flex-wrap gap-4" };
 const _hoisted_12$4 = { class: "grid grid-cols-2 gap-4 pt-8 border-t border-gradient-to-r from-blue-500/20 to-purple-500/20" };
 const _hoisted_13$4 = { class: "space-y-2 group" };
 const _hoisted_14$4 = { class: "text-sm text-blue-200/70 group-hover:text-purple-200/70 transition-colors duration-500" };
-const _hoisted_15$3 = { class: "space-y-2 group" };
-const _hoisted_16$2 = { class: "text-sm text-purple-200/70 group-hover:text-blue-200/70 transition-colors duration-500" };
-const _hoisted_17$1 = { class: "relative hidden lg:block" };
-const _hoisted_18$1 = { class: "relative" };
-const _hoisted_19$1 = { class: "relative w-full h-[500px]" };
-const _hoisted_20$1 = { class: "absolute top-[10%] left-[15%] w-32 h-32 bg-white/10 backdrop-blur-sm rounded-lg border border-white/20 shadow-lg transform rotate-4 animate-float-1" };
-const _hoisted_21$1 = ["alt"];
-const _hoisted_22$1 = { class: "absolute top-[25%] right-[20%] w-28 h-28 bg-white/10 backdrop-blur-sm rounded-lg border border-white/20 shadow-lg transform -rotate-6 animate-float-2" };
+const _hoisted_15$4 = { class: "space-y-2 group" };
+const _hoisted_16$3 = { class: "text-sm text-purple-200/70 group-hover:text-blue-200/70 transition-colors duration-500" };
+const _hoisted_17$2 = { class: "relative hidden lg:block" };
+const _hoisted_18$2 = { class: "relative" };
+const _hoisted_19$2 = { class: "relative w-full h-[500px]" };
+const _hoisted_20$2 = { class: "absolute top-[10%] left-[15%] w-32 h-32 bg-white/10 backdrop-blur-sm rounded-lg border border-white/20 shadow-lg transform rotate-4 animate-float-1" };
+const _hoisted_21$2 = ["alt"];
+const _hoisted_22$2 = { class: "absolute top-[25%] right-[20%] w-28 h-28 bg-white/10 backdrop-blur-sm rounded-lg border border-white/20 shadow-lg transform -rotate-6 animate-float-2" };
 const _hoisted_23$1 = ["alt"];
 const _hoisted_24$1 = { class: "absolute bottom-[20%] left-[25%] w-36 h-36 bg-white/10 backdrop-blur-sm rounded-lg border border-white/20 shadow-lg transform rotate-3 animate-float-3" };
 const _hoisted_25$1 = ["alt"];
@@ -487,7 +488,7 @@ const _hoisted_26$1 = { class: "absolute top-[60%] right-[25%] w-24 h-24 bg-whit
 const _hoisted_27$1 = ["alt"];
 const _hoisted_28$1 = { class: "absolute bottom-[35%] left-[10%] w-28 h-28 bg-white/10 backdrop-blur-sm rounded-lg border border-white/20 shadow-lg transform rotate-12 animate-float-5" };
 const _hoisted_29$1 = ["alt"];
-const _sfc_main$e = /* @__PURE__ */ defineComponent({
+const _sfc_main$f = /* @__PURE__ */ defineComponent({
   __name: "HeroBanner",
   setup(__props) {
     const scrollToSection = (href) => {
@@ -497,7 +498,7 @@ const _sfc_main$e = /* @__PURE__ */ defineComponent({
       }
     };
     return (_ctx, _cache) => {
-      return openBlock(), createElementBlock("section", _hoisted_1$e, [
+      return openBlock(), createElementBlock("section", _hoisted_1$f, [
         _cache[7] || (_cache[7] = createBaseVNode("div", { class: "absolute inset-0" }, [
           createBaseVNode("div", { class: "absolute inset-0 bg-[radial-gradient(circle_at_30%_30%,rgba(59,130,246,0.3),transparent_70%)]" }),
           createBaseVNode("div", { class: "absolute inset-0 bg-[radial-gradient(circle_at_70%_70%,rgba(147,51,234,0.3),transparent_70%)]" }),
@@ -539,26 +540,26 @@ const _sfc_main$e = /* @__PURE__ */ defineComponent({
                   ], -1)),
                   createBaseVNode("p", _hoisted_14$4, toDisplayString(_ctx.$t("hero.stats.countries")), 1)
                 ]),
-                createBaseVNode("div", _hoisted_15$3, [
+                createBaseVNode("div", _hoisted_15$4, [
                   _cache[4] || (_cache[4] = createBaseVNode("div", { class: "flex items-baseline gap-1" }, [
                     createBaseVNode("span", { class: "text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-blue-400 group-hover:from-purple-300 group-hover:to-blue-300 transition-all duration-500" }, "99.9%")
                   ], -1)),
-                  createBaseVNode("p", _hoisted_16$2, toDisplayString(_ctx.$t("hero.stats.availability")), 1)
+                  createBaseVNode("p", _hoisted_16$3, toDisplayString(_ctx.$t("hero.stats.availability")), 1)
                 ])
               ])
             ]),
-            createBaseVNode("div", _hoisted_17$1, [
+            createBaseVNode("div", _hoisted_17$2, [
               _cache[6] || (_cache[6] = createBaseVNode("div", { class: "absolute inset-0 bg-gradient-to-br from-blue-500/30 via-purple-500/20 to-transparent rounded-full blur-3xl animate-pulse-slow" }, null, -1)),
-              createBaseVNode("div", _hoisted_18$1, [
-                createBaseVNode("div", _hoisted_19$1, [
-                  createBaseVNode("div", _hoisted_20$1, [
+              createBaseVNode("div", _hoisted_18$2, [
+                createBaseVNode("div", _hoisted_19$2, [
+                  createBaseVNode("div", _hoisted_20$2, [
                     createBaseVNode("img", {
                       src: _imports_0$1,
                       alt: _ctx.$t("hero.partners.alt"),
                       class: "w-full h-full object-contain p-4"
-                    }, null, 8, _hoisted_21$1)
+                    }, null, 8, _hoisted_21$2)
                   ]),
-                  createBaseVNode("div", _hoisted_22$1, [
+                  createBaseVNode("div", _hoisted_22$2, [
                     createBaseVNode("img", {
                       src: _imports_1$1,
                       alt: _ctx.$t("hero.partners.alt"),
@@ -602,8 +603,8 @@ const _sfc_main$e = /* @__PURE__ */ defineComponent({
     };
   }
 });
-const HeroBanner = /* @__PURE__ */ _export_sfc(_sfc_main$e, [["__scopeId", "data-v-e87a1c7f"]]);
-const _hoisted_1$d = {
+const HeroBanner = /* @__PURE__ */ _export_sfc(_sfc_main$f, [["__scopeId", "data-v-e87a1c7f"]]);
+const _hoisted_1$e = {
   id: "services",
   class: "relative py-16 overflow-hidden"
 };
@@ -615,7 +616,7 @@ const _hoisted_6$6 = { class: "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 ga
 const _hoisted_7$5 = { class: "w-14 h-14 bg-gradient-to-br from-blue-500/30 to-blue-400/20 rounded-lg flex items-center justify-center mb-4 group-hover:from-blue-500/40 group-hover:to-blue-400/30 transition-all duration-300" };
 const _hoisted_8$5 = { class: "text-xl font-semibold text-white mb-3" };
 const _hoisted_9$5 = { class: "text-base text-gray-200" };
-const _sfc_main$d = /* @__PURE__ */ defineComponent({
+const _sfc_main$e = /* @__PURE__ */ defineComponent({
   __name: "Services",
   setup(__props) {
     const services = [
@@ -645,7 +646,7 @@ const _sfc_main$d = /* @__PURE__ */ defineComponent({
       }
     ];
     return (_ctx, _cache) => {
-      return openBlock(), createElementBlock("section", _hoisted_1$d, [
+      return openBlock(), createElementBlock("section", _hoisted_1$e, [
         _cache[0] || (_cache[0] = createBaseVNode("div", { class: "absolute inset-0 bg-gradient-to-br from-blue-900/20 via-purple-900/20 to-blue-900/20" }, [
           createBaseVNode("div", { class: "absolute inset-0 bg-[url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop')] bg-cover bg-center opacity-10" }),
           createBaseVNode("div", { class: "absolute inset-0 bg-gradient-to-br from-blue-900/40 via-purple-900/40 to-blue-900/40" })
@@ -674,7 +675,7 @@ const _sfc_main$d = /* @__PURE__ */ defineComponent({
     };
   }
 });
-const _hoisted_1$c = {
+const _hoisted_1$d = {
   id: "solutions",
   class: "py-16 relative overflow-hidden bg-gradient-to-b from-gray-900 to-gray-800"
 };
@@ -691,14 +692,14 @@ const _hoisted_11$3 = { class: "text-xl font-bold text-white" };
 const _hoisted_12$3 = { class: "text-blue-100" };
 const _hoisted_13$3 = { class: "bg-gradient-to-br from-green-500 to-green-600 rounded-2xl overflow-hidden" };
 const _hoisted_14$3 = { class: "p-8" };
-const _hoisted_15$2 = { class: "flex items-center space-x-4 mb-6" };
-const _hoisted_16$1 = { class: "w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center backdrop-blur-sm" };
-const _hoisted_17 = { class: "text-xl font-bold text-white" };
-const _hoisted_18 = { class: "text-green-100" };
-const _hoisted_19 = { class: "bg-gradient-to-br from-purple-500 to-purple-600 rounded-2xl overflow-hidden" };
-const _hoisted_20 = { class: "p-8" };
-const _hoisted_21 = { class: "flex items-center space-x-4 mb-6" };
-const _hoisted_22 = { class: "w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center backdrop-blur-sm" };
+const _hoisted_15$3 = { class: "flex items-center space-x-4 mb-6" };
+const _hoisted_16$2 = { class: "w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center backdrop-blur-sm" };
+const _hoisted_17$1 = { class: "text-xl font-bold text-white" };
+const _hoisted_18$1 = { class: "text-green-100" };
+const _hoisted_19$1 = { class: "bg-gradient-to-br from-purple-500 to-purple-600 rounded-2xl overflow-hidden" };
+const _hoisted_20$1 = { class: "p-8" };
+const _hoisted_21$1 = { class: "flex items-center space-x-4 mb-6" };
+const _hoisted_22$1 = { class: "w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center backdrop-blur-sm" };
 const _hoisted_23 = { class: "text-xl font-bold text-white" };
 const _hoisted_24 = { class: "text-purple-100" };
 const _hoisted_25 = { class: "bg-gradient-to-br from-indigo-500 to-indigo-600 rounded-2xl overflow-hidden" };
@@ -707,11 +708,11 @@ const _hoisted_27 = { class: "flex items-center space-x-4 mb-6" };
 const _hoisted_28 = { class: "w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center backdrop-blur-sm" };
 const _hoisted_29 = { class: "text-xl font-bold text-white" };
 const _hoisted_30 = { class: "text-indigo-100" };
-const _sfc_main$c = /* @__PURE__ */ defineComponent({
+const _sfc_main$d = /* @__PURE__ */ defineComponent({
   __name: "Solutions",
   setup(__props) {
     return (_ctx, _cache) => {
-      return openBlock(), createElementBlock("section", _hoisted_1$c, [
+      return openBlock(), createElementBlock("section", _hoisted_1$d, [
         _cache[0] || (_cache[0] = createBaseVNode("div", { class: "absolute inset-0" }, [
           createBaseVNode("div", { class: "absolute inset-0 bg-[radial-gradient(circle_at_70%_30%,rgba(59,130,246,0.05),transparent_70%)]" }),
           createBaseVNode("div", { class: "absolute inset-0 bg-grid opacity-10" })
@@ -735,19 +736,19 @@ const _sfc_main$c = /* @__PURE__ */ defineComponent({
             ]),
             createBaseVNode("div", _hoisted_13$3, [
               createBaseVNode("div", _hoisted_14$3, [
-                createBaseVNode("div", _hoisted_15$2, [
-                  createBaseVNode("div", _hoisted_16$1, [
+                createBaseVNode("div", _hoisted_15$3, [
+                  createBaseVNode("div", _hoisted_16$2, [
                     createVNode(unref(render$8), { class: "h-6 w-6 text-white" })
                   ]),
-                  createBaseVNode("h3", _hoisted_17, toDisplayString(_ctx.$t("solutions.items.sms.title")), 1)
+                  createBaseVNode("h3", _hoisted_17$1, toDisplayString(_ctx.$t("solutions.items.sms.title")), 1)
                 ]),
-                createBaseVNode("p", _hoisted_18, toDisplayString(_ctx.$t("solutions.items.sms.desc")), 1)
+                createBaseVNode("p", _hoisted_18$1, toDisplayString(_ctx.$t("solutions.items.sms.desc")), 1)
               ])
             ]),
-            createBaseVNode("div", _hoisted_19, [
-              createBaseVNode("div", _hoisted_20, [
-                createBaseVNode("div", _hoisted_21, [
-                  createBaseVNode("div", _hoisted_22, [
+            createBaseVNode("div", _hoisted_19$1, [
+              createBaseVNode("div", _hoisted_20$1, [
+                createBaseVNode("div", _hoisted_21$1, [
+                  createBaseVNode("div", _hoisted_22$1, [
                     createVNode(unref(render$1), { class: "h-6 w-6 text-white" })
                   ]),
                   createBaseVNode("h3", _hoisted_23, toDisplayString(_ctx.$t("solutions.items.ddos.title")), 1)
@@ -772,9 +773,9 @@ const _sfc_main$c = /* @__PURE__ */ defineComponent({
     };
   }
 });
-const Solutions = /* @__PURE__ */ _export_sfc(_sfc_main$c, [["__scopeId", "data-v-c6b55b27"]]);
-const _sfc_main$b = {};
-const _hoisted_1$b = {
+const Solutions = /* @__PURE__ */ _export_sfc(_sfc_main$d, [["__scopeId", "data-v-c6b55b27"]]);
+const _sfc_main$c = {};
+const _hoisted_1$c = {
   id: "cases",
   class: "py-20 bg-gray-50"
 };
@@ -785,15 +786,23 @@ const _hoisted_5$6 = { class: "text-lg text-gray-600" };
 const _hoisted_6$4 = { class: "grid grid-cols-1 md:grid-cols-2 gap-8" };
 const _hoisted_7$3 = { class: "bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300" };
 const _hoisted_8$3 = { class: "p-6" };
-const _hoisted_9$3 = { class: "bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300" };
-const _hoisted_10$3 = { class: "p-6" };
+const _hoisted_9$3 = { class: "text-xl font-semibold text-gray-900 mb-2" };
+const _hoisted_10$3 = { class: "text-gray-600 mb-4" };
 const _hoisted_11$2 = { class: "bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300" };
 const _hoisted_12$2 = { class: "p-6" };
-const _hoisted_13$2 = { class: "bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300" };
-const _hoisted_14$2 = { class: "p-6" };
-function _sfc_render$6(_ctx, _cache) {
+const _hoisted_13$2 = { class: "text-xl font-semibold text-gray-900 mb-2" };
+const _hoisted_14$2 = { class: "text-gray-600 mb-4" };
+const _hoisted_15$2 = { class: "bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300" };
+const _hoisted_16$1 = { class: "p-6" };
+const _hoisted_17 = { class: "text-xl font-semibold text-gray-900 mb-2" };
+const _hoisted_18 = { class: "text-gray-600 mb-4" };
+const _hoisted_19 = { class: "bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300" };
+const _hoisted_20 = { class: "p-6" };
+const _hoisted_21 = { class: "text-xl font-semibold text-gray-900 mb-2" };
+const _hoisted_22 = { class: "text-gray-600 mb-4" };
+function _sfc_render$7(_ctx, _cache) {
   const _component_RouterLink = resolveComponent("RouterLink");
-  return openBlock(), createElementBlock("section", _hoisted_1$b, [
+  return openBlock(), createElementBlock("section", _hoisted_1$c, [
     createBaseVNode("div", _hoisted_2$a, [
       createBaseVNode("div", _hoisted_3$a, [
         createBaseVNode("h2", _hoisted_4$a, toDisplayString(_ctx.$t("cases.title")), 1),
@@ -802,68 +811,68 @@ function _sfc_render$6(_ctx, _cache) {
       createBaseVNode("div", _hoisted_6$4, [
         createBaseVNode("div", _hoisted_7$3, [
           createBaseVNode("div", _hoisted_8$3, [
-            _cache[1] || (_cache[1] = createBaseVNode("h3", { class: "text-xl font-semibold text-gray-900 mb-2" }, "广西锋锐信息技术服务有限公司上云成功案例 ", -1)),
-            _cache[2] || (_cache[2] = createBaseVNode("p", { class: "text-gray-600 mb-4" }, "帮助企业完成AWS云迁移，提升系统性能，降低运维成本", -1)),
+            createBaseVNode("h3", _hoisted_9$3, toDisplayString(_ctx.$t("cases.cards.fengrui.title")), 1),
+            createBaseVNode("p", _hoisted_10$3, toDisplayString(_ctx.$t("cases.cards.fengrui.desc")), 1),
             createVNode(_component_RouterLink, {
               to: "/cases/fengrui",
               target: "_blank",
               rel: "noopener",
               class: "inline-flex items-center px-4 py-2 text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 rounded-md transition-colors"
             }, {
-              default: withCtx(() => [..._cache[0] || (_cache[0] = [
-                createTextVNode("查看详情", -1)
-              ])]),
-              _: 1
-            })
-          ])
-        ]),
-        createBaseVNode("div", _hoisted_9$3, [
-          createBaseVNode("div", _hoisted_10$3, [
-            _cache[4] || (_cache[4] = createBaseVNode("h3", { class: "text-xl font-semibold text-gray-900 mb-2" }, "武汉柏锐科技有限公司上云成功案例", -1)),
-            _cache[5] || (_cache[5] = createBaseVNode("p", { class: "text-gray-600 mb-4" }, "为游戏公司提供高性能云托管服务，支持全球玩家同时在线", -1)),
-            createVNode(_component_RouterLink, {
-              to: "/cases/bairui",
-              target: "_blank",
-              rel: "noopener",
-              class: "inline-flex items-center px-4 py-2 text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 rounded-md transition-colors"
-            }, {
-              default: withCtx(() => [..._cache[3] || (_cache[3] = [
-                createTextVNode("查看详情", -1)
-              ])]),
+              default: withCtx(() => [
+                createTextVNode(toDisplayString(_ctx.$t("cases.viewDetails")), 1)
+              ]),
               _: 1
             })
           ])
         ]),
         createBaseVNode("div", _hoisted_11$2, [
           createBaseVNode("div", _hoisted_12$2, [
-            _cache[7] || (_cache[7] = createBaseVNode("h3", { class: "text-xl font-semibold text-gray-900 mb-2" }, "某企业库存管理系统上云成功案例", -1)),
-            _cache[8] || (_cache[8] = createBaseVNode("p", { class: "text-gray-600 mb-4" }, "为库存管理系统提供稳定可靠的云服务，提升用户体验", -1)),
+            createBaseVNode("h3", _hoisted_13$2, toDisplayString(_ctx.$t("cases.cards.bairui.title")), 1),
+            createBaseVNode("p", _hoisted_14$2, toDisplayString(_ctx.$t("cases.cards.bairui.desc")), 1),
+            createVNode(_component_RouterLink, {
+              to: "/cases/bairui",
+              target: "_blank",
+              rel: "noopener",
+              class: "inline-flex items-center px-4 py-2 text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 rounded-md transition-colors"
+            }, {
+              default: withCtx(() => [
+                createTextVNode(toDisplayString(_ctx.$t("cases.viewDetails")), 1)
+              ]),
+              _: 1
+            })
+          ])
+        ]),
+        createBaseVNode("div", _hoisted_15$2, [
+          createBaseVNode("div", _hoisted_16$1, [
+            createBaseVNode("h3", _hoisted_17, toDisplayString(_ctx.$t("cases.cards.inventoryGame.title")), 1),
+            createBaseVNode("p", _hoisted_18, toDisplayString(_ctx.$t("cases.cards.inventoryGame.desc")), 1),
             createVNode(_component_RouterLink, {
               to: "/cases/inventory-game",
               target: "_blank",
               rel: "noopener",
               class: "inline-flex items-center px-4 py-2 text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 rounded-md transition-colors"
             }, {
-              default: withCtx(() => [..._cache[6] || (_cache[6] = [
-                createTextVNode("查看详情", -1)
-              ])]),
+              default: withCtx(() => [
+                createTextVNode(toDisplayString(_ctx.$t("cases.viewDetails")), 1)
+              ]),
               _: 1
             })
           ])
         ]),
-        createBaseVNode("div", _hoisted_13$2, [
-          createBaseVNode("div", _hoisted_14$2, [
-            _cache[10] || (_cache[10] = createBaseVNode("h3", { class: "text-xl font-semibold text-gray-900 mb-2" }, "某企业数据管理系统上云成功案例 ", -1)),
-            _cache[11] || (_cache[11] = createBaseVNode("p", { class: "text-gray-600 mb-4" }, "为企业提供强大的计算和存储资源，提高数据处理能力", -1)),
+        createBaseVNode("div", _hoisted_19, [
+          createBaseVNode("div", _hoisted_20, [
+            createBaseVNode("h3", _hoisted_21, toDisplayString(_ctx.$t("cases.cards.inventoryStable.title")), 1),
+            createBaseVNode("p", _hoisted_22, toDisplayString(_ctx.$t("cases.cards.inventoryStable.desc")), 1),
             createVNode(_component_RouterLink, {
               to: "/cases/inventory-stable",
               target: "_blank",
               rel: "noopener",
               class: "inline-flex items-center px-4 py-2 text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 rounded-md transition-colors"
             }, {
-              default: withCtx(() => [..._cache[9] || (_cache[9] = [
-                createTextVNode("查看详情", -1)
-              ])]),
+              default: withCtx(() => [
+                createTextVNode(toDisplayString(_ctx.$t("cases.viewDetails")), 1)
+              ]),
               _: 1
             })
           ])
@@ -872,10 +881,10 @@ function _sfc_render$6(_ctx, _cache) {
     ])
   ]);
 }
-const Cases = /* @__PURE__ */ _export_sfc(_sfc_main$b, [["render", _sfc_render$6]]);
+const Cases = /* @__PURE__ */ _export_sfc(_sfc_main$c, [["render", _sfc_render$7]]);
 const _imports_5 = "/assets/6.DUtRWKq2.jpg";
-const _sfc_main$a = {};
-const _hoisted_1$a = {
+const _sfc_main$b = {};
+const _hoisted_1$b = {
   id: "partners",
   class: "py-20 bg-gradient-to-b from-blue-50 to-white"
 };
@@ -894,8 +903,8 @@ const _hoisted_13$1 = { class: "flex items-center justify-center bg-white/80 bac
 const _hoisted_14$1 = ["alt"];
 const _hoisted_15$1 = { class: "flex items-center justify-center bg-white/80 backdrop-blur-sm p-8 rounded-lg shadow-sm hover:shadow-md transition-all duration-300" };
 const _hoisted_16 = ["alt"];
-function _sfc_render$5(_ctx, _cache) {
-  return openBlock(), createElementBlock("section", _hoisted_1$a, [
+function _sfc_render$6(_ctx, _cache) {
+  return openBlock(), createElementBlock("section", _hoisted_1$b, [
     createBaseVNode("div", _hoisted_2$9, [
       createBaseVNode("h2", _hoisted_3$9, toDisplayString(_ctx.$t("partners.title")), 1),
       createBaseVNode("div", _hoisted_4$9, [
@@ -945,9 +954,9 @@ function _sfc_render$5(_ctx, _cache) {
     ])
   ]);
 }
-const Partners = /* @__PURE__ */ _export_sfc(_sfc_main$a, [["render", _sfc_render$5]]);
-const _sfc_main$9 = {};
-const _hoisted_1$9 = {
+const Partners = /* @__PURE__ */ _export_sfc(_sfc_main$b, [["render", _sfc_render$6]]);
+const _sfc_main$a = {};
+const _hoisted_1$a = {
   id: "news",
   class: "py-20 bg-gradient-to-b from-gray-900 to-gray-800"
 };
@@ -960,8 +969,8 @@ const _hoisted_7$1 = { class: "bg-gray-800/50 backdrop-blur-sm rounded-2xl shado
 const _hoisted_8$1 = { class: "" };
 const _hoisted_9$1 = { class: "text-gray-300 leading-relaxed" };
 const _hoisted_10$1 = { class: "text-gray-300 leading-relaxed mt-6" };
-function _sfc_render$4(_ctx, _cache) {
-  return openBlock(), createElementBlock("section", _hoisted_1$9, [
+function _sfc_render$5(_ctx, _cache) {
+  return openBlock(), createElementBlock("section", _hoisted_1$a, [
     createBaseVNode("div", _hoisted_2$8, [
       createBaseVNode("div", _hoisted_3$8, [
         createBaseVNode("h2", _hoisted_4$8, toDisplayString(_ctx.$t("news.title")), 1),
@@ -978,16 +987,16 @@ function _sfc_render$4(_ctx, _cache) {
     ])
   ]);
 }
-const News = /* @__PURE__ */ _export_sfc(_sfc_main$9, [["render", _sfc_render$4], ["__scopeId", "data-v-4bc5b19f"]]);
+const News = /* @__PURE__ */ _export_sfc(_sfc_main$a, [["render", _sfc_render$5], ["__scopeId", "data-v-4bc5b19f"]]);
 const _imports_0 = "/assets/Jonny_TG.gR2QuDQP.jpg";
 const _imports_1 = "/assets/Leon_TG.C2MnYuC8.jpg";
 const _imports_2 = "/assets/wechat.B1xSEvwW.png";
 const _imports_3 = "/assets/wechat.D3vEf1Y7.jpg";
 const _imports_4 = "/assets/whatsApp.drYYwvNk.jpg";
-const _sfc_main$8 = {
+const _sfc_main$9 = {
   name: "Contact"
 };
-const _hoisted_1$8 = {
+const _hoisted_1$9 = {
   id: "contact",
   class: "py-12 bg-gradient-to-b from-gray-900 to-gray-800"
 };
@@ -1005,8 +1014,8 @@ const _hoisted_12 = { class: "text-sm font-medium text-white mb-0.5" };
 const _hoisted_13 = { class: "text-gray-400 text-sm" };
 const _hoisted_14 = { class: "mt-8 text-center" };
 const _hoisted_15 = { class: "text-gray-500 text-sm" };
-function _sfc_render$3(_ctx, _cache, $props, $setup, $data, $options) {
-  return openBlock(), createElementBlock("div", _hoisted_1$8, [
+function _sfc_render$4(_ctx, _cache, $props, $setup, $data, $options) {
+  return openBlock(), createElementBlock("div", _hoisted_1$9, [
     createBaseVNode("div", _hoisted_2$7, [
       createBaseVNode("div", _hoisted_3$7, [
         createBaseVNode("h2", _hoisted_4$7, toDisplayString(_ctx.$t("contact.title")), 1),
@@ -1065,16 +1074,16 @@ function _sfc_render$3(_ctx, _cache, $props, $setup, $data, $options) {
     ])
   ]);
 }
-const Contact = /* @__PURE__ */ _export_sfc(_sfc_main$8, [["render", _sfc_render$3], ["__scopeId", "data-v-6ee5a40e"]]);
-const _hoisted_1$7 = { class: "min-h-screen" };
-const _sfc_main$7 = /* @__PURE__ */ defineComponent({
+const Contact = /* @__PURE__ */ _export_sfc(_sfc_main$9, [["render", _sfc_render$4], ["__scopeId", "data-v-6ee5a40e"]]);
+const _hoisted_1$8 = { class: "min-h-screen" };
+const _sfc_main$8 = /* @__PURE__ */ defineComponent({
   __name: "Home",
   setup(__props) {
     return (_ctx, _cache) => {
-      return openBlock(), createElementBlock("div", _hoisted_1$7, [
+      return openBlock(), createElementBlock("div", _hoisted_1$8, [
         createVNode(Navbar),
         createVNode(HeroBanner),
-        createVNode(_sfc_main$d),
+        createVNode(_sfc_main$e),
         createVNode(Solutions),
         createVNode(Cases),
         createVNode(Partners),
@@ -1084,18 +1093,18 @@ const _sfc_main$7 = /* @__PURE__ */ defineComponent({
     };
   }
 });
-const Home = /* @__PURE__ */ _export_sfc(_sfc_main$7, [["__scopeId", "data-v-5f6954f2"]]);
-const _sfc_main$6 = {
+const Home = /* @__PURE__ */ _export_sfc(_sfc_main$8, [["__scopeId", "data-v-5f6954f2"]]);
+const _sfc_main$7 = {
   name: "CrossBorder"
 };
-const _hoisted_1$6 = { class: "min-h-screen bg-gradient-to-b from-gray-900 to-gray-800" };
+const _hoisted_1$7 = { class: "min-h-screen bg-gradient-to-b from-gray-900 to-gray-800" };
 const _hoisted_2$6 = { class: "bg-gray-800/50 backdrop-blur-sm border-b border-gray-700" };
 const _hoisted_3$6 = { class: "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" };
 const _hoisted_4$6 = { class: "flex items-center justify-between h-16" };
 const _hoisted_5$2 = { class: "flex items-center" };
-function _sfc_render$2(_ctx, _cache, $props, $setup, $data, $options) {
+function _sfc_render$3(_ctx, _cache, $props, $setup, $data, $options) {
   const _component_router_link = resolveComponent("router-link");
-  return openBlock(), createElementBlock("div", _hoisted_1$6, [
+  return openBlock(), createElementBlock("div", _hoisted_1$7, [
     createBaseVNode("nav", _hoisted_2$6, [
       createBaseVNode("div", _hoisted_3$6, [
         createBaseVNode("div", _hoisted_4$6, [
@@ -1129,18 +1138,18 @@ function _sfc_render$2(_ctx, _cache, $props, $setup, $data, $options) {
     _cache[2] || (_cache[2] = createStaticVNode('<div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12"><article class="prose prose-invert max-w-none"><h1 class="text-4xl font-bold text-white mb-8">跨境业务解决方案</h1><div class="bg-gray-800/50 backdrop-blur-sm rounded-xl p-8 mb-8"><h2 class="text-2xl font-semibold text-white mb-4">项目背景</h2><p class="text-gray-300 leading-relaxed"> 随着全球化的深入发展，越来越多的企业开始拓展海外市场。然而，跨境业务面临着网络延迟、数据安全、合规性等多重挑战。我们的客户是一家快速发展的跨境电商企业，需要稳定、安全、高效的网络基础设施来支持其全球业务。 </p></div><div class="bg-gray-800/50 backdrop-blur-sm rounded-xl p-8 mb-8"><h2 class="text-2xl font-semibold text-white mb-4">解决方案</h2><div class="space-y-6"><div><h3 class="text-xl font-medium text-white mb-3">1. 全球网络加速</h3><p class="text-gray-300 leading-relaxed"> 部署全球CDN网络，通过智能路由和边缘节点优化，显著降低网络延迟，提升用户体验。主要特点： </p><ul class="list-disc list-inside text-gray-300 mt-2 space-y-2"><li>覆盖全球200+个节点</li><li>智能DNS解析</li><li>动态路由优化</li><li>实时流量监控</li></ul></div><div><h3 class="text-xl font-medium text-white mb-3">2. 安全防护</h3><p class="text-gray-300 leading-relaxed"> 构建多层安全防护体系，确保业务安全稳定运行： </p><ul class="list-disc list-inside text-gray-300 mt-2 space-y-2"><li>DDoS防护</li><li>WAF防火墙</li><li>SSL加密</li><li>实时安全监控</li></ul></div><div><h3 class="text-xl font-medium text-white mb-3">3. 合规性保障</h3><p class="text-gray-300 leading-relaxed"> 确保业务符合各地区法律法规要求： </p><ul class="list-disc list-inside text-gray-300 mt-2 space-y-2"><li>数据本地化存储</li><li>隐私保护合规</li><li>行业认证支持</li><li>合规性咨询</li></ul></div></div></div><div class="bg-gray-800/50 backdrop-blur-sm rounded-xl p-8"><h2 class="text-2xl font-semibold text-white mb-4">实施效果</h2><div class="grid grid-cols-1 md:grid-cols-3 gap-6"><div class="bg-gray-700/30 rounded-lg p-6"><div class="text-3xl font-bold text-blue-400 mb-2">85%</div><p class="text-gray-300">网络延迟降低</p></div><div class="bg-gray-700/30 rounded-lg p-6"><div class="text-3xl font-bold text-green-400 mb-2">99.9%</div><p class="text-gray-300">服务可用性</p></div><div class="bg-gray-700/30 rounded-lg p-6"><div class="text-3xl font-bold text-purple-400 mb-2">60%</div><p class="text-gray-300">运营成本降低</p></div></div></div></article></div>', 1))
   ]);
 }
-const CrossBorder = /* @__PURE__ */ _export_sfc(_sfc_main$6, [["render", _sfc_render$2]]);
-const _sfc_main$5 = {
+const CrossBorder = /* @__PURE__ */ _export_sfc(_sfc_main$7, [["render", _sfc_render$3]]);
+const _sfc_main$6 = {
   name: "Ddos"
 };
-const _hoisted_1$5 = { class: "min-h-screen bg-gradient-to-b from-gray-900 to-gray-800" };
+const _hoisted_1$6 = { class: "min-h-screen bg-gradient-to-b from-gray-900 to-gray-800" };
 const _hoisted_2$5 = { class: "bg-gray-800/50 backdrop-blur-sm border-b border-gray-700" };
 const _hoisted_3$5 = { class: "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" };
 const _hoisted_4$5 = { class: "flex items-center justify-between h-16" };
 const _hoisted_5$1 = { class: "flex items-center" };
-function _sfc_render$1(_ctx, _cache, $props, $setup, $data, $options) {
+function _sfc_render$2(_ctx, _cache, $props, $setup, $data, $options) {
   const _component_router_link = resolveComponent("router-link");
-  return openBlock(), createElementBlock("div", _hoisted_1$5, [
+  return openBlock(), createElementBlock("div", _hoisted_1$6, [
     createBaseVNode("nav", _hoisted_2$5, [
       createBaseVNode("div", _hoisted_3$5, [
         createBaseVNode("div", _hoisted_4$5, [
@@ -1174,17 +1183,17 @@ function _sfc_render$1(_ctx, _cache, $props, $setup, $data, $options) {
     _cache[2] || (_cache[2] = createStaticVNode('<div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12"><article class="prose prose-invert max-w-none"><h1 class="text-4xl font-bold text-white mb-8">DDoS防护解决方案</h1><div class="bg-gray-800/50 backdrop-blur-sm rounded-xl p-8 mb-8"><h2 class="text-2xl font-semibold text-white mb-4">项目背景</h2><p class="text-gray-300 leading-relaxed"> 随着网络攻击日益频繁和复杂，DDoS攻击已成为企业面临的主要安全威胁之一。我们的客户是一家在线游戏公司，经常遭受大规模DDoS攻击，导致服务中断，严重影响用户体验和业务运营。 </p></div><div class="bg-gray-800/50 backdrop-blur-sm rounded-xl p-8 mb-8"><h2 class="text-2xl font-semibold text-white mb-4">解决方案</h2><div class="space-y-6"><div><h3 class="text-xl font-medium text-white mb-3">1. 智能防护系统</h3><p class="text-gray-300 leading-relaxed"> 部署智能DDoS防护系统，实现攻击的实时检测和自动防护： </p><ul class="list-disc list-inside text-gray-300 mt-2 space-y-2"><li>AI智能识别</li><li>实时流量分析</li><li>自动防护策略</li><li>攻击源追踪</li></ul></div><div><h3 class="text-xl font-medium text-white mb-3">2. 多层防护架构</h3><p class="text-gray-300 leading-relaxed"> 构建多层防护架构，确保业务持续可用： </p><ul class="list-disc list-inside text-gray-300 mt-2 space-y-2"><li>边缘节点防护</li><li>数据中心防护</li><li>应用层防护</li><li>智能负载均衡</li></ul></div><div><h3 class="text-xl font-medium text-white mb-3">3. 安全运维服务</h3><p class="text-gray-300 leading-relaxed"> 提供全方位的安全运维支持： </p><ul class="list-disc list-inside text-gray-300 mt-2 space-y-2"><li>7x24小时监控</li><li>专家团队支持</li><li>定期安全评估</li><li>应急响应服务</li></ul></div></div></div><div class="bg-gray-800/50 backdrop-blur-sm rounded-xl p-8"><h2 class="text-2xl font-semibold text-white mb-4">实施效果</h2><div class="grid grid-cols-1 md:grid-cols-3 gap-6"><div class="bg-gray-700/30 rounded-lg p-6"><div class="text-3xl font-bold text-blue-400 mb-2">100%</div><p class="text-gray-300">攻击防护成功率</p></div><div class="bg-gray-700/30 rounded-lg p-6"><div class="text-3xl font-bold text-green-400 mb-2">99.99%</div><p class="text-gray-300">服务可用性</p></div><div class="bg-gray-700/30 rounded-lg p-6"><div class="text-3xl font-bold text-purple-400 mb-2">50%</div><p class="text-gray-300">运维成本降低</p></div></div></div></article></div>', 1))
   ]);
 }
-const Ddos = /* @__PURE__ */ _export_sfc(_sfc_main$5, [["render", _sfc_render$1]]);
-const _sfc_main$4 = {};
-const _hoisted_1$4 = { class: "fixed w-full bg-white backdrop-blur-md z-50 shadow-sm border-b border-gray-100/50" };
+const Ddos = /* @__PURE__ */ _export_sfc(_sfc_main$6, [["render", _sfc_render$2]]);
+const _sfc_main$5 = {};
+const _hoisted_1$5 = { class: "fixed w-full bg-white backdrop-blur-md z-50 shadow-sm border-b border-gray-100/50" };
 const _hoisted_2$4 = { class: "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" };
 const _hoisted_3$4 = { class: "flex justify-between items-center h-16" };
 const _hoisted_4$4 = { class: "flex-shrink-0 group" };
 const _hoisted_5 = ["alt"];
 const _hoisted_6 = { class: "flex items-center" };
-function _sfc_render(_ctx, _cache) {
+function _sfc_render$1(_ctx, _cache) {
   const _component_router_link = resolveComponent("router-link");
-  return openBlock(), createElementBlock("nav", _hoisted_1$4, [
+  return openBlock(), createElementBlock("nav", _hoisted_1$5, [
     createBaseVNode("div", _hoisted_2$4, [
       createBaseVNode("div", _hoisted_3$4, [
         createBaseVNode("div", _hoisted_4$4, [
@@ -1214,7 +1223,13 @@ function _sfc_render(_ctx, _cache) {
     ])
   ]);
 }
-const SimpleNavbar = /* @__PURE__ */ _export_sfc(_sfc_main$4, [["render", _sfc_render]]);
+const SimpleNavbar = /* @__PURE__ */ _export_sfc(_sfc_main$5, [["render", _sfc_render$1]]);
+const _sfc_main$4 = {};
+const _hoisted_1$4 = { class: "fixed bottom-0 left-0 right-0 py-4 text-center text-gray-400 text-sm bg-gradient-to-b from-gray-900 to-gray-800 z-40" };
+function _sfc_render(_ctx, _cache) {
+  return openBlock(), createElementBlock("div", _hoisted_1$4, toDisplayString(_ctx.$t("contact.copyright")), 1);
+}
+const CaseFooter = /* @__PURE__ */ _export_sfc(_sfc_main$4, [["render", _sfc_render]]);
 const archImg$3 = "/assets/case1-architecture.BLVwDXmg.png";
 const _hoisted_1$3 = { class: "min-h-screen bg-gray-50 flex flex-col" };
 const _hoisted_2$3 = { class: "max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-32" };
@@ -1241,7 +1256,7 @@ const _sfc_main$3 = {
             _cache[2] || (_cache[2] = createStaticVNode('<h2 class="text-2xl font-semibold text-gray-900">4. 项目成果</h2><ul class="list-disc pl-6 space-y-2"><li><b>显著降低访问延迟：</b>在新加坡区域部署后，页面加载与下单响应明显加速，满意度与留存率提升。</li><li><b>安全性增强：</b>WAF+Shield 组合抵御约 95% 的常见网络攻击与DDoS威胁，数据与交易更安全。</li><li><b>高可用保障：</b>ELB + 多可用区 EKS 架构将服务可用性提升至 99.9% 级别，活动高峰依然稳定。</li><li><b>性能与成本优化：</b>Auto Scaling 保障高并发稳定响应，Reserved Instances 等策略显著降低云成本。</li><li><b>持续改进能力：</b>建立性能评估与安全审计机制，持续优化，快速适配业务增长与市场扩张。</li></ul>', 2))
           ])
         ]),
-        _cache[4] || (_cache[4] = createBaseVNode("div", { class: "fixed bottom-0 left-0 right-0 py-4 text-center text-gray-400 text-sm bg-gradient-to-b from-gray-900 to-gray-800 z-40" }, " © 2024 香港點一雲科技有限公司. All rights reserved. ", -1))
+        createVNode(CaseFooter)
       ]);
     };
   }
@@ -1272,7 +1287,7 @@ const _sfc_main$2 = {
             _cache[2] || (_cache[2] = createStaticVNode('<h2 class="text-2xl font-semibold text-gray-900">4. 项目成果</h2><ul class="list-disc pl-6 space-y-2"><li><b>显著降低延迟：</b>新加坡区域就近部署，访问与匹配延迟明显下降，玩家留存率提升。</li><li><b>安全性增强：</b>WAF+Shield 自动化清洗与拦截，约 95% 常见攻击被阻断，平台声誉提升。</li><li><b>高可用保障：</b>ELB + 多可用区 EC2 提升服务可用性至 99.9% 级别，高峰期依旧稳定。</li><li><b>性能与成本优化：</b>Auto Scaling 高峰稳定、低谷节省成本；Reserved Instances 等手段降低支出。</li><li><b>持续改进能力：</b>建立性能评估与安全审计机制，持续优化以适配业务扩张。</li></ul>', 2))
           ])
         ]),
-        _cache[4] || (_cache[4] = createBaseVNode("div", { class: "fixed bottom-0 left-0 right-0 py-4 text-center text-gray-400 text-sm bg-gradient-to-b from-gray-900 to-gray-800 z-40" }, " © 2024 香港點一雲科技有限公司. All rights reserved. ", -1))
+        createVNode(CaseFooter)
       ]);
     };
   }
@@ -1303,7 +1318,7 @@ const _sfc_main$1 = {
             _cache[2] || (_cache[2] = createStaticVNode('<h2 class="text-2xl font-semibold text-gray-900">4. 项目成果</h2><ul class="list-disc pl-6 space-y-2"><li><b>显著降低延迟：</b>高性能 EC2 与弹性伸缩，旺季响应时间显著下降，查询与订单处理更流畅。</li><li><b>安全性增强：</b>Shield + WAF 自动化防护，约 95% 常见攻击被拦截，内部数据安全与合规性提升。</li><li><b>高可用保障：</b>ALB + 多可用区 EC2 确保服务连续性，旺季与突发情况下仍可稳定提供库存服务。</li><li><b>性能与成本优化：</b>Auto Scaling 提升高并发承载并在低谷降本；Reserved Instances 等手段降低长期成本。</li><li><b>持续改进能力：</b>建立性能评估与安全审计机制，持续优化系统以支撑业务扩展与国际化需求。</li></ul>', 2))
           ])
         ]),
-        _cache[4] || (_cache[4] = createBaseVNode("div", { class: "fixed bottom-0 left-0 right-0 py-4 text-center text-gray-400 text-sm bg-gradient-to-b from-gray-900 to-gray-800 z-40" }, " © 2024 香港點一雲科技有限公司. All rights reserved. ", -1))
+        createVNode(CaseFooter)
       ]);
     };
   }
@@ -1334,7 +1349,7 @@ const _sfc_main = {
             _cache[2] || (_cache[2] = createStaticVNode('<h2 class="text-2xl font-semibold text-gray-900">4. 项目成果</h2><ul class="list-disc pl-6 space-y-2"><li><b>显著降低延迟：</b>新加坡区域就近部署，跨境访问延迟明显下降，办公效率与处理速度提升。</li><li><b>安全性增强：</b>Shield + WAF 自动化防护，约 95% 常见攻击被拦截，内部与客户数据更安全。</li><li><b>高可用保障：</b>ELB + 多可用区 EC2 提升可用性至 99.9% 级别，案件高峰与紧急事务期间保持稳定。</li><li><b>性能与成本优化：</b>Auto Scaling 高峰稳定、低谷降本；Reserved Instances 等策略降低长期成本。</li><li><b>持续改进能力：</b>建立例行评估与安全审计流程，持续优化系统以适配业务扩展。</li></ul>', 2))
           ])
         ]),
-        _cache[4] || (_cache[4] = createBaseVNode("div", { class: "fixed bottom-0 left-0 right-0 py-4 text-center text-gray-400 text-sm bg-gradient-to-b from-gray-900 to-gray-800 z-40" }, " © 2024 香港點一雲科技有限公司. All rights reserved. ", -1))
+        createVNode(CaseFooter)
       ]);
     };
   }
@@ -1387,10 +1402,11 @@ const router = createRouter({
   history: createWebHashHistory(),
   routes
 });
+const savedLocale = localStorage.getItem("locale") || "zh-TW";
 const i18n = createI18n({
   // 使用 Composition API 模式，支持 useI18n()
   legacy: false,
-  locale: "zh-TW",
+  locale: savedLocale,
   fallbackLocale: "zh-TW",
   messages,
   // 允许在模板中直接使用 `$t`
@@ -1404,4 +1420,4 @@ const app = createApp(App);
 app.use(router);
 app.use(i18n);
 app.mount("#app");
-//# sourceMappingURL=index.qhpj9EeY.js.map
+//# sourceMappingURL=index.Brb0IMgG.js.map

@@ -73,6 +73,7 @@ const currentLanguage = ref<Language>(languages.find(l => l.code === i18n.locale
 
 const switchLanguage = (code: string) => {
   i18n.locale.value = code
+  localStorage.setItem('locale', code)
   currentLanguage.value = languages.find(l => l.code === code) || languages[0]
   isOpen.value = false
 }
