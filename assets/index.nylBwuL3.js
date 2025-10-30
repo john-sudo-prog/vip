@@ -55,7 +55,7 @@ function _sfc_render$7(_ctx, _cache, $props, $setup, $data, $options) {
   ]);
 }
 const App = /* @__PURE__ */ _export_sfc(_sfc_main$h, [["render", _sfc_render$7]]);
-const _imports_0$2 = "/assets/logo.CX6W3yQJ.jpg";
+const _imports_0$2 = "/vip/assets/logo.CX6W3yQJ.jpg";
 function render$a(_ctx, _cache) {
   return openBlock(), createElementBlock("svg", {
     xmlns: "http://www.w3.org/2000/svg",
@@ -443,11 +443,11 @@ const _sfc_main$f = /* @__PURE__ */ defineComponent({
   }
 });
 const Navbar = /* @__PURE__ */ _export_sfc(_sfc_main$f, [["__scopeId", "data-v-8304f352"]]);
-const _imports_0$1 = "/assets/1.BkiepcgT.jpg";
-const _imports_1$1 = "/assets/2.D2zvkKpT.jpg";
-const _imports_2$1 = "/assets/3.BF3sJ9Id.jpg";
-const _imports_3$1 = "/assets/4.Ca7N3nEU.jpg";
-const _imports_4$1 = "/assets/5.DtazJjHU.jpg";
+const _imports_0$1 = "/vip/assets/1.BkiepcgT.jpg";
+const _imports_1$1 = "/vip/assets/2.D2zvkKpT.jpg";
+const _imports_2$1 = "/vip/assets/3.BF3sJ9Id.jpg";
+const _imports_3$1 = "/vip/assets/4.Ca7N3nEU.jpg";
+const _imports_4$1 = "/vip/assets/5.DtazJjHU.jpg";
 const _hoisted_1$e = {
   id: "home",
   class: "min-h-[90vh] pt-16 bg-gradient-to-br from-gray-900 via-primary-900 to-gray-900 relative overflow-hidden"
@@ -787,7 +787,7 @@ function _sfc_render$6(_ctx, _cache) {
   ]);
 }
 const Cases = /* @__PURE__ */ _export_sfc(_sfc_main$b, [["render", _sfc_render$6]]);
-const _imports_5 = "/assets/6.DUtRWKq2.jpg";
+const _imports_5 = "/vip/assets/6.DUtRWKq2.jpg";
 const _sfc_main$a = {};
 const _hoisted_1$a = {
   id: "partners",
@@ -893,11 +893,11 @@ function _sfc_render$4(_ctx, _cache) {
   ]);
 }
 const News = /* @__PURE__ */ _export_sfc(_sfc_main$9, [["render", _sfc_render$4], ["__scopeId", "data-v-4bc5b19f"]]);
-const _imports_0 = "/assets/Jonny_TG.gR2QuDQP.jpg";
-const _imports_1 = "/assets/Leon_TG.C2MnYuC8.jpg";
-const _imports_2 = "/assets/wechat.B1xSEvwW.png";
-const _imports_3 = "/assets/wechat.D3vEf1Y7.jpg";
-const _imports_4 = "/assets/whatsApp.drYYwvNk.jpg";
+const _imports_0 = "/vip/assets/Jonny_TG.gR2QuDQP.jpg";
+const _imports_1 = "/vip/assets/Leon_TG.C2MnYuC8.jpg";
+const _imports_2 = "/vip/assets/wechat.B1xSEvwW.png";
+const _imports_3 = "/vip/assets/wechat.D3vEf1Y7.jpg";
+const _imports_4 = "/vip/assets/whatsApp.drYYwvNk.jpg";
 const _sfc_main$8 = {
   name: "Contact"
 };
@@ -1129,7 +1129,7 @@ function _sfc_render(_ctx, _cache) {
   ]);
 }
 const SimpleNavbar = /* @__PURE__ */ _export_sfc(_sfc_main$4, [["render", _sfc_render]]);
-const archImg$3 = "/assets/case1-architecture.BLVwDXmg.png";
+const archImg$3 = "/vip/assets/case1-architecture.BLVwDXmg.png";
 const _hoisted_1$3 = { class: "min-h-screen bg-gray-50 flex flex-col" };
 const _hoisted_2$3 = { class: "max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-32" };
 const _hoisted_3$3 = { class: "space-y-10 text-gray-800 leading-7" };
@@ -1160,7 +1160,7 @@ const _sfc_main$3 = {
     };
   }
 };
-const archImg$2 = "/assets/case2-architecture.BkzR6eFG.png";
+const archImg$2 = "/vip/assets/case2-architecture.BkzR6eFG.png";
 const _hoisted_1$2 = { class: "min-h-screen bg-gray-50 flex flex-col" };
 const _hoisted_2$2 = { class: "max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-32" };
 const _hoisted_3$2 = { class: "space-y-10 text-gray-800 leading-7" };
@@ -1191,7 +1191,7 @@ const _sfc_main$2 = {
     };
   }
 };
-const archImg$1 = "/assets/case3-architecture.CqeFZUNL.png";
+const archImg$1 = "/vip/assets/case3-architecture.CqeFZUNL.png";
 const _hoisted_1$1 = { class: "min-h-screen bg-gray-50 flex flex-col" };
 const _hoisted_2$1 = { class: "max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-32" };
 const _hoisted_3$1 = { class: "space-y-10 text-gray-800 leading-7" };
@@ -1222,7 +1222,7 @@ const _sfc_main$1 = {
     };
   }
 };
-const archImg = "/assets/case4-architecture.B8OOYqN-.png";
+const archImg = "/vip/assets/case4-architecture.B8OOYqN-.png";
 const _hoisted_1 = { class: "min-h-screen bg-gray-50 flex flex-col" };
 const _hoisted_2 = { class: "max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-32" };
 const _hoisted_3 = { class: "space-y-10 text-gray-800 leading-7" };
@@ -1318,4 +1318,4 @@ const app = createApp(App);
 app.use(router);
 app.use(i18n);
 app.mount("#app");
-//# sourceMappingURL=index.5SGjPeJe.js.map
+//# sourceMappingURL=index.nylBwuL3.js.map
