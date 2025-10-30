@@ -3,8 +3,8 @@ import vue from '@vitejs/plugin-vue'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  // 使用相对路径，便于在 GitHub Pages 项目页子路径下访问
-  base: './',
+  // GitHub Pages 项目页路径
+  base: '/vip/',
   plugins: [vue()],
   build: {
     outDir: 'dist',
